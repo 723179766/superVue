@@ -1,0 +1,32 @@
+@import "10-color.scss";
+@keyframes fade-in{
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes fade-out{
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+.dj-fade-in{
+  animation: fade-in 1s;
+  -moz-animation: fade-in 1s;    /* Firefox */
+  -webkit-animation: fade-in 1s; /* Safari and Chrome */
+  -o-animation: fade-in 1s;      /* Opera */
+  animation-fill-mode: forwards;
+}
+.dj-fade-out{
+  animation: fade-out 1s;
+  -moz-animation: fade-out 1s;    /* Firefox */
+  -webkit-animation: fade-out 1s; /* Safari and Chrome */
+  -o-animation: fade-out 1s;      /* Opera */
+  animation-fill-mode: forwards;
+  display: none;
+}

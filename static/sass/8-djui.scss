@@ -1,0 +1,148 @@
+@import "10-color.scss";
+.dj-message{
+  z-index: 2000;
+  position: fixed;
+  top: -50px;
+  display: inline-block;
+  height: 40px;
+  height: 42px\0;
+  line-height: 40px;
+  text-align: center;
+  box-shadow: 1px 1px 5px #8391a5;
+  border: 1px solid #8391a5\0;
+  background: #fff;  /* 暂时采用此解决方案 */
+  >div{
+    float: left;
+  }
+  >.message-icon{
+    width: 40px;
+    color: #fff;
+  }
+  >.message-tool{
+    min-width: 100px;
+    padding: 0 10px 0 15px;
+    color: #8391a5;
+    text-align: left;
+    /*color: #2e6da4;*/      /*  备用样式 */
+  }
+  >.message-close{
+    width: 40px;
+    color: #8391a5;
+    /*color: #2e6da4;*/      /*  备用样式 */
+    >span{
+      cursor: pointer;
+    }
+    >span:hover{
+      color: #87cefa;
+    }
+  }
+}
+
+//element UI模态框改造
+.el-dialog-primary{
+  .el-dialog--small{
+    width: 520px;
+  }
+  .el-dialog__header{
+    padding: 20px;
+    border-bottom: 1px solid rgb(230,230,230);
+    border-top: 4px solid $primary;
+  }
+}
+.el-dialog-info{
+  .el-dialog--small{
+    width: 520px;
+  }
+  .el-dialog__header{
+    padding: 20px;
+    border-bottom: 1px solid rgb(230,230,230);
+    border-top: 4px solid $info;
+  }
+}
+.el-dialog-success{
+  .el-dialog--small{
+    width: 520px;
+  }
+  .el-dialog__header{
+    padding: 20px;
+    border-bottom: 1px solid rgb(230,230,230);
+    border-top: 4px solid $success;
+  }
+}
+.el-dialog-warning{
+  .el-dialog--small{
+    width: 520px;
+  }
+  .el-dialog__header{
+    padding: 20px;
+    border-bottom: 1px solid rgb(230,230,230);
+    border-top: 4px solid $warning;
+  }
+}
+.el-dialog-danger{
+  .el-dialog--small{
+    width: 520px;
+  }
+  .el-dialog__header{
+    padding: 20px;
+    border-bottom: 1px solid rgb(230,230,230);
+    border-top: 4px solid $danger;
+  }
+}
+.el-dialog__footer{
+  padding: 15px 20px;
+  text-align: center;
+  background: rgb(242,244,250);
+  border-top: 1px solid rgb(230,230,230);
+}
+.el-dialog__body{
+  padding: 30px;
+  .el-form-item:last-child{
+    margin-bottom: 0;
+  }
+}
+
+//删除对话框
+.el-message-box__btns{
+  text-align: center;
+  button{
+    min-width: 112px;
+    padding: 6px 12px;
+    line-height: 1.42857143;
+    font-family: "PingFang SC";
+    font-size: 14px;
+    font-weight: 400;
+  }
+}
+
+//element tab页改造
+.el-tabs__item{
+  padding: 0 20px;
+  height: 38px;
+  line-height: 38px;
+  font-family: "PingFang SC";
+  font-size: 14px;
+  font-weight: bold;
+  color: #999;
+}
+.el-tabs__item.is-active{
+  color: #1d8be9;
+}
+.el-tabs--border-card>.el-tabs__content{
+  padding: 20px 50px ;
+}
+
+//element 内联表单改造
+.el-form-item__label{
+  padding: 11px 10px 11px 0;
+}
+.el-input__inner{
+  padding-left: 20px;
+}
+.el-cascader__label{
+  padding-left: 20px;
+}
+.el-textarea__inner{
+  padding-left: 20px;
+  padding-right: 10px;
+}

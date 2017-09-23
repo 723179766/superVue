@@ -1,0 +1,77 @@
+/* 定义情景色彩类 */
+$primary: #39a3fe;
+$info: #00c1d7;
+$success: #44ac4e;
+$warning: #ffa303;
+$danger: #dd450f;
+$default: #F5F5F5;
+$back: #aaa;
+
+/* 背景色彩 */
+.bgcolor-primary{
+  background: $primary;
+}
+.bgcolor-info{
+  background: $info;
+}
+.bgcolor-success{
+  background: $success;
+}
+.bgcolor-warning{
+  background: $warning;
+}
+.bgcolor-danger{
+  background: $danger;
+}
+
+/* 边框色彩 */
+.border-primary{
+  border: 1px solid $primary;
+}
+.border-primary-top{
+  border-top: 3px solid $primary;
+}
+.border-info{
+  border: 1px solid $info;
+}
+.border-info-top{
+  border-top: 3px solid $info;
+}
+.border-success{
+  border: 1px solid $success;
+}
+.border-success-top{
+  border-top: 3px solid $success;
+}
+.border-warning{
+  border: 1px solid $warning;
+}
+.border-warning-top{
+  border-top: 3px solid $warning;
+}
+.border-danger{
+  border: 1px solid $danger;
+}
+.border-danger-top{
+  border-top: 3px solid $danger;
+}
+
+/* 字体色彩 */
+.color-primary{
+  color: $primary;
+}
+.color-info{
+  color: $info;
+}
+.color-success{
+  color: $success;
+}
+.color-warning{
+  color: $warning;
+}
+.color-danger{
+  color: $danger;
+}
+.color-1d8be9{
+  color: #1d8be9;
+}

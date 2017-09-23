@@ -1,0 +1,765 @@
+@import "10-color.scss";
+/*----------------------------- 表单组 ------------------------------------*/
+//输入框
+.dj-input{
+  box-sizing: border-box;
+  display: inline-block;
+  width: 100%;
+  height: 36px;
+  line-height: 1;
+  padding: 3px 10px;
+  font-size: inherit;
+  background-color: #fff;
+  background-image: none;
+  border-radius: 4px;
+  border: 1px solid #bfcbd9;
+  color: #1f2d3d;
+  outline: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  transition: border-color .2s cubic-bezier(.645,.045,.355,1);
+}
+.dj-input:focus{
+  border-color: #39a3fe;
+}
+.dj-page-input{
+  box-sizing: border-box;
+  width: 25px;
+  height: 25px;
+  padding: 4px 2px;
+  line-height: 18px;
+  text-align: center;
+  color: #39a4ff;
+  background-color: #f8f8ff;
+  border: 1px solid #d1dbe5;
+  border-radius: 2px;
+  transition: border .3s;
+}
+input[type=number]::-webkit-outer-spin-button,input[type=number]::-webkit-inner-spin-button{
+  -webkit-appearance: none !important;
+  margin: 0;
+}
+.dj-page-input:focus{
+  border-color: darken(#39a4ff, 6%);
+}
+.dj-checkbox{
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  line-height: 15px;
+  color: #87cefa;
+  border: 1px solid #87cefa;
+}
+.dj-checkbox-disabled{
+  color: #ccc;
+  border: 1px solid #bebdbd;
+  cursor: not-allowed;
+}
+
+//按钮
+.dj-btn{
+  min-width: 112px;
+  padding: 6px 12px;
+  line-height: 1.42857143;
+  font-family: "PingFang SC";
+  font-size: 14px;
+  font-weight: 400;
+  text-align: center;
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 0;
+  cursor: pointer;
+  outline: none;
+  >.icon-left{
+    margin-right: 10px;
+  }
+  >.icon-right{
+    margin-left: 10px;
+  }
+  >.btn-img-left{
+    height: 15px;
+    margin-right: 10px;
+    vertical-align: top;
+  }
+  >.btn-img-right{
+    height: 15px;
+    margin-left: 10px;
+    vertical-align: top;
+  }
+}
+.dj-btn-lg{
+  padding: 8px 12px;
+}
+.dj-btn-sm{
+  padding: 4px 12px;
+}
+.dj-btn-xs{
+  padding: 2px 12px;
+}
+.dj-btn-primary{
+  color: #fff;
+  background-color: $primary;
+  border-color: $primary;
+  &:hover{
+    color: #fff;
+    background-color: darken($primary, 6%);
+    border-color: darken($primary, 6%);
+  }
+}
+.dj-btn-info{
+  color: #fff;
+  background-color: $info;
+  border-color: $info;
+  &:hover{
+    color: #fff;
+    background-color: darken($info, 6%);
+    border-color: darken($info, 6%);
+  }
+}
+.dj-btn-success{
+  color: #fff;
+  background-color: $success;
+  border-color: $success;
+  &:hover{
+    color: #fff;
+    background-color: darken($success, 6%);
+    border-color: darken($success, 6%);
+  }
+}
+.dj-btn-warning{
+  color: #fff;
+  background-color: $warning;
+  border-color: $warning;
+  &:hover{
+    color: #fff;
+    background-color: darken($warning, 6%);
+    border-color: darken($warning, 6%);
+  }
+}
+.dj-btn-danger{
+  color: #fff;
+  background-color: $danger;
+  border-color: $danger;
+  &:hover{
+    color: #fff;
+    background-color: darken($danger, 6%);
+    border-color: darken($danger, 6%);
+  }
+}
+.dj-btn-default{
+  color: #8E8E8E;
+  background-color: $default;
+  border-color: #d2d2d2;
+  &:hover{
+    color: #8E8E8E;
+    background-color: darken($default, 6%);
+    border-color: darken(#d2d2d2, 6%);
+  }
+}
+.dj-btn-back{
+  color: #fff;
+  background-color: $back;
+  border-color: $back;
+  &:hover{
+    color: #fff;
+    background-color: darken($back, 6%);
+    border-color: darken($back, 6%);
+  }
+}
+.dj-btn-fff{
+  color: #575757;
+  background-color: #fff;
+  border-color: #575757;
+  &:hover{
+    color: darken(#575757, 6%);
+    background-color: #fff;
+    border-color: darken(#575757, 6%);
+  }
+}
+//图标按钮
+.dj-btn-icon-primary{
+  color: $primary;
+  background-color: #fff;
+  border-color: $primary;
+  &:hover{
+    color: darken($primary, 6%);
+    background-color: #fff;
+    border-color: darken($primary, 6%);
+  }
+}
+.dj-btn-icon-info{
+  color: $info;
+  background-color: #fff;
+  border-color: $info;
+  &:hover{
+    color: darken($info, 6%);
+    background-color: #fff;
+    border-color: darken($info, 6%);
+  }
+}
+.dj-btn-icon-success{
+  color: $success;
+  background-color: #fff;
+  border-color: $success;
+  &:hover{
+    color: darken($success, 6%);
+    background-color: #fff;
+    border-color: darken($success, 6%);
+  }
+}
+.dj-btn-icon-warning{
+  color: $warning;
+  background-color: #fff;
+  border-color: $warning;
+  &:hover{
+    color: darken($warning, 6%);
+    background-color: #fff;
+    border-color: darken($warning, 6%);
+  }
+}
+.dj-btn-icon-danger{
+  color: $danger;
+  background-color: #fff;
+  border-color: $danger;
+  &:hover{
+    color: darken($danger, 6%);
+    background-color: #fff;
+    border-color: darken($danger, 6%);
+  }
+}
+.dj-btn-icon-download{
+  color: #666;
+  background-color: #fff;
+  border-color: #666;;
+  &:hover{
+    color: darken(#666, 6%);
+    background-color: #fff;
+    border-color: darken(#666, 6%);
+  }
+}
+//按钮组group
+.dj-btn-group-default{
+  color: #aeaeae;
+  background-color: #fff;
+  border-color: #aeaeae;
+  &:hover{
+    color: darken(#aeaeae, 6%);
+    background-color: #fff;
+    border-color: darken(#aeaeae, 6%);
+  }
+  &:focus{
+    color: #39a3fe;
+    border-color: #39a3fe;
+  }
+}
+//按钮disabled状态
+.dj-btn[disabled]{
+  cursor: not-allowed;
+  filter: alpha(opacity=65);
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  opacity: .65;
+}
+.dj-btn-primary[disabled]:hover{
+  color: #fff;
+  background-color: $primary;
+  border-color: $primary;
+}
+.dj-btn-info[disabled]:hover{
+  color: #fff;
+  background-color: $info;
+  border-color: $info;
+}
+.dj-btn-success[disabled]:hover{
+  color: #fff;
+  background-color: $success;
+  border-color: $success;
+}
+.dj-btn-warning[disabled]:hover{
+  color: #fff;
+  background-color: $warning;
+  border-color: $warning;
+}
+.dj-btn-danger[disabled]:hover{
+  color: #fff;
+  background-color: $danger;
+  border-color: $danger;
+}
+.dj-btn-default[disabled]:hover{
+  color: #8E8E8E;
+  background-color: $default;
+  border-color: #d2d2d2;
+}
+.dj-btn-back[disabled]:hover{
+  color: #fff;
+  background-color: $back;
+  border-color: $back;
+}
+.dj-btn-icon-primary[disabled]:hover{
+  color: $primary;
+  background-color: #fff;
+  border-color: $primary;
+}
+.dj-btn-icon-info[disabled]:hover{
+  color: $info;
+  background-color: #fff;
+  border-color: $info;
+}
+.dj-btn-icon-success[disabled]:hover{
+  color: $success;
+  background-color: #fff;
+  border-color: $success;
+}
+.dj-btn-icon-warning[disabled]:hover{
+  color: $warning;
+  background-color: #fff;
+  border-color: $warning;
+}
+.dj-btn-icon-danger[disabled]:hover{
+  color: $danger;
+  background-color: #fff;
+  border-color: $danger;
+}
+.dj-btn-icon-download[disabled]:hover{
+  color: #666;
+  background-color: #fff;
+  border-color: #666;
+}
+.dj-sign-font{
+  margin-left: 10px;
+  color: $primary;
+  cursor: pointer;
+  &:hover{
+    color: darken($primary, 10%);
+  }
+}
+.dj-btn-group{
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  >.dj-btn{
+    float: left;
+  }
+  >.dj-btn:first-child{
+    border-top-left-radius: 5px !important;
+    border-bottom-left-radius: 5px !important;
+  }
+  >.dj-btn:last-child{
+    border-top-right-radius: 5px !important;
+    border-bottom-right-radius: 5px !important;
+    //border-left: none;
+  }
+  .dj-btn:not(:first-child):not(:last-child){
+    border-radius: 0;
+    //border-left: none;
+  }
+}
+
+
+//左右无边框--表格
+.dj-table{
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  >thead{
+    color: #333;
+    border-top: 1px solid #c3cedc;
+    border-bottom: 1px solid #c3cedc;
+    background: #e1effd;
+    >tr{
+      >.xs-width{
+        width: 180px;
+      }
+      >.sm-width{
+        width: 280px;
+      }
+      >.md-width{
+        width: 380px;
+      }
+      >.lg-width{
+        width: 480px;
+      }
+      >th{
+        padding: 10px 0;
+        text-align: center;
+      }
+    }
+  }
+  >tbody{
+    text-align: center;
+    color: #666;
+    >tr>td{
+      height: 40px;
+      padding: 8px 0;
+    }
+    >tr .a-link{
+      font-family: "Arial";
+      font-size: 14px;
+      color: #1d8be9;
+      cursor: pointer;
+    }
+    >tr .font-arial{
+      font-family: "Arial";
+      font-size: 14px;
+      color: #666;
+    }
+    >tr .font-pfsc{
+      font-family: "PingFang SC";
+      font-size: 14px;
+      font-weight: bold;
+      color: #666;
+    }
+    /* 奇数行 */
+    >tr:nth-child(odd){
+      background: #fff;
+    }
+    >tr:nth-child(odd)>td:first-child{
+      border-top: 2px solid #fff;
+      border-bottom: 2px solid #fff;
+      border-left: 2px solid #fff;
+    }
+    >tr:nth-child(odd):hover>td:first-child{
+      border-top: 2px solid #fea200;
+      border-bottom: 2px solid #fea200;
+      border-left: 2px solid #fea200;
+    }
+    >tr:nth-child(odd)>td:last-child{
+      border-top: 2px solid #fff;
+      border-bottom: 2px solid #fff;
+      border-right: 2px solid #fff;
+    }
+    >tr:nth-child(odd):hover>td:last-child{
+      border-top: 2px solid #fea200;
+      border-bottom: 2px solid #fea200;
+      border-right: 2px solid #fea200;
+    }
+    >tr:nth-child(odd)>td:not(:first-of-type):not(:last-of-type){
+      border-top: 2px solid #fff;
+      border-bottom: 2px solid #fff;
+    }
+    >tr:nth-child(odd):hover>td:not(:first-of-type):not(:last-of-type){
+      border-top: 2px solid #fea200;
+      border-bottom: 2px solid #fea200;
+    }
+    /* 偶数行 */
+    >tr:nth-child(even){
+      background: #f3f5f7;
+    }
+    >tr:nth-child(even)>td:first-child{
+      border-top: 2px solid #f3f5f7;
+      border-bottom: 2px solid #f3f5f7;
+      border-left: 2px solid #f3f5f7;
+    }
+    >tr:nth-child(even):hover>td:first-child{
+      border-top: 2px solid #fea200;
+      border-bottom: 2px solid #fea200;
+      border-left: 2px solid #fea200;
+    }
+    >tr:nth-child(even)>td:last-child{
+      border-top: 2px solid #f3f5f7;
+      border-bottom: 2px solid #f3f5f7;
+      border-right: 2px solid #f3f5f7;
+    }
+    >tr:nth-child(even):hover>td:last-child{
+      border-top: 2px solid #fea200;
+      border-bottom: 2px solid #fea200;
+      border-right: 2px solid #fea200;
+    }
+    >tr:nth-child(even)>td:not(:first-of-type):not(:last-of-type){
+      border-top: 2px solid #f3f5f7;
+      border-bottom: 2px solid #f3f5f7;
+    }
+    >tr:nth-child(even):hover>td:not(:first-of-type):not(:last-of-type){
+      border-top: 2px solid #fea200;
+      border-bottom: 2px solid #fea200;
+    }
+    /* 行点击效果 */
+    >.border-orange{
+      >td:first-child{
+        border-top: 2px solid #fea200 !important;
+        border-bottom: 2px solid #fea200 !important;
+        border-left: 2px solid #fea200 !important;
+      }
+      >td:last-child{
+        border-top: 2px solid #fea200 !important;
+        border-bottom: 2px solid #fea200 !important;
+        border-right: 2px solid #fea200 !important;
+      }
+      >td:not(:first-of-type):not(:last-of-type){
+        border-top: 2px solid #fea200 !important;
+        border-bottom: 2px solid #fea200 !important;
+      }
+    }
+  }
+}
+//分页区
+.dj-page.text-right{
+  margin-top: 10px;
+  font-family: "PingFang SC";
+  font-size: 12px;
+  color: #999;
+  >.prev-page{
+    margin-right: 10px;
+  }
+  >.prev-page:hover{
+    color: #39a4ff;
+    cursor: pointer;
+  }
+  >.next-page:hover{
+    color: #39a4ff;
+    cursor: pointer;
+  }
+  >.total-page{
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+  >.next-page{
+    margin-right: 25px;
+  }
+  >.total-num{
+    margin-right: 32px;
+  }
+}
+
+
+/*----------------------------- 情景类 ------------------------------------*/
+.tool-primary{
+  padding: 6px 20px;
+  background: $primary;
+  color: #fff;
+}
+.tool-info{
+  padding: 6px 20px;
+  background: $info;
+  color: #fff;
+}
+.tool-success{
+  padding: 6px 20px;
+  background: $success;
+  color: #fff;
+}
+.tool-warning{
+  padding: 6px 20px;
+  background: $warning;
+  color: #fff;
+}
+.tool-danger{
+  padding: 6px 20px;
+  background: $danger;
+  color: #fff;
+}
+.tool-pink{
+  padding: 6px 20px;
+  background: #FDE5E5;
+  color: #F86262;
+}
+.text-tool-default{
+  font-size: 16px;
+  color: #3c3c3c;
+}
+
+/*----------------------------- 功能类 ------------------------------------*/
+.show-ellipsis{
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  -o-text-overflow: ellipsis;
+  overflow: hidden;
+}
+.clear-float:after{
+  display: block;
+  content: " ";
+  clear: both;
+}
+
+//图标
+.icon-out{
+  width: 30px;
+  height: 30px;
+  background-size: 30px 30px;
+  border-radius: 15px !important;
+  background: #E5E5E5;
+}
+.icon-in{
+  padding:8px 0 0 8px !important;
+}
+
+//图片
+.image-rectangle{
+  width: 200px;
+  height: 200px;
+  border:2px solid #D5DDE7;
+}
+
+
+//标签
+.dj-tag{
+  display: inline-block;
+  padding: 4px 20px;
+  cursor: pointer;
+  &:hover{
+    background: #E1EFFD;
+  }
+}
+.dj-tag{
+  margin-left: 3px;
+}
+.dj-tag-selectd{
+  background: #f2f3f7;
+  &:hover{
+    background: #f2f3f7;
+  }
+}
+
+//图片区域
+.card-box{
+  position: relative;
+  display: inline-block;
+  width: 217px;
+  height: 276px;
+  margin-left: 10px;
+  margin-bottom: 10px;
+  background: #fff;
+  border: 1px solid #ccc;
+  vertical-align: top;
+  white-space: normal;
+  >.img-box{
+    position: relative;
+    padding: 40px 0 20px 0;
+    text-align: center;
+    img{
+      width: 96px;
+      height: 96px;
+      border: 2px solid #ccc;
+      border-radius: 50% !important;
+    }
+    >.card-icon{
+      z-index: 5;
+      position: absolute;
+      display: inline-block;
+      top: 0;
+      right: 5px;
+      cursor: pointer;
+      i{
+        line-height: 1;
+        font-size: 26px;
+        color: #6F6F6F;
+      }
+    }
+    >.tool-box{
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      >img{
+        z-index: 2;
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        top: 8px;
+        left: 10px;
+      }
+      >.tool-font{
+        display: inline-block;
+        z-index: 2;
+        padding: 10px;
+        margin-top: 1px;
+        font-family: "PingFang SC";
+        font-size: 12px;
+        font-weight: bold;
+        background: #fdf0f0;
+        color: #e44b27;
+      }
+    }
+  }
+  >.content-box{
+    text-align: center;
+    .descr-font{
+      display: inline-block;
+      width: 120px;
+      font-family: "PingFang SC";
+      font-size: 14px;
+      color: #999;
+    }
+    .apk-name{
+      margin-bottom: 10px;
+      font-family: "PingFang SC";
+      font-size: 14px;
+      font-weight: bold;
+      color: #333;
+    }
+    .apk-tag-primary{
+      margin-bottom: 20px;
+      display: inline-block;
+      padding: 2px 16px;
+      font-family: "PingFang SC";
+      font-size: 12px;
+      font-weight: bold;
+      background: #e1effd;
+      color: #1d8be9;
+    }
+    .apk-tag-danger{
+      margin-bottom: 20px;
+      display: inline-block;
+      padding: 2px 16px;
+      font-family: "PingFang SC";
+      font-size: 12px;
+      font-weight: bold;
+      background: #fdf0f0;
+      color: #e44b27;
+    }
+    .apk-tag-success{
+      margin-bottom: 20px;
+      display: inline-block;
+      padding: 2px 16px;
+      font-family: "PingFang SC";
+      font-size: 12px;
+      font-weight: bold;
+      background: lighten(#44ac4e, 30%);
+      color: #44ac4e;
+    }
+  }
+  >.footer-box{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    border-top: 1px solid #ccc;
+    .opt-sign{
+      font-family: "PingFang SC";
+      font-size: 14px;
+      color: #1d8be9;
+      i,span{
+        cursor: pointer;
+      }
+    }
+    .opt-double{
+      float: left;
+      width: 50%;
+      font-family: "PingFang SC";
+      font-size: 14px;
+      color: #1d8be9;
+      i,span{
+        cursor: pointer;
+      }
+    }
+    .opt-double:first-child{
+      border-right: 1px solid #ccc;
+    }
+    .state-font{
+      font-family: "PingFang SC";
+      font-size: 14px;
+      color: #999;
+    }
+    .xs-icon-img{
+      width: 15px;
+      height: 15px;
+      margin-top: -4px;
+      vertical-align: middle;
+      cursor: pointer;
+    }
+  }
+}

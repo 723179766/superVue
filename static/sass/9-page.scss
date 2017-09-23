@@ -1,0 +1,75 @@
+@import "10-color.scss";
+*{
+  font-family: Microsoft Yahei, Arial, Helvetica;
+  //font-size: 12px;
+  //outline: none !important;
+  border-radius: 0 !important;
+}
+html,body{
+  height: 100%;
+  overflow-y: hidden;
+  min-width: 1024px;
+  ul li{
+    list-style: none;
+  }
+}
+
+//上下页
+.page-model-upDown{
+  >.up{
+    min-width: 950px;
+    overflow: hidden;
+    padding: 20px 32px;
+    margin-bottom: 10px;
+    background: #fff;
+    border: 1px solid #ccc;
+  }
+  >.down{
+    min-width: 950px;
+    overflow: hidden;
+    padding-bottom: 10px;
+    background: #fff;
+    border: 1px solid #ccc;
+    >.btn-opt-area{
+      padding: 18px 0 18px 32px;
+    }
+  }
+}
+
+//单页
+.page-sign{
+  min-width: 950px;
+  overflow: hidden;
+  padding-bottom: 20px;
+  background: #fff;
+  border: 1px solid #ccc;
+}
+
+//左右页--人员管理首页
+.page-model-equal{
+  &:after{
+    display: block;
+    content: " ";
+    clear: both;
+  }
+  >.left-content{
+    float: left;
+    width: 34%;
+    height: 450px;
+    padding-top: 18px;
+    background: #fff;
+    border: 1px solid #ccc;
+    overflow-y: auto;
+  }
+  >.middle-content{
+    float: left;
+    width: 2%;
+  }
+  >.right-content{
+    float: left;
+    width: 64%;
+    min-height: 450px;
+    border: 1px solid #ccc;
+    background: #fff;
+  }
+}
