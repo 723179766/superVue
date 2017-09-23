@@ -60,9 +60,9 @@
           this.$message('请输入验证码');
           return;
         }
-//        sessionStorage.setItem('userInfo',1);
-//        this.$router.push({ name: 'Layout'});
-//        return;
+        sessionStorage.setItem('userInfo',1);
+        this.$router.push({ name: 'Layout'});
+        return;
         axios({
           method: 'post',
           url: API + '/auth',

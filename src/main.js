@@ -51,6 +51,7 @@ router.afterEach(route => {
 
 //拦截器
 axios.interceptors.request.use(function (config){
+  return
   var token = null;
   if(sessionStorage.getItem('userInfo')){
     token = JSON.parse(sessionStorage.getItem('userInfo')).token;
