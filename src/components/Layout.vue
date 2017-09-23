@@ -71,6 +71,14 @@
           <router-link to="/AppClassify" tag="span">应用分类</router-link>
         </el-menu-item>
       </el-submenu>
+      <el-submenu index="8">
+        <template slot="title">
+          <img class="sys-icon" src="../assets/nav_icon_sys.png" alt="">
+          组件系统</template>
+        <el-menu-item index="80">
+          <router-link to="/ComLabelEdit" tag="span">标签编辑</router-link>
+        </el-menu-item>
+      </el-submenu>
     </el-menu>
 
     <div v-bind:class="{'right-no-full':openFlag,'right-full':!openFlag}" class="right">

@@ -31,6 +31,9 @@ import AppClassify from '@/components/appManage/AppClassify'
 
 import AppDetail from '@/components/appManage/AppDetail'
 
+//组件系统
+import ComLabelEdit from '@/components/comSystem/ComLabelEdit'
+
 Vue.use(Router)
 
 export default new Router({
@@ -241,6 +244,14 @@ export default new Router({
           component:AppDetail,
           meta:{
             name:'应用详情'
+          }
+        },
+        {
+          path:'/ComLabelEdit',
+          name:'ComLabelEdit',
+          component:ComLabelEdit,
+          meta:{
+            name:'标签编辑'
           }
         },
         {
