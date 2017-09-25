@@ -33,6 +33,7 @@ import AppDetail from '@/components/appManage/AppDetail'
 
 //组件系统
 import ComLabelEdit from '@/components/comSystem/ComLabelEdit'
+import AddBox from '@/components/comSystem/AddBox'
 
 Vue.use(Router)
 
@@ -252,6 +253,14 @@ export default new Router({
           component:ComLabelEdit,
           meta:{
             name:'标签编辑'
+          }
+        },
+        {
+          path:'/AddBox',
+          name:'AddBox',
+          component:AddBox,
+          meta:{
+            name:'添加容器'
           }
         },
         {

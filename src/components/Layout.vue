@@ -78,6 +78,9 @@
         <el-menu-item index="80">
           <router-link to="/ComLabelEdit" tag="span">标签编辑</router-link>
         </el-menu-item>
+        <el-menu-item index="81">
+          <router-link to="/AddBox" tag="span">容器</router-link>
+        </el-menu-item>
       </el-submenu>
     </el-menu>
 
