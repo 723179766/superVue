@@ -34,6 +34,7 @@ import AppDetail from '@/components/appManage/AppDetail'
 //组件系统
 import ComLabelEdit from '@/components/comSystem/ComLabelEdit'
 import AddBox from '@/components/comSystem/AddBox'
+import FileUpload from '@/components/comSystem/FileUpload'
 
 Vue.use(Router)
 
@@ -261,6 +262,14 @@ export default new Router({
           component:AddBox,
           meta:{
             name:'添加容器'
+          }
+        },
+        {
+          path:'/FileUpload',
+          name:'FileUpload',
+          component:FileUpload,
+          meta:{
+            name:'文件上传组件'
           }
         },
         {
