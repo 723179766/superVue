@@ -1,6 +1,6 @@
 <template>
   <div class="file-upload">
-    <com-file-upload></com-file-upload>
+    <com-file-upload :comProp="comProp"></com-file-upload>
   </div>
 </template>
 
@@ -13,7 +13,13 @@
     created () {
     },
     data () {
-      return {}
+      return {
+        comProp:{
+          signUpd: true,
+          multiUpd: false,
+          showList: true
+        }
+      }
     },
     methods: {}
   }

@@ -32,7 +32,7 @@ import AppClassify from '@/components/appManage/AppClassify'
 import AppDetail from '@/components/appManage/AppDetail'
 
 //组件系统
-import ComLabelEdit from '@/components/comSystem/ComLabelEdit'
+import LabelEdit from '@/components/comSystem/LabelEdit'
 import AddBox from '@/components/comSystem/AddBox'
 import FileUpload from '@/components/comSystem/FileUpload'
 
@@ -249,9 +249,9 @@ export default new Router({
           }
         },
         {
-          path:'/ComLabelEdit',
-          name:'ComLabelEdit',
-          component:ComLabelEdit,
+          path:'/LabelEdit',
+          name:'LabelEdit',
+          component:LabelEdit,
           meta:{
             name:'标签编辑'
           }

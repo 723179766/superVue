@@ -1,13 +1,13 @@
 <template>
-  <div class="">
-    <label-list-edit :comProp="comProp"></label-list-edit>
+  <div class="label-edit">
+    <com-label-edit :comProp="comProp"></com-label-edit>
   </div>
 </template>
 <script type="text/ecmascript-6">
-  import LabelListEdit from './components/LabelListEdit.vue'
+  import ComLabelEdit from './components/ComLabelEdit.vue'
   export default {
     components:{
-      LabelListEdit
+      ComLabelEdit
     },
     created(){
 

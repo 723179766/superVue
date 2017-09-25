@@ -14,7 +14,7 @@
      }
 -->
 <template>
-  <div class="label-list">
+  <div class="com-label-edit">
     <span class="dj-tag" @click="labelAllClick()" v-show="comProp.all" v-bind:class="{'dj-tag-selectd':selectdAll==true}">全部</span><span class="dj-tag margin-bottom-3" v-bind:class="{'dj-tag-selectd':item.selectd==true}" v-for="item in thisTag" @click="labelClick(item)">{{item[comProp.labelName]}}</span>
     <span class="reset-a" @click="reset" v-show="comProp.reset">重置</span>
     <span class="dj-sign-font" v-show="moreFlag" @click="showMore">更多 <i class="el-icon-caret-bottom"></i></span>
@@ -162,7 +162,7 @@
   }
 </script>
 <style lang='scss'>
-  .label-list{
+  .com-label-edit{
   .reset-a{
     margin-left: 10px;
     color: #31a2ff;

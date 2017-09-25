@@ -76,7 +76,7 @@
           <img class="sys-icon" src="../assets/nav_icon_sys.png" alt="">
           组件系统</template>
         <el-menu-item index="80">
-          <router-link to="/ComLabelEdit" tag="span">标签编辑</router-link>
+          <router-link to="/LabelEdit" tag="span">标签编辑</router-link>
         </el-menu-item>
         <el-menu-item index="81">
           <router-link to="/AddBox" tag="span">容器</router-link>
