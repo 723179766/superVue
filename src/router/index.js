@@ -35,6 +35,7 @@ import AppDetail from '@/components/appManage/AppDetail'
 import LabelEdit from '@/components/comSystem/LabelEdit'
 import AddBox from '@/components/comSystem/AddBox'
 import FileUpload from '@/components/comSystem/FileUpload'
+import ShanGe from '@/components/comSystem/ShanGe'
 
 Vue.use(Router)
 
@@ -270,6 +271,14 @@ export default new Router({
           component:FileUpload,
           meta:{
             name:'文件上传组件'
+          }
+        },
+        {
+          path:'/ShanGe',
+          name:'ShanGe',
+          component:ShanGe,
+          meta:{
+            name:'ShanGe'
           }
         },
         {

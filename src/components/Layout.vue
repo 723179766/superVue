@@ -84,6 +84,9 @@
         <el-menu-item index="82">
           <router-link to="/FileUpload" tag="span">文件上传组件</router-link>
         </el-menu-item>
+        <el-menu-item index="83">
+          <router-link to="/ShanGe" tag="span">栅格系统</router-link>
+        </el-menu-item>
       </el-submenu>
     </el-menu>
 
