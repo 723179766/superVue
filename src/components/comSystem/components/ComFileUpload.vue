@@ -12,12 +12,11 @@
     </ul>
   </div>
 </template>
-
 <script type="text/ecmascript-6">
+  import axios from 'axios'
+  import {API} from '../../../config'
   export default {
-    name: '',
     created () {
-
     },
     data () {
       return {
@@ -30,17 +29,29 @@
         this.$refs.inputer.click();
       },
       fileChange(e){
-        let vm = this,inputDom,fileData;
-        inputDom = vm.$refs.inputer;
-        fileData = inputDom.files[0];
-        console.log(fileData);
-        if('success'){
-          vm.fileList.push({
-            name: fileData.name,
-            size: fileData.size
-          });
-//          vm.hasFile = true;
-        }
+        let vm = this,
+          fileDom = vm.$refs.inputer,
+          fileData = fileDom.files[0],
+          data = new FormData();
+        data.append('term_model_pic', fileData);
+        axios({
+          url: API + '/term_model/upload',
+          method: 'post',
+          data: data,
+          headers: {'Content-Type': 'multipart/form-data'}
+        }).then((resp)=>{
+          if(resp.data.code=="00000"){
+            vm.fileList.push({
+              name: fileData.name,
+              size: fileData.size
+            });
+            this.$message({
+              type: 'success',
+              message: '上传成功'
+            });
+            //vm.hasFile = true;
+          }
+        });
       }
     },
     mounted(){
@@ -51,7 +62,6 @@
     }
   }
 </script>
-
 <style lang="scss">
   .com-file-upload{
   .input-file{
