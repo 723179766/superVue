@@ -87,6 +87,9 @@
         <el-menu-item index="83">
           <router-link to="/ShanGe" tag="span">栅格系统</router-link>
         </el-menu-item>
+        <el-menu-item index="84">
+          <router-link to="/ShuttleBox" tag="span">穿梭框</router-link>
+        </el-menu-item>
       </el-submenu>
     </el-menu>
 

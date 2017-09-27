@@ -36,6 +36,7 @@ import LabelEdit from '@/components/comSystem/LabelEdit'
 import AddBox from '@/components/comSystem/AddBox'
 import FileUpload from '@/components/comSystem/FileUpload'
 import ShanGe from '@/components/comSystem/ShanGe'
+import ShuttleBox from '@/components/comSystem/ShuttleBox'
 
 Vue.use(Router)
 
@@ -278,7 +279,15 @@ export default new Router({
           name:'ShanGe',
           component:ShanGe,
           meta:{
-            name:'ShanGe'
+            name:'栅格'
+          }
+        },
+        {
+          path:'/ShuttleBox',
+          name:'ShuttleBox',
+          component:ShuttleBox,
+          meta:{
+            name:'穿梭框'
           }
         },
         {
