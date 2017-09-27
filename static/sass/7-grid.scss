@@ -77,42 +77,95 @@
   >div{
     height: 30px;
     line-height: 30px;
-    background: #fff;
+  }
+  &:after{
+    display: block;
+    content: " ";
+    clear: both;
   }
 }
-.dj-col-sm-12 {
-  width: 100%;
+
+@media (min-width: 768px) {
+  .dj-col-sm-1, .dj-col-sm-2, .dj-col-sm-3, .dj-col-sm-4, .dj-col-sm-5, .dj-col-sm-6, .dj-col-sm-7, .dj-col-sm-8, .dj-col-sm-9, .dj-col-sm-10, .dj-col-sm-11, .dj-col-sm-12 {
+    float: left;
+  }
+  .dj-col-sm-12 {
+    width: 100%;
+  }
+  .dj-col-sm-11 {
+    width: 91.66666667%;
+  }
+  .dj-col-sm-10 {
+    width: 83.33333333%;
+  }
+  .dj-col-sm-9 {
+    width: 75%;
+  }
+  .dj-col-sm-8 {
+    width: 66.66666667%;
+  }
+  .dj-col-sm-7 {
+    width: 58.33333333%;
+  }
+  .dj-col-sm-6 {
+    width: 50%;
+  }
+  .dj-col-sm-5 {
+    width: 41.66666667%;
+  }
+  .dj-col-sm-4 {
+    width: 33.33333333%;
+  }
+  .dj-col-sm-3 {
+    width: 25%;
+  }
+  .dj-col-sm-2 {
+    width: 16.66666667%;
+  }
+  .dj-col-sm-1 {
+    width: 8.33333333%;
+  }
 }
-.dj-col-sm-11 {
-  width: 91.66666667%;
+
+@media (min-width: 992px) {
+  .dj-col-md-1, .dj-col-md-2, .dj-col-md-3, .dj-col-md-4, .dj-col-md-5, .dj-col-md-6, .dj-col-md-7, .dj-col-md-8, .dj-col-md-9, .dj-col-md-10, .dj-col-md-11, .dj-col-md-12 {
+    float: left;
+  }
+  .dj-col-md-12 {
+    width: 100%;
+  }
+  .dj-col-md-11 {
+    width: 91.66666667%;
+  }
+  .dj-col-md-10 {
+    width: 83.33333333%;
+  }
+  .dj-col-md-9 {
+    width: 75%;
+  }
+  .dj-col-md-8 {
+    width: 66.66666667%;
+  }
+  .dj-col-md-7 {
+    width: 58.33333333%;
+  }
+  .dj-col-md-6 {
+    width: 50%;
+  }
+  .dj-col-md-5 {
+    width: 41.66666667%;
+  }
+  .dj-col-md-4 {
+    width: 33.33333333%;
+  }
+  .dj-col-md-3 {
+    width: 25%;
+  }
+  .dj-col-md-2 {
+    width: 16.66666667%;
+  }
+  .dj-col-md-1 {
+    width: 8.33333333%;
+  }
 }
-.dj-col-sm-10 {
-  width: 83.33333333%;
-}
-.dj-col-sm-9 {
-  width: 75%;
-}
-.dj-col-sm-8 {
-  width: 66.66666667%;
-}
-.dj-col-sm-7 {
-  width: 58.33333333%;
-}
-.dj-col-sm-6 {
-  width: 50%;
-}
-.dj-col-sm-5 {
-  width: 41.66666667%;
-}
-.dj-col-sm-4 {
-  width: 33.33333333%;
-}
-.dj-col-sm-3 {
-  width: 25%;
-}
-.dj-col-sm-2 {
-  width: 16.66666667%;
-}
-.dj-col-sm-1 {
-  width: 8.33333333%;
-}
+
