@@ -40,7 +40,7 @@
 
 //穿梭框
 .com-shuttle-box{
-  >.shuttle-box-left,.shuttle-box-right{
+  >.shuttle-box{
     display: inline-block;
     width: 200px;
     border: 1px solid #d1dbe5;
@@ -73,24 +73,31 @@
         &:hover{
           background: #e4e8f1;
         }
-        >.data-checkbox{
-          display: inline-block;
-          width: 16px;
-          height: 16px;
-          line-height: 16px;
-          text-align: center;
-          font-size: 1px;
-          color: #87cefa;
-          border: 1px solid #87cefa;
-          vertical-align: middle;
-        }
-        >.data-info{
-          display: inline-block;
-          margin-left: 12px;
-          color: #00A0AF;
-          vertical-align: middle;
-        }
       }
+    }
+    >.shuttle-box-footer{
+      height: 36px;
+      line-height: 36px;
+      padding-left: 20px;
+      background: #fff;
+      border-top: 1px solid #d1dbe5;
+    }
+    .data-checkbox{
+      display: inline-block;
+      width: 16px;
+      height: 16px;
+      line-height: 16px;
+      text-align: center;
+      font-size: 1px;
+      color: #87cefa;
+      border: 1px solid #87cefa;
+      vertical-align: middle;
+    }
+    .data-info{
+      display: inline-block;
+      margin-left: 12px;
+      color: #00A0AF;
+      vertical-align: middle;
     }
   }
   >.shuttle-box-middle{
@@ -105,6 +112,23 @@
       border: 1px solid #bfcbd9;
       border-radius: 4px !important;
       cursor: pointer;
+      outline: none;
+      &:hover{
+        color: #fff;
+        background-color: #62c16b;
+        border-color: #62c16b;
+      }
+      &:active{
+        color: #fff;
+        background-color: darken(#62c16b,6%);
+        border-color: darken(#62c16b,6%);
+      }
+    }
+    >.opt-btn[disabled]{
+      color: #bfcbd9;
+      cursor: not-allowed;
+      background-color: #eef1f6;
+      border-color: #d1dbe5;
     }
   }
 }
