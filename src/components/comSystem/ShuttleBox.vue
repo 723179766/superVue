@@ -34,7 +34,9 @@
     },
     methods:{
       getData(){
-        alert('你做梦')
+        console.log(this.comProp.leftData);
+        console.log(this.comProp.rightData);
+        this.$message('控制台已经打印');
       }
     }
   }

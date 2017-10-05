@@ -17,7 +17,7 @@
          <span class="data-checkbox" @click="leftAllClick">
             <i v-bind:class="{'el-icon-check':leftCountMax,'el-icon-minus':leftCountMax=='half'}"></i>
           </span>
-        <span class="data-info">共{{leftCount}}项</span>
+        <span class="data-info">共{{comProp.leftData.length}}项</span>
       </p>
     </div>
 
@@ -43,7 +43,7 @@
          <span class="data-checkbox" @click="rightAllClick">
             <i v-bind:class="{'el-icon-check':rightCountMax,'el-icon-minus':rightCountMax=='half'}"></i>
           </span>
-        <span class="data-info">共{{rightCount}}项</span>
+        <span class="data-info">共{{comProp.rightData.length}}项</span>
       </p>
     </div>
   </div>
@@ -52,14 +52,10 @@
   export default {
     created(){
       let vm = this;
-      vm.leftCount = vm.comProp.leftData.length;
-      vm.rightCount = vm.comProp.rightData.length;
     },
     data(){
       return{
-        leftCount: 0,
         leftCountMax: false,
-        rightCount: 0,
         rightCountMax: false,
         canMoveRight: false,
         canMoveLeft: false
@@ -74,7 +70,7 @@
             num++
           }
         });
-        if(0<num<vm.leftCount){
+        if(0<num<vm.comProp.leftData.length){
           vm.canMoveRight = true;
           vm.leftCountMax = 'half';
         }
@@ -82,12 +78,16 @@
           vm.canMoveRight = false;
           vm.leftCountMax = false;
         }
-        if(num==vm.leftCount){
+        if(num==vm.comProp.leftData.length){
           vm.canMoveRight = true;
           vm.leftCountMax = true;
         }
       },
       leftAllClick(){
+        if(this.comProp.leftData.length==0){
+          this.$message('左边已经没有可选数据');
+          return;
+        }
         let vm = this;
         if(vm.leftCountMax==false || vm.leftCountMax=='half'){
           vm.canMoveRight = true;
@@ -111,7 +111,7 @@
             num++
           }
         });
-        if(0<num<vm.rightCount){
+        if(0<num<vm.comProp.rightData.length){
           vm.canMoveLeft = true;
           vm.rightCountMax = 'half';
         }
@@ -119,12 +119,16 @@
           vm.canMoveLeft = false;
           vm.rightCountMax = false;
         }
-        if(num==vm.rightCount){
+        if(num==vm.comProp.rightData.length){
           vm.canMoveLeft = true;
           vm.rightCountMax = true;
         }
       },
       rightAllClick(){
+        if(this.comProp.rightData.length==0){
+          this.$message('右边已经没有可选数据');
+          return;
+        }
         let vm = this;
         if(vm.rightCountMax==false || vm.rightCountMax=='half'){
           vm.canMoveLeft = true;
@@ -141,17 +145,78 @@
         }
       },
       moveRight(){
-        let vm = this;
-        console.log('moveRight');
-        console.log(vm.comProp.leftData);
+        if(this.canMoveRight==false){
+          this.$message('请勿使用控制台非法操作');
+          return;
+        }
+        let vm = this,tempLeftArr = [];
         vm.comProp.leftData.forEach(function(val,index,arr){
-
+          if(val.selectd == true){
+            val.selectd = false;
+            vm.comProp.rightData.push(val);
+          }else{
+            tempLeftArr.push(val);
+          }
         });
+        vm.comProp.leftData = tempLeftArr;
+        vm.checkBoxState('right');
+        vm.leftCountMax = false;
+        vm.canMoveRight = false;
       },
       moveLeft(){
-        let vm = this;
-        console.log('moveLeft');
-        console.log(vm.comProp.rightData);
+        if(this.canMoveLeft==false){
+          this.$message('请勿使用控制台非法操作');
+          return;
+        }
+        let vm = this,tempRightArr = [];
+        vm.comProp.rightData.forEach(function(val,index,arr){
+          if(val.selectd == true){
+            val.selectd = false;
+            vm.comProp.leftData.push(val);
+          }else{
+            tempRightArr.push(val);
+          }
+        });
+        vm.comProp.rightData = tempRightArr;
+        vm.checkBoxState('left');
+        vm.rightCountMax = false;
+        vm.canMoveLeft = false;
+      },
+      //检查底部复选框状态
+      checkBoxState(item){
+        let vm = this,num = 0;
+        if(item=='right'){
+          vm.comProp.rightData.forEach(function(val,index,arr){
+            if(val.selectd==true){
+              num++
+            }
+          });
+          if(0<num<vm.comProp.rightData.length){
+            vm.rightCountMax = 'half';
+          }
+          if(num==0){
+            vm.rightCountMax = false;
+          }
+          if(num==vm.comProp.rightData.length){
+            vm.rightCountMax = true;
+          }
+        }
+        if(item=='left'){
+          vm.comProp.leftData.forEach(function(val,index,arr){
+            if(val.selectd==true){
+              num++
+            }
+          });
+          if(0<num<vm.comProp.leftData.length){
+            vm.leftCountMax = 'half';
+          }
+          if(num==0){
+            vm.leftCountMax = false;
+          }
+          if(num==vm.comProp.leftData.length){
+            vm.leftCountMax = true;
+          }
+        }
       }
     },
     props:{
