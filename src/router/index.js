@@ -38,6 +38,7 @@ import FileUpload from '@/components/comSystem/FileUpload'
 import ShanGe from '@/components/comSystem/ShanGe'
 import ShuttleBox from '@/components/comSystem/ShuttleBox'
 import Rate from '@/components/comSystem/Rate'
+import Tab from '@/components/comSystem/Tab'
 
 Vue.use(Router)
 
@@ -297,6 +298,14 @@ export default new Router({
           component:Rate,
           meta:{
             name:'评分'
+          }
+        },
+        {
+          path:'/Tab',
+          name:'Tab',
+          component:Tab,
+          meta:{
+            name:'选项卡'
           }
         },
         {

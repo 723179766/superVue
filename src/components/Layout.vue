@@ -93,6 +93,9 @@
         <el-menu-item index="85">
           <router-link to="/Rate" tag="span">评分</router-link>
         </el-menu-item>
+        <el-menu-item index="86">
+          <router-link to="/Tab" tag="span">选项卡</router-link>
+        </el-menu-item>
       </el-submenu>
       <el-submenu index="9">
         <template slot="title">
