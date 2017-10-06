@@ -37,6 +37,7 @@ import AddBox from '@/components/comSystem/AddBox'
 import FileUpload from '@/components/comSystem/FileUpload'
 import ShanGe from '@/components/comSystem/ShanGe'
 import ShuttleBox from '@/components/comSystem/ShuttleBox'
+import Rate from '@/components/comSystem/Rate'
 
 Vue.use(Router)
 
@@ -288,6 +289,14 @@ export default new Router({
           component:ShuttleBox,
           meta:{
             name:'穿梭框'
+          }
+        },
+        {
+          path:'/Rate',
+          name:'Rate',
+          component:Rate,
+          meta:{
+            name:'评分'
           }
         },
         {

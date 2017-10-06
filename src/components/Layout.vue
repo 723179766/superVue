@@ -90,6 +90,9 @@
         <el-menu-item index="84">
           <router-link to="/ShuttleBox" tag="span">穿梭框</router-link>
         </el-menu-item>
+        <el-menu-item index="85">
+          <router-link to="/Rate" tag="span">评分</router-link>
+        </el-menu-item>
       </el-submenu>
       <el-submenu index="9">
         <template slot="title">
