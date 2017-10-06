@@ -572,37 +572,16 @@ input[type=number]::-webkit-outer-spin-button,input[type=number]::-webkit-inner-
   clear: both;
 }
 
-//图标
-.icon-out{
-  width: 30px;
-  height: 30px;
-  background-size: 30px 30px;
-  border-radius: 15px !important;
-  background: #E5E5E5;
-}
-.icon-in{
-  padding:8px 0 0 8px !important;
-}
-
-//图片
-.image-rectangle{
-  width: 200px;
-  height: 200px;
-  border:2px solid #D5DDE7;
-}
-
 
 //标签
 .dj-tag{
   display: inline-block;
   padding: 4px 20px;
+  margin-right: 3px;
   cursor: pointer;
   &:hover{
     background: #E1EFFD;
   }
-}
-.dj-tag{
-  margin-left: 3px;
 }
 .dj-tag-selectd{
   background: #f2f3f7;
@@ -762,4 +741,13 @@ input[type=number]::-webkit-outer-spin-button,input[type=number]::-webkit-inner-
       cursor: pointer;
     }
   }
+}
+
+//导航提示
+.nav-tool{
+  display: block;
+  margin-bottom: 10px;
+  font-size: 16px;
+  font-weight: bold;
+  border-left: 5px solid #00c1d7;
 }

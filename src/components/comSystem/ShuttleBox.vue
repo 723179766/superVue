@@ -1,7 +1,18 @@
 <template>
   <div class="">
+    <div class="tool-primary margin-bottom-10">
+      <span>基础用法</span>
+    <pre>
+      leftTitle: '未添加的联系人',
+      rightTitle: '已存储的联系人',
+      leftData: [],                          //必传，左边数据，没有该数据默认[]
+      rightData: [],                        //必传，右边数据，没有该数据默认[]
+      label: 'name'                        //必传，数据字段标签名称</pre>
+    </div>
     <com-shuttle-box :comProp="comProp"></com-shuttle-box>
     <button class="dj-btn dj-btn-icon-info margin-top-10" @click="getData"><i class="el-icon-star-on icon-left"></i>获取数据</button>
+    <div class="tool-info margin-top-10">可搜索</div>
+    <div class="tool-success margin-top-10">可分页</div>
   </div>
 </template>
 <script type="text/ecmascript-6">
@@ -27,8 +38,9 @@
         comProp:{
           leftTitle: '未添加的联系人',
           rightTitle: '已存储的联系人',
-          leftData: [],
-          rightData: []
+          leftData: [],                          //必传，左边数据
+          rightData: [],                        //必传，右边数据
+          label: 'name'                        //必传，数据字段标签名称
         }
       }
     },

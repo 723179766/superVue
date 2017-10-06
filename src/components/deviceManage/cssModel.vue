@@ -2,6 +2,9 @@
 <template>
   <div class="css-model">
     <h2 class="margin-bottom-20">CSS模板，部分样式可从此页面copy</h2>
+    <div class="nav-tool">
+      <span class="margin-left-10">按钮</span>
+    </div>
     <div style="margin-bottom: 20px">
       <button class="dj-btn dj-btn-primary">搜索</button>
       <button class="dj-btn dj-btn-primary" disabled>搜索</button>
@@ -14,6 +17,8 @@
       <button class="dj-btn dj-btn-success" disabled>添加</button>
       <button class="dj-btn dj-btn-warning">修改</button>
       <button class="dj-btn dj-btn-warning" disabled>修改</button>
+      <button class="dj-btn dj-btn-fff">白色</button>
+      <button class="dj-btn dj-btn-fff" disabled>白色</button>
     </div>
 
     <div style="margin-bottom: 20px">
@@ -41,6 +46,32 @@
       <button class="dj-btn dj-btn-icon-primary" disabled>搜索<i class="el-icon-minus icon-right"></i></button>
     </div>
 
+    <div style="margin-bottom: 20px">
+      <button class="dj-btn dj-btn-icon-download dj-btn-lg">下载<i class="el-icon-upload2 icon-right"></i></button>
+      <button class="dj-btn dj-btn-icon-download">下载<i class="el-icon-upload2 icon-right"></i></button>
+      <button class="dj-btn dj-btn-icon-download dj-btn-sm">下载<i class="el-icon-upload2 icon-right"></i></button>
+      <button class="dj-btn dj-btn-icon-download dj-btn-xs">下载<i class="el-icon-upload2 icon-right"></i></button>
+    </div>
+
+    <div class="dj-btn-group margin-bottom-20">
+      <button type="button" class="dj-btn dj-btn-group-default">下载量</button>
+      <button type="button" class="dj-btn dj-btn-group-default">下载量</button>
+      <button type="button" class="dj-btn dj-btn-group-default">下载量</button>
+    </div>
+
+    <div class="nav-tool">
+      <span class="margin-left-10">输入框</span>
+    </div>
+    <div style="margin-bottom: 20px">
+      <input type="number" class="dj-page-input">
+      <input type="text" class="dj-page-input">
+      <div class="dj-checkbox"></div>
+      <div class="dj-checkbox dj-checkbox-disabled"></div>
+    </div>
+
+    <div class="nav-tool">
+      <span class="margin-left-10">表格</span>
+    </div>
     <div style="margin-bottom: 20px">
       <div v-show="allData.length!=0" class="table-area">
         <table class="dj-table">
@@ -78,6 +109,9 @@
       </div>
     </div>
 
+    <div class="nav-tool">
+      <span class="margin-left-10">卡片</span>
+    </div>
     <div class="card-area" style="margin-bottom: 20px">
       <div class="card-box">
         <div class="img-box">
@@ -239,11 +273,32 @@
       </div>
 
     </div>
+
+    <div class="nav-tool">
+      <span class="margin-left-10">情景</span>
+    </div>
+    <div style="margin-bottom: 20px">
+      <div class="tool-primary margin-top-10">段落情景</div>
+      <div class="tool-info margin-top-10">段落情景</div>
+      <div class="tool-success margin-top-10">段落情景</div>
+      <div class="tool-warning margin-top-10">段落情景</div>
+      <div class="tool-danger margin-top-10">段落情景</div>
+      <div class="tool-pink margin-top-10">段落情景</div>
+    </div>
+
+    <div class="nav-tool">
+      <span class="margin-left-10">标签</span>
+    </div>
+    <div class="margin-top-10">
+      <span class="dj-tag">标签1未选中</span>
+      <span class="dj-tag dj-tag-selectd">标签2已选中</span>
+    </div>
+
   </div>
 </template>
 <script>
   export default {
-    name: 'DeviceTip',
+    name: 'CssModel',
     created(){},
     data(){
       return {
@@ -288,11 +343,11 @@
 <style lang='scss'>
   .css-model{
   .card-area{
-    margin-left: -27px;
+    margin-left: -10px;
     white-space: nowrap;
-    .card-box{
-      white-space: normal;
-    }
+  .card-box{
+    white-space: normal;
+  }
   }
   }
 </style>

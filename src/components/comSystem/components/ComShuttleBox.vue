@@ -10,7 +10,7 @@
           <span class="data-checkbox">
             <i v-bind:class="{'el-icon-check':item.selectd==true}"></i>
           </span>
-          <span class="data-info">{{item.name}}</span>
+          <span class="data-info">{{item[comProp.label]}}</span>
         </label>
       </div>
       <p class="shuttle-box-footer">
@@ -36,7 +36,7 @@
           <span class="data-checkbox">
             <i v-bind:class="{'el-icon-check':item.selectd==true}"></i>
           </span>
-          <span class="data-info">{{item.name}}</span>
+          <span class="data-info">{{item[comProp.label]}}</span>
         </label>
       </div>
       <p class="shuttle-box-footer">
@@ -52,6 +52,7 @@
   export default {
     created(){
       let vm = this;
+      vm.checkProp();
     },
     data(){
       return{
@@ -146,6 +147,7 @@
       },
       moveRight(){
         if(this.canMoveRight==false){
+          document.getElementsByClassName("shuttle-box-middle")[0].firstChild.disabled = true;
           this.$message('请勿使用控制台非法操作');
           return;
         }
@@ -165,6 +167,7 @@
       },
       moveLeft(){
         if(this.canMoveLeft==false){
+          document.getElementsByClassName("shuttle-box-middle")[0].lastChild.disabled = true;
           this.$message('请勿使用控制台非法操作');
           return;
         }
@@ -216,6 +219,14 @@
           if(num==vm.comProp.leftData.length){
             vm.leftCountMax = true;
           }
+        }
+      },
+      checkProp(){
+        let vm = this;
+        if(vm.comProp.leftData==undefined || vm.comProp.rightData==undefined){
+          vm.$message.error('请配置leftData，rightData数据');
+          vm.comProp.leftData = [];
+          vm.comProp.rightData = [];
         }
       }
     },

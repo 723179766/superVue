@@ -91,6 +91,14 @@
           <router-link to="/ShuttleBox" tag="span">穿梭框</router-link>
         </el-menu-item>
       </el-submenu>
+      <el-submenu index="9">
+        <template slot="title">
+          <i class="el-icon-star-off" style="margin-right: 3px;"></i>
+          CSS类库</template>
+        <el-menu-item index="90">
+          <router-link to="/CssModel" tag="span">CSS模板</router-link>
+        </el-menu-item>
+      </el-submenu>
     </el-menu>
 
     <div v-bind:class="{'right-no-full':openFlag,'right-full':!openFlag}" class="right">
