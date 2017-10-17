@@ -51,7 +51,7 @@ router.afterEach(route => {
 
 //拦截器
 axios.interceptors.request.use(function (config){
-  //return
+  return;//禁止请求接口，因为没有后台环境
   var token = null;
   if(sessionStorage.getItem('userInfo')){
     token = JSON.parse(sessionStorage.getItem('userInfo')).token;

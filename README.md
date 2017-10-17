@@ -1,6 +1,6 @@
-# jssptms
+# 多个Js与Css库的项目，如何管理
 
-> A Vue.js project
+>Vue + Element UI
 
 ## Build Setup
 
@@ -22,4 +22,5 @@ cnpm i element-ui -S@1.3.2
 
 ```
 
-For detailed explanation on how things work, checkout the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+如何基于需求更改Element UI样式库。
+基于使用别人CSS库的过程中，如何构建组织内部CSS库的架构目录。
