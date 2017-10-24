@@ -97,7 +97,10 @@
           <router-link to="/CssModel" tag="span">CSS模板</router-link>
         </el-menu-item>
         <el-menu-item index="91">
-          <router-link to="/AnimationCss" tag="span">CSS3动画</router-link>
+          <router-link to="/CssAnimation" tag="span">CSS3动画</router-link>
+        </el-menu-item>
+        <el-menu-item index="92">
+          <router-link to="/CssTransition" tag="span">CSS3过渡</router-link>
         </el-menu-item>
       </el-submenu>
     </el-menu>

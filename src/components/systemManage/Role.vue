@@ -303,6 +303,17 @@
         })
       }
     },
+    mounted(){
+      setTimeout(() => {
+        this.$refs.permissionTree.setCheckedNodes([
+          {id:'2B222DD8-2E78-E9F6-A22A-5EF6A4F4EED6'},
+          {id:'96A19189-AE85-098E-297C-D34F6D1D5D98'},
+          {id:'07593D26-746A-C599-79C4-DB378A04AD50'},
+          {id:'648AB4F0-DDC1-DEC9-36D3-290BF861487A'},
+          {id:'58E8895A-3A52-C185-7657-6AB04FCC6028'}
+        ]);
+      }, 800);
+    },
     data() {
       return {
         form:{

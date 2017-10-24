@@ -21,7 +21,8 @@ import EditMan from '@/components/deviceManage/EditMan'
 import ModelDetail from '@/components/deviceManage/ModelDetail'
 
 import CssModel from '@/components/cssLab/CssModel'
-import AnimationCss from '@/components/cssLab/AnimationCss'
+import CssAnimation from '@/components/cssLab/CssAnimation'
+import CssTransition from '@/components/cssLab/CssTransition'
 
 import AppList from '@/components/appManage/AppList'
 import ApkUpload from '@/components/appManage/ApkUpload'
@@ -310,11 +311,19 @@ export default new Router({
           }
         },
         {
-          path:'/AnimationCss',
-          name:'AnimationCss',
-          component:AnimationCss,
+          path:'/CssAnimation',
+          name:'CssAnimation',
+          component:CssAnimation,
           meta:{
             name:'CSS3动画'
+          }
+        },
+        {
+          path:'/CssTransition',
+          name:'CssTransition',
+          component:CssTransition,
+          meta:{
+            name:'CSS3过渡'
           }
         },
         {

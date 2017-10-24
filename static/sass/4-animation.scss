@@ -366,3 +366,50 @@
     }
   }
 }
+
+//css3 过渡
+.dj-transition{
+  .rotate-block{
+    display: inline-block;
+    width: 105px;
+    height: 60px;
+    line-height: 60px;
+    text-align: center;
+    font-size: 16px;
+    color: #fff;
+    background: #87cefa;
+    transition: width 1s, height 1s, transform 1s, line-height 1s, background 1s;
+    -moz-transition: width 1s, height 1s, -moz-transform 1s, line-height 1s, background 1s;
+    -webkit-transition: width 1s, height 1s, -webkit-transform 1s, line-height 1s, background 1s;
+    -o-transition: width 1s, height 1s,-o-transform 1s, line-height 1s, background 1s;
+    &:hover{
+      width: 140px;
+      height: 80px;
+      line-height: 80px;
+      background: #ffA500;
+      transform: rotate(360deg);
+      -moz-transform: rotate(360deg); /* Firefox 4 */
+      -webkit-transform: rotate(360deg); /* Safari and Chrome */
+      -o-transform: rotate(360deg); /* Opera */
+    }
+  }
+  .rotate-circle{
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    border-top: 2px solid #87cefa;
+    border-right: 2px solid #87cefa;
+    border-radius: 50%!important;
+    transition: transform 1s;
+    -moz-transition: transform 1s;
+    -webkit-transition: transform 1s;
+    -o-transition: transform 1s;
+    &:hover{
+      transform: rotate(360deg);
+      -moz-transform: rotate(360deg);
+      -webkit-transform: rotate(360deg);
+      -o-transform: rotate(360deg);
+    }
+  }
+}
