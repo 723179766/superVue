@@ -2,6 +2,7 @@
   <div class="hello">
     <div class="top">
       <img src='../assets/zfy_logo.png'>
+      <div style="position: absolute; top:0;left: 200px;font-size: 24px;color: #fff;">没有后台环境，只展示了部分假数据</div>
       <el-dropdown>
         <span class="el-dropdown-link">
           {{userName}}，欢迎你
@@ -12,20 +13,13 @@
         </el-dropdown-menu>
       </el-dropdown>
     </div>
-    <!-- <div v-bind:class="{'icon-open':openFlag,'icon-close':!openFlag}" class="menu-icon" @click="openMenu">
-          <i v-show="!openFlag" class="el-icon-caret-right"></i>
-          <i v-show="openFlag" class="el-icon-caret-left"></i>
-        </div> -->
     <el-menu unique-opened default-active="1" v-bind:class="{'menu-width-open':openFlag,'menu-width-close':!openFlag}" class="el-menu-vertical-demo" @open="handleOpen" @close="handleClose" theme="dark">
-      <!-- <el-menu-item index="-1" class="logo">智能设备云平台</el-menu-item> -->
       <el-menu-item index="0">
-        <!-- <i class="el-icon-document"></i> -->
         <img class="sys-icon" src="../assets/nav_icon_home.png" alt="">
         <router-link to="/Gzt" tag="span">首页</router-link>
       </el-menu-item>
       <el-submenu index="5">
         <template slot="title">
-          <!-- <i class="el-icon-setting"></i> -->
           <img class="sys-icon" src="../assets/nav_icon_sys.png" alt="">
           系统设置</template>
         <el-menu-item index="51">
@@ -37,13 +31,12 @@
         <el-menu-item index="53">
           <router-link to="/Role" tag="span">角色管理</router-link>
         </el-menu-item>
-        <el-menu-item index="54">
-          <router-link to="/Staff" tag="span">人员管理</router-link>
-        </el-menu-item>
+        <!--<el-menu-item index="54">-->
+          <!--<router-link to="/Staff" tag="span">人员管理</router-link>-->
+        <!--</el-menu-item>-->
       </el-submenu>
       <el-submenu index="6">
         <template slot="title">
-          <!-- <i class="el-icon-menu"></i> -->
           <img class="sys-icon" src="../assets/nav_icon_device.png" alt="">
           设备管理</template>
         <el-menu-item index="61">
@@ -58,7 +51,6 @@
       </el-submenu>
       <el-submenu index="7">
         <template slot="title">
-          <!-- <i class="el-icon-menu"></i> -->
           <img class="sys-icon" src="../assets/nav_icon_appstore.png" alt="">
           应用管理</template>
         <el-menu-item index="71">
@@ -103,6 +95,9 @@
           CSS类库</template>
         <el-menu-item index="90">
           <router-link to="/CssModel" tag="span">CSS模板</router-link>
+        </el-menu-item>
+        <el-menu-item index="91">
+          <router-link to="/AnimationCss" tag="span">CSS3动画</router-link>
         </el-menu-item>
       </el-submenu>
     </el-menu>

@@ -1,10 +1,12 @@
 <template>
-  <div id="login">
+  <div id="login" class="dj-amt">
     <div class="login-title">
-      <span class="font1">Seuic 东集</span>
-      <span class="font2">|</span>
-      <span class="font3">智能设备平台</span>
-      <span class="font4">大数据云监控</span>
+      <div class="amtFont">
+        <span class="font1">QiYou 七游集团</span>
+        <span class="font2">|</span>
+        <span class="font3">大数据云监控平台</span>
+        <span class="font4">一键配置接入系统</span>
+      </div>
     </div>
     <div class="login-main">
       <div class="login-font">登录</div>
@@ -27,6 +29,10 @@
         <el-button type="primary" @click="loginIn">登录</el-button>
       </div>
     </div>
+    <div class="animation3" v-if="loginLoad">
+      <div class="circle1"></div>
+      <div class="circle2"></div>
+    </div>
   </div>
 </template>
 
@@ -37,6 +43,16 @@
   export default {
     name: 'Login',
     created () {
+      let vm = this;
+      setTimeout(function(){
+        vm.account = '723179766@qq.com';
+        vm.pwd = 'root@root.com';
+        vm.$notify({
+          title: 'OK!',
+          message: '账号已经为您分配成功',
+          type: 'success'
+        });
+      },1500);
     },
     data () {
       return {
@@ -44,7 +60,8 @@
         account: '',
         pwd: '',
         code: '',
-        dataImg: ''
+        dataImg: '',
+        loginLoad: false
       }
     },
     methods: {
@@ -60,8 +77,13 @@
           this.$message('请输入验证码');
           return;
         }
-        sessionStorage.setItem('userInfo',1);
-        this.$router.push({ name: 'Layout'});
+        let vm = this;
+        vm.loginLoad = true;
+        setTimeout(function(){
+          vm.loginLoad = false;
+          sessionStorage.setItem('userInfo',JSON.stringify({user_name:723179766}));
+          vm.$router.push({ name: 'Layout'});
+        },700);
         return;
         axios({
           method: 'post',
@@ -103,6 +125,9 @@
           }
         });
       }
+    },
+    mounted(){
+
     }
   }
 </script>
@@ -118,35 +143,105 @@
     line-height: 78px;
     background: #1e242b;
   }
-  #login>.login-title>span{
+  #login .amtFont{
+    width: 80%;
+    margin-left: -530px;
+    -webkit-animation: fontAmt 1.2s ease-in-out;
+    animation: fontAmt 1.2s ease-in-out;
+    animation-fill-mode: forwards;
+  }
+  @-webkit-keyframes fontAmt {
+    0% { }
+    50% { margin-left: 0;}
+    60%{ transform: translateX(-4px);}
+    65%{ transform: translateX(4px);}
+    70%{ transform: translateX(-4px);}
+    75%{ transform: translateX(4px);}
+    80%{ transform: translateX(-4px);}
+    85%{ transform: translateX(4px);}
+    90%{ transform: translateX(-4px);}
+    95%{ transform: translateX(4px);}
+    100%{ margin-left: 0;}
+  }
+  @keyframes loginAmt {
+    0% { }
+    50% { margin-left: 0;}
+    60%{ transform: translateX(-4px);}
+    65%{ transform: translateX(4px);}
+    70%{ transform: translateX(-4px);}
+    75%{ transform: translateX(4px);}
+    80%{ transform: translateX(-4px);}
+    85%{ transform: translateX(4px);}
+    90%{ transform: translateX(-4px);}
+    95%{ transform: translateX(4px);}
+    100%{ margin-left: 0;}
+  }
+  #login>.login-title span{
     font-size: 16px;
   }
-  #login>.login-title>.font1{
+  #login>.login-title .font1{
     margin-left: 100px;
     font-size: 18px;
     color: #1784c6;
   }
-  #login>.login-title>.font2{
+  #login>.login-title .font2{
     margin-left: 5px;
     color: #1784c6;
   }
-  #login>.login-title>.font3{
+  #login>.login-title .font3{
     margin-left: 5px;
     color: #ffa100;
   }
-  #login>.login-title>.font4{
+  #login>.login-title .font4{
     color: #1784c6;
   }
   #login>.login-main{
+    position: absolute;
+    top: 0;
+    left: 50%;
     width: 400px;
-    margin: 40px auto 0 auto;
+    height: 290px;
+    margin-left: -200px;
+    margin-top: -290px;
     padding: 30px 35px 20px 35px;
     background: #fff;
+    -webkit-animation: loginAmt 1.2s ease-in-out;
+    animation: loginAmt 1.2s ease-in-out;
+    animation-fill-mode: forwards;
+  }
+  @-webkit-keyframes loginAmt {
+    0% { }
+    50% { margin-top: 140px;}
+    60%{ transform: translateX(-4px);}
+    65%{ transform: translateX(4px);}
+    70%{ transform: translateX(-4px);}
+    75%{ transform: translateX(4px);}
+    80%{ transform: translateX(-4px);}
+    85%{ transform: translateX(4px);}
+    90%{ transform: translateX(-4px);}
+    95%{ transform: translateX(4px);}
+    100% { margin-top: 140px;}
+  }
+  @keyframes loginAmt {
+    0% { }
+    50% { margin-top: 140px;}
+    60%{ transform: translateX(-4px);}
+    65%{ transform: translateX(4px);}
+    70%{ transform: translateX(-4px);}
+    75%{ transform: translateX(4px);}
+    80%{ transform: translateX(-4px);}
+    85%{ transform: translateX(4px);}
+    90%{ transform: translateX(-4px);}
+    95%{ transform: translateX(4px);}
+    100% { margin-top: 140px;}
   }
   #login>.login-main>.login-font{
     margin-bottom: 30px;
     font-size: 25px;
     color: #39a4fe;
+  }
+  #login>.animation3{
+    margin: 150px auto;
   }
   .margin-b-22{
     margin-bottom: 22px;

@@ -149,7 +149,7 @@
             page_size: 500
           },
           initState: 0,
-          name: 'category_name'
+          name: 'label_name'
         },
         comInit: {
           data: [],

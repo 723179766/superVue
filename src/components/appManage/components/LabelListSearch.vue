@@ -17,13 +17,15 @@
   export default {
     created(){
       let vm = this;
-      axios.post(API+vm.comProp.body.api,(vm.comProp.body)).then(function(resp){
-        if(resp.data.code=='00000'){
-          if(resp.data.data.data){
-            vm.tagAll = resp.data.data.data;
-          }else{
-            vm.tagAll = resp.data.data;
-          }
+//      axios.post(API+vm.comProp.body.api,(vm.comProp.body)).then(function(resp){
+//        if(resp.data.code=='00000'){
+//          if(resp.data.data.data){
+//            vm.tagAll = resp.data.data.data;
+//          }else{
+//            vm.tagAll = resp.data.data;
+//          }
+      vm.tagAll = [{id:1,label_name:'家具'},{id:2,label_name:'冰雪'},{id:3,label_name:'火焰'},{id:4,label_name:'游戏'},{id:5,label_name:'雪糕'},
+        {id:6,label_name:'动物'},{id:7,label_name:'快递'},{id:8,label_name:'瀑布'},{id:9,label_name:'军械'},{id:10,label_name:'电商'}];
           for(let i=0;i<vm.tagAll.length;i++){
             vm.$set(vm.tagAll[i],"selectd",false);
           }
@@ -32,8 +34,8 @@
             vm.tagFold.push(vm.tagAll[i]);
           }
           vm.thisTag = vm.tagFold;
-        }
-      });
+//        }
+//      });
     },
     data(){
       return{

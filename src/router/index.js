@@ -20,7 +20,8 @@ import AddMan from '@/components/deviceManage/AddMan'
 import EditMan from '@/components/deviceManage/EditMan'
 import ModelDetail from '@/components/deviceManage/ModelDetail'
 
-import CssModel from '@/components/deviceManage/CssModel'
+import CssModel from '@/components/cssLab/CssModel'
+import AnimationCss from '@/components/cssLab/AnimationCss'
 
 import AppList from '@/components/appManage/AppList'
 import ApkUpload from '@/components/appManage/ApkUpload'
@@ -189,14 +190,6 @@ export default new Router({
           }
         },
         {
-          path:'/CssModel',
-          name:'CssModel',
-          component:CssModel,
-          meta:{
-            name:'CSS模板'
-          }
-        },
-        {
           path:'/AppList',
           name:'AppList',
           component:AppList,
@@ -306,6 +299,22 @@ export default new Router({
           component:Tab,
           meta:{
             name:'选项卡'
+          }
+        },
+        {
+          path:'/CssModel',
+          name:'CssModel',
+          component:CssModel,
+          meta:{
+            name:'CSS模板'
+          }
+        },
+        {
+          path:'/AnimationCss',
+          name:'AnimationCss',
+          component:AnimationCss,
+          meta:{
+            name:'CSS3动画'
           }
         },
         {

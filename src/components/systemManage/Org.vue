@@ -28,12 +28,11 @@
     </div>
 
     <div class="margin-b-22">
-      <el-table
-        :data="thisPageData"
-        border
-        @row-click="rowClick"
-        highlight-current-row
-        style="width: 100%">
+      <el-table :data="thisPageData"
+                border
+                @row-click="rowClick"
+                highlight-current-row
+                style="width: 100%">
         <el-table-column
           prop="org_name"
           label="机构名称">
@@ -125,6 +124,7 @@
     },
     data(){
       return {
+        loading2: false,
         formAdd: {
           orgId: '',
           orgName: '',
@@ -185,18 +185,82 @@
         modModel: false,
         thisRowData: null,
         orgId: '',
-        getOrgData: [],
+        getOrgData: [{
+          value: 'zhinan',
+          label: '指南',
+          children: [{
+            value: 'shejiyuanze',
+            label: '设计原则',
+            children: [{
+              value: 'yizhi',
+              label: '一致'
+            },{
+              value: 'xiaolv',
+              label: '效率'
+            }]
+          }, {
+            value: 'daohang',
+            label: '导航',
+            children: [{
+              value: 'cexiangdaohang',
+              label: '侧向导航'
+            }, {
+              value: 'dingbudaohang',
+              label: '顶部导航'
+            }]
+          }]
+        },{
+          value: 'ziyuan',
+          label: '资源',
+          children: [{
+            value: 'axure',
+            label: 'Axure Components'
+          }, {
+            value: 'sketch',
+            label: 'Sketch Templates'
+          }, {
+            value: 'jiaohu',
+            label: '组件交互文档'
+          }]
+        }],
         orgArrData: [],
         props: {
-          value: 'id',
-          label: 'org_name',
+          value: 'value',
+          label: 'label',
           children: 'children'
         },
-        tableData: [],
+        tableData: [
+          {
+            org_name: '栖霞区分行',
+            id: '0001001',
+            org_addr: '栖霞区下关村',
+            org_par_name: '南京市'
+          },
+          {
+            org_name: '建邺区分行',
+            id: '0001002',
+            org_addr: '建邺区白凤路',
+            org_par_name: '南京市'
+          },
+          {
+            org_name: '浦口分行',
+            id: '0001003',
+            org_addr: '浦口龙邦山',
+            org_par_name: '南京市'
+          },
+          {
+            org_name: '大河分行',
+            id: '0001004',
+            org_addr: '老城区',
+            org_par_name: '南京市'
+          }
+        ],
         thisPageData: [],
         currentPage: 1,
-        pageSize: 6,
-        total: 0
+//        pageSize: 6,
+//        total: 0,
+        pageSize: 3,
+        total: 4
       }
     },
     methods:{
@@ -346,6 +410,8 @@
       //获取机构子集
       getChildOrg(orgId){
         let vm = this;
+        vm.getCurrentPageInfo(vm.tableData);
+        return
         axios.get(API + '/organization/getChildOrg/' + orgId).then(function (response){
           if(response.data.code=='00000'){
             vm.tableData = response.data.data.data;
