@@ -325,18 +325,19 @@ export default new Router({
           meta:{
             name:'CSS3过渡'
           }
-        },
-        {
-          path: '/*',
-          redirect: function(info){
-            if(confirm("没有匹配到导航，是否进入登录页？")){
-              sessionStorage.clear();
-              return "/Login";
-            }else{
-              return "/NoMatch";
-            }
-          }
         }
+        //,
+        //{
+        //  path: '/*',
+        //  redirect: function(info){
+        //    if(confirm("没有匹配到导航，是否进入登录页？")){
+        //      sessionStorage.clear();
+        //      return "/Login";
+        //    }else{
+        //      return "/NoMatch";
+        //    }
+        //  }
+        //}
       ]
     }
   ]
