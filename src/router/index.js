@@ -42,6 +42,8 @@ import ShuttleBox from '@/components/comSystem/ShuttleBox'
 import Rate from '@/components/comSystem/Rate'
 import Tab from '@/components/comSystem/Tab'
 
+import NewTree from '@/components/gongSiDemo/NewTree'
+
 Vue.use(Router)
 
 export default new Router({
@@ -324,6 +326,14 @@ export default new Router({
           component:CssTransition,
           meta:{
             name:'CSS3过渡'
+          }
+        },
+        {
+          path:'/NewTree',
+          name:'NewTree',
+          component:NewTree,
+          meta:{
+            name:'公司练习'
           }
         }
         //,

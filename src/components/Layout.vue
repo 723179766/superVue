@@ -103,6 +103,15 @@
           <router-link to="/CssTransition" tag="span">CSS3过渡</router-link>
         </el-menu-item>
       </el-submenu>
+
+      <el-submenu index="4">
+        <template slot="title">
+          <i class="el-icon-star-off" style="margin-right: 3px;"></i>
+          公司练习</template>
+        <el-menu-item index="40">
+          <router-link to="/NewTree" tag="span">NewTree</router-link>
+        </el-menu-item>
+      </el-submenu>
     </el-menu>
 
     <div v-bind:class="{'right-no-full':openFlag,'right-full':!openFlag}" class="right">

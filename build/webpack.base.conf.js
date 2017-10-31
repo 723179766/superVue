@@ -47,6 +47,14 @@ module.exports = {
         include: [resolve('src'), resolve('test'), resolve('node_modules/vue-echarts')]
       },
       {
+        test: /\.jade$/,
+        loader: "jade"
+      },
+      {
+        test: /\.pug$/,
+        loader: 'pug'
+      },
+      {
         test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
         loader: 'url-loader',
         options: {
