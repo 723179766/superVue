@@ -7,10 +7,10 @@
       <com-top :comTopData="comtopdata"></com-top>
     </div>
     <div class="new-tree-left">
-      <com-tree></com-tree>
+      <com-tree :comTreeData="comtreedata" :defaultProps="defaultProps"></com-tree>
     </div>
     <div class="new-tree-right">
-      <!--<com-right></com-right>-->
+      <com-right :comTreeData="comtreedata"></com-right>
     </div>
   </div>
 </template>
@@ -60,6 +60,76 @@
               name: '物品2'
             }
           ]
+        },
+        comtreedata: [
+          {
+            id: 1,
+            label: '皇上',
+            children: [
+              {
+                id: 2,
+                label: '丞相',
+                children: [
+                  {
+                    id: 3,
+                    label: '丞相儿子',
+                    children: [
+                      {
+                        id: 7,
+                        label: '书童',
+                        children: [
+                          {
+                            id: 8,
+                            label: '书童一号'
+                          },
+                          {
+                            id: 9,
+                            label: '书童二号'
+                          },
+                          {
+                            id: 10,
+                            label: '书童三号'
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    id: 4,
+                    label: '丞相女儿',
+                    children: [
+                      {
+                        id: 5,
+                        label: '大女儿一号'
+                      },
+                      {
+                        id: 6,
+                        label: '大女儿二号'
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                id: 20,
+                label: '警衣卫',
+                children: [
+                  {
+                    id: 21,
+                    label: '警衣卫一号'
+                  },
+                  {
+                    id: 22,
+                    label: '警衣卫二号'
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        defaultProps: {
+          children: 'children',
+          label: 'label'
         }
       }
     }

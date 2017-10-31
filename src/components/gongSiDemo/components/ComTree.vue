@@ -1,6 +1,6 @@
 <template lang="pug">
   .com-tree
-    el-tree(:data="treedata", :props="defaultProps", show-checkbox, node-key="id", default-expand-all, :expand-on-click-node="false", :render-content="renderContent", @click="append()")
+    el-tree(:data="comTreeData", :props="defaultProps", node-key="id", default-expand-all, :expand-on-click-node="false", :render-content="renderContent", @click="append()")
 </template>
 
 <script type="text/ecmascript-6">
@@ -8,98 +8,48 @@
   export default {
     data () {
       return {
-        treedata: [
-          {
-            id: 1,
-            label: '皇上',
-            children: [
-              {
-                id: 2,
-                label: '丞相',
-                children: [
-                  {
-                    id: 3,
-                    label: '丞相儿子',
-                    children: [
-                      {
-                        id: 7,
-                        label: '书童',
-                        children: [
-                          {
-                            id: 8,
-                            label: '书童一号'
-                          },
-                          {
-                            id: 9,
-                            label: '书童二号'
-                          },
-                          {
-                            id: 10,
-                            label: '书童三号'
-                          }
-                        ]
-                      }
-                    ]
-                  },
-                  {
-                    id: 4,
-                    label: '丞相女儿',
-                    children: [
-                      {
-                        id: 5,
-                        label: '大女儿一号'
-                      },
-                      {
-                        id: 6,
-                        label: '大女儿二号'
-                      }
-                    ]
-                  }
-                ]
-              },
-              {
-                id: 20,
-                label: '警衣卫',
-                children: [
-                  {
-                    id: 21,
-                    label: '警衣卫一号'
-                  },
-                  {
-                    id: 22,
-                    label: '警衣卫二号'
-                  }
-                ]
-              }
-            ]
-          }
-        ],
-        defaultProps: {
-          children: 'children',
-          label: 'label'
-        }
       }
     },
-
     methods: {
       append (store, data) {
-        console.log (1)
-        store.append({ id: id++, label: 'testtest', children: [] }, data)
+        store.append({ id: id++, label: '新的节点', children: [] }, data)
       },
       remove (store, data) {
+//        console.log(store)
+//        console.log(data)
+//        return
+        if(data.label=='皇上'){
+          alert('根节点无法删除')
+          return
+        }
         store.remove(data)
       },
       renderContent (h, { node, data, store }) {
-        var elm = h('span', {}, [
+        var elm = h('div', {class: ['info-warp']}, [
           h('span', {}, node.label),
-          h('i', {class: ['el-icon-plus']}, null),
-          h('i', {class: ['el-icon-minus margin-left-15'],
-            on: {
-            click: () => {
-              console.log('我是删除1')
-              this.append(store,data)
-            }
-          }}, null)
+          h('span', {class: ['icon-warp']},[
+            h('i', {
+              'class': {
+                'el-icon-plus': true,
+                'margin-right-30': node.label=='皇上'
+              },
+              on: {
+                click: () => {
+                  this.append(store,data)
+                }
+              }}, null),
+            h('i', {
+              'class': {
+                'el-icon-minus': true,
+                'margin-left-15': true,
+                'icon-hide': node.label=='皇上'
+              },
+              on: {
+                click: () => {
+                  this.remove(store,data)
+                }
+              }}, null)
+          ])
         ])
         return elm
 //        return (
@@ -113,17 +63,35 @@
 //        </span>
 //        </span>);
       }
+    },
+    props: {
+      comTreeData: Array,
+      defaultProps: Object
     }
   }
 </script>
 
 <style lang="less">
   .com-tree{
-    .margin-left-15{
-      margin-left: 15px;
-    }
-    .icon-right{
-      float: right;
-    }
+  .margin-left-15{
+    margin-left: 15px;
+  }
+  .margin-right-30{
+    margin-right: 30px;
+  }
+  .icon-right{
+    float: right;
+  }
+  .info-warp{
+    display: inline-block;
+    vertical-align: middle;
+  }
+  .icon-warp{
+    position: absolute;
+    right: 15px;
+  }
+  .icon-hide{
+    display: none;
+  }
   }
 </style>
