@@ -4,6 +4,7 @@
 </template>
 
 <script type="text/ecmascript-6">
+  import Bus from './bus'
   let id = 1000
   export default {
     data () {
@@ -12,41 +13,52 @@
     },
     methods: {
       append (store, data) {
-        store.append({ id: id++, label: '新的节点', children: [] }, data)
+        let nodeName = prompt('请输入节点名称1')
+        if (nodeName === null) {
+          return
+        }
+        store.append({ id: id++, label: nodeName, children: [] }, data)
+        Bus.$emit('nodeData', 'add', data, { id: id, label: nodeName, children: [] })
+        console.log('添加操作')
+        console.log(data)
+//        console.log({ id: id, label: nodeName, children: [] })
       },
       remove (store, data) {
-//        console.log(store)
+//        console.log('删除操作')
 //        console.log(data)
-//        return
-        if(data.label=='皇上'){
+        if (data.label === '皇上') {
           alert('根节点无法删除')
           return
         }
         store.remove(data)
+        if (data.id > 500) {
+          data.id ++
+        }
+        Bus.$emit('nodeData', 'del', data)
       },
       renderContent (h, { node, data, store }) {
         var elm = h('div', {class: ['info-warp']}, [
           h('span', {}, node.label),
-          h('span', {class: ['icon-warp']},[
+          h('span', {class: ['icon-warp']}, [
             h('i', {
               'class': {
                 'el-icon-plus': true,
-                'margin-right-30': node.label=='皇上'
+                'margin-right-30': node.label === '皇上'
               },
               on: {
                 click: () => {
-                  this.append(store,data)
+                  this.append(store, data)
                 }
               }}, null),
             h('i', {
               'class': {
                 'el-icon-minus': true,
                 'margin-left-15': true,
-                'icon-hide': node.label=='皇上'
+                'icon-hide': node.label === '皇上'
               },
               on: {
                 click: () => {
-                  this.remove(store,data)
+                  this.remove(store, data)
                 }
               }}, null)
           ])

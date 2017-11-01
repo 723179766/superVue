@@ -1,6 +1,3 @@
-<!--<template lang="pug">-->
-<!--p asdfasdfaasdfasdadsfasdasdfasdfa-->
-<!--</template>-->
 <template>
   <div class="new-tree">
     <div class="new-tree-top">
@@ -80,15 +77,18 @@
                         children: [
                           {
                             id: 8,
-                            label: '书童一号'
+                            label: '书童一号',
+                            children: []
                           },
                           {
                             id: 9,
-                            label: '书童二号'
+                            label: '书童二号',
+                            children: []
                           },
                           {
                             id: 10,
-                            label: '书童三号'
+                            label: '书童三号',
+                            children: []
                           }
                         ]
                       }
@@ -100,11 +100,13 @@
                     children: [
                       {
                         id: 5,
-                        label: '大女儿一号'
+                        label: '大女儿一号',
+                        children: []
                       },
                       {
                         id: 6,
-                        label: '大女儿二号'
+                        label: '大女儿二号',
+                        children: []
                       }
                     ]
                   }
@@ -116,11 +118,13 @@
                 children: [
                   {
                     id: 21,
-                    label: '警衣卫一号'
+                    label: '警衣卫一号',
+                    children: []
                   },
                   {
                     id: 22,
-                    label: '警衣卫二号'
+                    label: '警衣卫二号',
+                    children: []
                   }
                 ]
               }
