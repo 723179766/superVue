@@ -107,9 +107,12 @@
       <el-submenu index="4">
         <template slot="title">
           <i class="el-icon-star-off" style="margin-right: 3px;"></i>
-          公司练习</template>
+          手册库</template>
         <el-menu-item index="40">
-          <router-link to="/NewTree" tag="span">NewTree</router-link>
+          <router-link to="/NewTree" tag="span">组件通讯</router-link>
+        </el-menu-item>
+        <el-menu-item index="41">
+          <router-link to="/es6KuoZan" tag="span">es6扩展</router-link>
         </el-menu-item>
       </el-submenu>
     </el-menu>

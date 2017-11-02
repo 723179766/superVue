@@ -43,6 +43,7 @@ import Rate from '@/components/comSystem/Rate'
 import Tab from '@/components/comSystem/Tab'
 
 import NewTree from '@/components/gongSiDemo/NewTree'
+import es6KuoZan from '@/components/gongSiDemo/es6KuoZan'
 
 Vue.use(Router)
 
@@ -333,7 +334,15 @@ export default new Router({
           name:'NewTree',
           component:NewTree,
           meta:{
-            name:'公司练习'
+            name:'组件通讯'
+          }
+        },
+        {
+          path:'/es6KuoZan',
+          name:'es6KuoZan',
+          component:es6KuoZan,
+          meta:{
+            name:'es6扩展'
           }
         }
         //,
