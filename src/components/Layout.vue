@@ -115,6 +115,15 @@
           <router-link to="/es6KuoZan" tag="span">es6扩展</router-link>
         </el-menu-item>
       </el-submenu>
+
+      <el-submenu index="3">
+        <template slot="title">
+          <img class="sys-icon" src="../assets/nav_icon_appstore.png" alt="">
+          Vue</template>
+        <el-menu-item index="30">
+          <router-link to="/computed" tag="span">计算属性</router-link>
+        </el-menu-item>
+      </el-submenu>
     </el-menu>
 
     <div v-bind:class="{'right-no-full':openFlag,'right-full':!openFlag}" class="right">

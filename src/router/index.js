@@ -45,6 +45,8 @@ import Tab from '@/components/comSystem/Tab'
 import NewTree from '@/components/gongSiDemo/NewTree'
 import es6KuoZan from '@/components/gongSiDemo/es6KuoZan'
 
+import computed from '@/components/vue/computed'
+
 Vue.use(Router)
 
 export default new Router({
@@ -343,6 +345,14 @@ export default new Router({
           component:es6KuoZan,
           meta:{
             name:'es6扩展'
+          }
+        },
+        {
+          path:'/computed',
+          name:'computed',
+          component:computed,
+          meta:{
+            name:'计算属性'
           }
         }
         //,
