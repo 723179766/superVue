@@ -1,44 +1,61 @@
 <template>
   <div class="computed">
-    我是计算属性，比较复杂的计算都是用计算属性，不能通过this去访问
+    计算属性，比较复杂的计算可以用计算属性,data()原值改变时，计算属性会自动计算，计算属性的值会被缓存
     <div></div>
     {{bigCount}}
     {{smallCount}}
-    {{reversedMessage}}
-    <button class="dj-btn dj-btn-danger" @click="changeH">改变hello</button>
+    <div></div>
+    {{reversedMessage}} <span></span> {{reversedMessage}} <span></span>{{reversedMessage}} <span></span>
+    <div></div>
+    <button class="dj-btn dj-btn-danger" @click="changeH">注意上面的文案</button>
+    <div>
+      <com-Computed :data="intoCom"></com-Computed>
+    </div>
   </div>
 </template>
-
 <script>
+  import comComputed from './components/comComputed.vue'
   export default {
-    created () {
-      setTimeout(function () {
-        this.message = 'hcy'
-      }, 1000)
+    components:{
+      comComputed
     },
     data () {
       return {
-        message: 'Hello'
+        message: 'Hello',
+        step: 1
       }
     },
     computed: {
       bigCount: function () {
-        return 1
+        return '你好世界'
       },
       smallCount () {
-        return 2
+        return '嘻嘻嘻嘻'
+      },
+      intoCom () {
+        return '我是计算属性，可以传到组件内部去'
       },
       reversedMessage: function () {
+        alert('原值改变，重新计算')
         return this.message.split('').reverse().join('')
       }
     },
-    method: {
+    methods: {
       changeH () {
+        if(this.step==1){
+          this.message = 'hcy'
+          this.step++
+        }else if(this.step==2){
+          this.message = 'qiqixiaoyu'
+          this.step++
+        }else if(this.step==3){
+          console.log(111111111)
+          this.message = 'qiqixiaoyu'
+        }
       }
     }
   }
 </script>
-
 <style>
   .computed{
     background: #87cefa;
