@@ -33,7 +33,7 @@
         return '嘻嘻嘻嘻'
       },
       intoCom () {
-        return '我是计算属性，可以传到组件内部去'
+        return '我是计算属性，可以传到组件内部去，master文件'
       },
       reversedMessage: function () {
         alert('原值改变，重新计算')
