@@ -6,23 +6,40 @@
     {{smallCount}}
     <div></div>
     {{reversedMessage}} <span></span> {{reversedMessage}} <span></span>{{reversedMessage}} <span></span>
-    <div></div>
+    <p></p>
     <button class="dj-btn dj-btn-danger" @click="changeH">注意上面的文案</button>
     <div>
       <com-Computed :data="intoCom"></com-Computed>
     </div>
+    <p>Object.assign(target, ...sources)拷贝对象</p>
+    <p>原来对象:{{myObj1}}</p>
+    <p>拷贝出来的对象:{{myObj2}}</p>
   </div>
 </template>
 <script>
   import comComputed from './components/comComputed.vue'
   export default {
-    components:{
+    created () {
+
+    },
+    components: {
       comComputed
     },
     data () {
       return {
         message: 'Hello',
-        step: 1
+        step: 1,
+        myObj1: {
+          name: '七七小鱼',
+          sex: '男',
+          love: null,
+          like: undefined,
+          smt: {
+            xiangmao: '帅气',
+            yanzhi: '逆天'
+          }
+        },
+        myObj2: ''
       }
     },
     computed: {
@@ -42,17 +59,24 @@
     },
     methods: {
       changeH () {
-        if(this.step==1){
+        if (this.step === 1) {
           this.message = 'hcy'
           this.step++
-        }else if(this.step==2){
+        } else if (this.step === 2) {
           this.message = 'qiqixiaoyu'
           this.step++
-        }else if(this.step==3){
+        } else if (this.step === 3) {
           console.log(111111111)
           this.message = 'qiqixiaoyu'
         }
       }
+    },
+    mounted () {
+      var res = Object.assign(this.myObj2, this.myObj1)
+      this.myObj2 = res
+      console.log(res)
+      console.log(typeof res)
+      console.log(this.myObj2)
     }
   }
 </script>
