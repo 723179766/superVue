@@ -14,14 +14,17 @@
     <p>Object.assign(target, ...sources)拷贝对象</p>
     <p>原来对象:{{myObj1}}</p>
     <p>拷贝出来的对象:{{myObj2}}</p>
+    <button class="dj-btn dj-btn-danger" @click="mixinClick">mixins11使用</button>
   </div>
 </template>
 <script>
   import comComputed from './components/comComputed.vue'
+  import mymix from './mixin'
   export default {
     created () {
-
+      console.log('这个created钩子在自身组件中执行')
     },
+    mixins: [mymix],
     components: {
       comComputed
     },
