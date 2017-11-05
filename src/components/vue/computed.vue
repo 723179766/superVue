@@ -6,23 +6,43 @@
     {{smallCount}}
     <div></div>
     {{reversedMessage}} <span></span> {{reversedMessage}} <span></span>{{reversedMessage}} <span></span>
-    <div></div>
+    <p></p>
     <button class="dj-btn dj-btn-danger" @click="changeH">注意上面的文案</button>
     <div>
       <com-Computed :data="intoCom"></com-Computed>
     </div>
+    <p>Object.assign(target, ...sources)拷贝对象</p>
+    <p>原来对象:{{myObj1}}</p>
+    <p>拷贝出来的对象:{{myObj2}}</p>
+    <button class="dj-btn dj-btn-danger" @click="mixinClick">mixins11使用</button>
   </div>
 </template>
 <script>
   import comComputed from './components/comComputed.vue'
+  import mymix from './mixin'
   export default {
-    components:{
+    created () {
+      console.log('这个created钩子在自身组件中执行')
+    },
+    mixins: [mymix],
+    components: {
       comComputed
     },
     data () {
       return {
         message: 'Hello',
-        step: 1
+        step: 1,
+        myObj1: {
+          name: '七七小鱼',
+          sex: '男',
+          love: null,
+          like: undefined,
+          smt: {
+            xiangmao: '帅气',
+            yanzhi: '逆天'
+          }
+        },
+        myObj2: ''
       }
     },
     computed: {
@@ -33,6 +53,7 @@
         return '嘻嘻嘻嘻'
       },
       intoCom () {
+        return '我是计算属性，可以传到组件内部去，qiqixiaoyu分支'
         return '我是计算属性，可以传到组件内部去，master文件'
       },
       reversedMessage: function () {
@@ -42,17 +63,24 @@
     },
     methods: {
       changeH () {
-        if(this.step==1){
+        if (this.step === 1) {
           this.message = 'hcy'
           this.step++
-        }else if(this.step==2){
+        } else if (this.step === 2) {
           this.message = 'qiqixiaoyu'
           this.step++
-        }else if(this.step==3){
+        } else if (this.step === 3) {
           console.log(111111111)
           this.message = 'qiqixiaoyu'
         }
       }
+    },
+    mounted () {
+      var res = Object.assign(this.myObj2, this.myObj1)
+      this.myObj2 = res
+      console.log(res)
+      console.log(typeof res)
+      console.log(this.myObj2)
     }
   }
 </script>
