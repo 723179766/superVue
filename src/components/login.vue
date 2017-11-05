@@ -2,7 +2,7 @@
   <div id="login" class="dj-amt">
     <div class="login-title">
       <div class="amtFont">
-        <span class="font1">QiYou 七游集团maseter分支</span>
+        <span class="font1">QiYou 七游集团</span>
         <span class="font2">|</span>
         <span class="font3">大数据云监控平台</span>
         <span class="font4">一键配置接入系统</span>
