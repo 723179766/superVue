@@ -65,6 +65,9 @@ $back: #aaa;
 }
 .color-success{
   color: $success;
+  .el-input__inner{
+    color: $success;
+  }
 }
 .color-warning{
   color: $warning;

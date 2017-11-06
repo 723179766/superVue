@@ -46,6 +46,7 @@ import NewTree from '@/components/gongSiDemo/NewTree'
 import es6KuoZan from '@/components/gongSiDemo/es6KuoZan'
 
 import computed from '@/components/vue/computed'
+import directive from '@/components/directive/directive'
 
 Vue.use(Router)
 
@@ -353,6 +354,14 @@ export default new Router({
           component:computed,
           meta:{
             name:'计算属性'
+          }
+        },
+        {
+          path:'/directive',
+          name:'directive',
+          component:directive,
+          meta:{
+            name:'封装指令'
           }
         }
         //,

@@ -21,7 +21,8 @@
       <el-submenu index="5">
         <template slot="title">
           <img class="sys-icon" src="../assets/nav_icon_sys.png" alt="">
-          系统设置</template>
+          系统设置
+        </template>
         <el-menu-item index="51">
           <router-link to="/Org" tag="span">机构管理</router-link>
         </el-menu-item>
@@ -38,7 +39,8 @@
       <el-submenu index="6">
         <template slot="title">
           <img class="sys-icon" src="../assets/nav_icon_device.png" alt="">
-          设备管理</template>
+          设备管理
+        </template>
         <el-menu-item index="61">
           <router-link to="/ManModel" tag="span">厂商型号</router-link>
         </el-menu-item>
@@ -52,7 +54,8 @@
       <el-submenu index="7">
         <template slot="title">
           <img class="sys-icon" src="../assets/nav_icon_appstore.png" alt="">
-          应用管理</template>
+          应用管理
+        </template>
         <el-menu-item index="71">
           <router-link to="/AppList" tag="span">应用列表</router-link>
         </el-menu-item>
@@ -66,7 +69,8 @@
       <el-submenu index="8">
         <template slot="title">
           <img class="sys-icon" src="../assets/nav_icon_sys.png" alt="">
-          组件系统</template>
+          组件系统
+        </template>
         <el-menu-item index="80">
           <router-link to="/LabelEdit" tag="span">标签编辑</router-link>
         </el-menu-item>
@@ -92,7 +96,8 @@
       <el-submenu index="9">
         <template slot="title">
           <i class="el-icon-star-off" style="margin-right: 3px;"></i>
-          CSS类库</template>
+          CSS类库
+        </template>
         <el-menu-item index="90">
           <router-link to="/CssModel" tag="span">CSS模板</router-link>
         </el-menu-item>
@@ -107,7 +112,8 @@
       <el-submenu index="4">
         <template slot="title">
           <i class="el-icon-star-off" style="margin-right: 3px;"></i>
-          手册库</template>
+          手册库
+        </template>
         <el-menu-item index="40">
           <router-link to="/NewTree" tag="span">组件通讯</router-link>
         </el-menu-item>
@@ -119,9 +125,20 @@
       <el-submenu index="3">
         <template slot="title">
           <img class="sys-icon" src="../assets/nav_icon_appstore.png" alt="">
-          Vue</template>
+          Vue
+        </template>
         <el-menu-item index="30">
           <router-link to="/computed" tag="span">计算属性</router-link>
+        </el-menu-item>
+      </el-submenu>
+
+      <el-submenu index="2">
+        <template slot="title">
+          <img class="sys-icon" src="../assets/nav_icon_home.png" alt="">
+          指令
+        </template>
+        <el-menu-item index="30">
+          <router-link to="/directive" tag="span">封装指令</router-link>
         </el-menu-item>
       </el-submenu>
     </el-menu>
