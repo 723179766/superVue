@@ -15,6 +15,13 @@
     <p>原来对象:{{myObj1}}</p>
     <p>拷贝出来的对象:{{myObj2}}</p>
     <button class="dj-btn dj-btn-danger" @click="mixinClick">mixins11使用</button>
+
+    <input type="text" v-model="myColor">
+    <input type="color" id="color" v-model="myColor">
+    <button class="dj-btn dj-btn-info" @click="getColor">获取color</button>
+
+    <img src="http://pic4.nipic.com/20091217/3885730_124701000519_2.jpg" alt="">
+
   </div>
 </template>
 <script>
@@ -42,7 +49,8 @@
             yanzhi: '逆天'
           }
         },
-        myObj2: ''
+        myObj2: '',
+        myColor: '#ffffff'
       }
     },
     computed: {
@@ -57,11 +65,14 @@
         return '我是计算属性，可以传到组件内部去，master文件'
       },
       reversedMessage: function () {
-        alert('原值改变，重新计算')
+//        alert('原值改变，重新计算')
         return this.message.split('').reverse().join('')
       }
     },
     methods: {
+      getColor () {
+        console.log(document.getElementById('color').value)
+      },
       changeH () {
         if (this.step === 1) {
           this.message = 'hcy'
