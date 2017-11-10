@@ -8,52 +8,89 @@
         <el-table-column prop="address" label="地址"></el-table-column>
       </el-table>
     </div>
+
+    <div>
+      <el-transfer v-model="value1" :data="data" :render-content="renderFunc"></el-transfer>
+    </div>
+
   </div>
 </template>
 <script type="text/ecmascript-6">
   import elBtn from './qy-btn/elBtn.vue'
   export default {
-    components:{
+    components: {
       elBtn
     },
-    created(){
-
+    created () {
+//      console.log(this.tableData.length)
+//      console.log(this.tableData[this.tableData.length])
+//      console.log(this.tableData[this.tableData.length - 1])
+      console.log(this.myObj)
+      let newObj = Object.assign({}, this.myObj)
+      newObj.hcy = 'hahaha'
+      this.myObj = {
+        name: 1,
+        sex: 2
+      }
+      console.log(newObj)
+      console.log(this.myObj)
     },
-    data(){
-      return{
+    data () {
+      const generateData = _ => {
+        const data = []
+        for (let i = 1; i <= 15; i++) {
+          data.push({
+            key: i,
+            label: `备选项 ${ i } `,
+            disabled: i % 4 === 0
+          })
+        }
+        return data
+      }
+      return {
+        data: generateData(),
+        value1: [1, 4],
         comProp: 'color-success',
-        tableData: [{
-          date: '2016-05-02',
-          name: '王小虎',
-          address: '上海市普陀区金沙江路 1518 弄'
-        }, {
-          date: '2016-05-04',
-          name: '王小虎',
-          address: '上海市普陀区金沙江路 1517 弄'
-        }, {
-          date: '2016-05-01',
-          name: '王小虎',
-          address: '上海市普陀区金沙江路 1519 弄'
-        }, {
-          date: '2016-05-03',
-          name: '王小虎',
-          address: '上海市普陀区金沙江路 1516 弄'
-        }]
+        tableData: [
+          {
+            date: '2016-05-02',
+            name: '王小虎',
+            address: '上海市普陀区金沙江路 1518 弄'
+          },
+          {
+            date: '2016-05-04',
+            name: '王小虎',
+            address: '上海市普陀区金沙江路 1517 弄'
+          },
+          {
+            date: '2016-05-01',
+            name: '王小虎',
+            address: '上海市普陀区金沙江路 1519 弄'
+          },
+          {
+            date: '2016-05-03',
+            name: '王小虎',
+            address: '上海市普陀区金沙江路 1516 弄'
+          }],
+        myObj: {
+          name: 1,
+          sex: [1, 2, 3, 4]
+        }
       }
     },
-    methods:{
-      clickHandler(){
+    methods: {
+      clickHandler () {
         alert('终于生效了')
       },
       renderHeader: function (h, { column, $index }) {
-        return h('div',[
-          h('span',column.label),
+        return h('div', [
+          h('span', column.label),
           h('span', {
             attrs: {
               id: 'span'
             }
-          },'hcy'),
-          h('i',{
+          }, 'hcy'),
+          h('i', {
             on: {
               click: this.clickHandler
             },
@@ -62,6 +99,15 @@
               fontSize: '14px'
             }
           }, '我可以点击？')
+        ])
+      },
+      renderFunc: function (h, option) {
+        return h('div', [
+          h('span', {
+            attrs: {
+              id: 'span'
+            }
+          }, 'hcy')
         ])
       }
     }
