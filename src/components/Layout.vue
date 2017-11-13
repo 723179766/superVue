@@ -141,6 +141,16 @@
           <router-link to="/directive" tag="span">封装指令</router-link>
         </el-menu-item>
       </el-submenu>
+
+      <el-submenu index="A">
+        <template slot="title">
+          <img class="sys-icon" src="../assets/nav_icon_appstore.png" alt="">
+          封装element
+        </template>
+        <el-menu-item index="A1">
+          <router-link to="/index" tag="span">index</router-link>
+        </el-menu-item>
+      </el-submenu>
     </el-menu>
 
     <div v-bind:class="{'right-no-full':openFlag,'right-full':!openFlag}" class="right">

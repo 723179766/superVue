@@ -33,7 +33,10 @@ import AppClassify from '@/components/appManage/AppClassify'
 
 import AppDetail from '@/components/appManage/AppDetail'
 
-//组件系统
+// 封装element ui
+import index from '@/components/newElement/index'
+
+// 组件系统
 import LabelEdit from '@/components/comSystem/LabelEdit'
 import AddBox from '@/components/comSystem/AddBox'
 import FileUpload from '@/components/comSystem/FileUpload'
@@ -117,11 +120,11 @@ export default new Router({
           }
         },
         {
-          path:'/ManModel',
-          name:'ManModel',
-          component:ManModel,
-          meta:{
-            name:'厂商型号'
+          path: '/ManModel',
+          name: 'ManModel',
+          component: ManModel,
+          meta: {
+            name: '厂商型号'
           }
         },
         {
@@ -362,6 +365,14 @@ export default new Router({
           component:directive,
           meta:{
             name:'封装指令'
+          }
+        },
+        {
+          path:'/index',
+          name:'index',
+          component:index,
+          meta:{
+            name:'封装element ui'
           }
         }
         //,
