@@ -130,6 +130,9 @@
         <el-menu-item index="30">
           <router-link to="/computed" tag="span">计算属性</router-link>
         </el-menu-item>
+        <el-menu-item index="30">
+          <router-link to="/renderFunc" tag="span">render函数</router-link>
+        </el-menu-item>
       </el-submenu>
 
       <el-submenu index="2">

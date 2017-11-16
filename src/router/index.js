@@ -49,6 +49,7 @@ import NewTree from '@/components/gongSiDemo/NewTree'
 import es6KuoZan from '@/components/gongSiDemo/es6KuoZan'
 
 import computed from '@/components/vue/computed'
+import renderFunc from '@/components/vue/renderFunc'
 import directive from '@/components/directive/directive'
 
 Vue.use(Router)
@@ -357,6 +358,14 @@ export default new Router({
           component:computed,
           meta:{
             name:'计算属性'
+          }
+        },
+        {
+          path:'/renderFunc',
+          name:'renderFunc',
+          component:renderFunc,
+          meta:{
+            name:'render函数'
           }
         },
         {
