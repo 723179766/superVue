@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+    }
+    html,body{
+      height:100%;
+    }
+
+    .base{
+      height: 100%;
+      background: yellow;
+    }
+    .amt-left-in{
+      -webkit-animation: amtLeftIn 1s ease;
+      animation: amtLeftIn 1s ease;
+    }
+    @-webkit-keyframes amtLeftIn {
+      0%{ transform: translate(-100%, 0); }
+      100%{ transform: translate(0, 0); }
+    }
+    @keyframes amtLeftIn {
+      0%{ transform: translate(-100%, 0); }
+      100%{ transform: translate(0, 0); }
+    }
+
+
+    .header{
+      height: 50px;
+      background: red;
+    }
+    .content{
+      height: calc(100% - 50px);
+      height: -webkit-calc(100% - 50px);
+      background: pink;
+    }
+
+    .left{
+      float: left;
+      height: 100%;
+      width: 200px;
+      background: greenyellow;
+    }
+    .right{
+      float: left;
+      height: 100%;
+      width: calc(100% - 200px);
+      background: yellow;
+    }
+    @media screen and (max-width: 1000px) {
+      .left{
+        width: 50px;
+      }
+      .right{
+        width: calc(100% - 50px);
+      }
+    }
+
+  </style>
+</head>
+<body>
+
+
+<div class="header"></div>
+<div class="content">
+  <div class="left">
+    1
+  </div>
+  <div class="right amt-left-in">
+    22
+  </div>
+</div>
+
+</body>
+</html>

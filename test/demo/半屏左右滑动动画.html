@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+    }
+    html,body{
+      height:100%;
+      overflow: hidden;
+    }
+
+    .base{
+      width: 50%;
+      height: 100%;
+      background: yellow;
+      display: inline-block;
+    }
+    .base2{
+      width: 50%;
+      height: 100%;
+      background: pink;
+      display: inline-block;
+    }
+    .amt-left-in{
+      position: relative;
+      -webkit-animation: amtLeftIn 1s ease;
+      animation: amtLeftIn 1s ease;
+    }
+    @-webkit-keyframes amtLeftIn {
+      0%{ left: -50%; }
+      100%{ left: 0; }
+    }
+    @keyframes amtLeftIn {
+      0%{ left: -50%; }
+      100%{ left: 0; }
+    }
+
+
+    .amt-right-in{
+      position: relative;
+      animation: amtRightIn 1s ease;
+      -webkit-animation: amtRightIn 1s ease;
+      -moz-animation: amtRightIn 1s ease;
+      -o-animation: amtRightIn 1s ease;
+    }
+    @keyframes amtRightIn {
+      0%{ left: 50%; }
+      100%{ left: 0; }
+    }
+    @-webkit-keyframes amtRightIn {
+      0%{ left: 50%; }
+      100%{ left: 0; }
+    }
+    @-moz-keyframes amtRightIn {
+      0%{ left: 50%; }
+      100%{ left: 0; }
+    }
+    @-o-keyframes amtRightIn {
+      0%{ left: 50%; }
+      100%{ left: 0; }
+    }
+
+
+  </style>
+</head>
+<body>
+
+<div class="base amt-left-in"></div><div class="base2 amt-right-in"></div>
+
+</body>
+</html>
