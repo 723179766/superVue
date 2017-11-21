@@ -59,7 +59,6 @@
     <br>
 
     <el-form :model="dynamicValidateForm" ref="dynamicValidateForm" label-width="100px">
-
       <el-form-item v-for="(domain, index) in dynamicValidateForm.domains" :label="'域名' + index" :key="domain.key" :prop="'domains.' + index + '.value'"
                     :rules="[
             { validator: checkAge, trigger: 'blur' }
@@ -74,6 +73,9 @@
         <el-button @click="resetForm('dynamicValidateForm')">重置</el-button>
       </el-form-item>
     </el-form>
+
+    <button class="dj-btn dj-btn-success" @click="ssss">{{bigCount}}</button>
+    {{bigCount}}
   </div>
 </template>
 
@@ -81,7 +83,6 @@
   import qyBtn from './qyBtn/qyBtn.vue'
   export default {
     created () {
-
     },
     components: {
       qyBtn
@@ -100,6 +101,7 @@
         }, 500);
       };
       return {
+        showCao: true,
         checkAge: checkAge,
         tableData: [
           {
@@ -129,6 +131,9 @@
       }
     },
     methods: {
+      ssss () {
+        this.showCao = !this.showCao
+      },
       myFunc () {
         alert(12345)
       },
@@ -188,6 +193,17 @@
           value: '',
           key: Date.now()
         })
+      }
+    },
+    computed: {
+      bigCount: function () {
+        if (this.showCao) {
+          console.log(1111111111111)
+          return '你好世界'
+        }else {
+          console.log(2222222222)
+          return 'hello world'
+        }
       }
     }
   }
