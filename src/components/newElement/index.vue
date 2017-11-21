@@ -55,37 +55,84 @@
       </el-table-column>
     </el-table>
     <el-button type="primary" @click="changeTableData">改变表格数据</el-button>
+
+    <br>
+
+    <el-form :model="dynamicValidateForm" ref="dynamicValidateForm" label-width="100px">
+
+      <el-form-item v-for="(domain, index) in dynamicValidateForm.domains" :label="'域名' + index" :key="domain.key" :prop="'domains.' + index + '.value'"
+                    :rules="[
+            { validator: checkAge, trigger: 'blur' }
+                     ]">
+        <el-input v-model.number="domain.value" style="width: 400px"></el-input>
+        <el-button @click.prevent="removeDomain(domain)">删除</el-button>
+      </el-form-item>
+
+      <el-form-item>
+        <el-button type="primary" @click="submitForm('dynamicValidateForm')">提交</el-button>
+        <el-button @click="addDomain">新增域名</el-button>
+        <el-button @click="resetForm('dynamicValidateForm')">重置</el-button>
+      </el-form-item>
+    </el-form>
   </div>
 </template>
 
 <script type="text/ecmascript-6">
   import qyBtn from './qyBtn/qyBtn.vue'
   export default {
+    created () {
+
+    },
     components: {
       qyBtn
     },
-    data() {
+    data () {
+      var checkAge = (rule, value, callback) => {
+        if (!value) {
+          return callback(new Error('年龄不能为空'));
+        }
+        setTimeout(() => {
+          if ( parseInt(value) < 18) {
+            callback(new Error('必须年满18岁'));
+          } else {
+            callback();
+          }
+        }, 500);
+      };
       return {
-        tableData: [{
-          date: '2016-05-02',
-          address: '七七小鱼1号'
-        }, {
-          date: '2016-05-04',
-          address: '七七小鱼二号'
-        }, {
-          date: '2016-05-01',
-          address: '七七小鱼1号'
-        }, {
-          date: '2016-05-03',
-          address: '七七小鱼二号'
-        }]
+        checkAge: checkAge,
+        tableData: [
+          {
+            date: '2016-05-02',
+            address: '七七小鱼1号'
+          },
+          {
+            date: '2016-05-04',
+            address: '七七小鱼二号'
+          },
+          {
+            date: '2016-05-01',
+            address: '七七小鱼1号'
+          },
+          {
+            date: '2016-05-03',
+            address: '七七小鱼二号'
+          }
+        ],
+        dynamicValidateForm: {
+          domains: [
+            {
+              value: ''
+            }
+          ]
+        }
       }
     },
     methods: {
       myFunc () {
         alert(12345)
       },
-      formatter(row, column) {
+      formatter (row, column) {
         console.log(1)
 //        return ((a,b) => {
 //          return a + '--->' + b
@@ -95,20 +142,52 @@
 //        }()
         return <h1 class="table-cell-hello" title={row.address}>{row.address}</h1>
       },
-      changeTableData(){
-        this. tableData =  [{
-          date: '2016-05-02',
-          address: '11'
-        }, {
-          date: '2016-05-04',
-          address: '22'
-        }, {
-          date: '2016-05-01',
-          address: '33'
-        }, {
-          date: '2016-05-03',
-          address: '44'
-        }]
+      changeTableData () {
+        this.tableData = [
+          {
+            date: '2016-05-02',
+            address: '11'
+          },
+          {
+            date: '2016-05-04',
+            address: '22'
+          },
+          {
+            date: '2016-05-01',
+            address: '33'
+          },
+          {
+            date: '2016-05-03',
+            address: '44'
+          }
+        ]
+      },
+      submitForm (formName) {
+        this.$refs[formName].validate((valid) => {
+          if (valid) {
+            console.log(this.dynamicValidateForm.domains)
+            alert('submit!')
+          } else {
+            console.log('error submit!!')
+            return false
+          }
+        })
+      },
+      resetForm (formName) {
+        this.$refs[formName].resetFields()
+      },
+      removeDomain (item) {
+        console.log(item)
+        var index = this.dynamicValidateForm.domains.indexOf(item)
+        if (index !== -1) {
+          this.dynamicValidateForm.domains.splice(index, 1)
+        }
+      },
+      addDomain () {
+        this.dynamicValidateForm.domains.push({
+          value: '',
+          key: Date.now()
+        })
       }
     }
   }
