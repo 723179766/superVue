@@ -60,11 +60,9 @@
 
     <el-form :model="dynamicValidateForm" ref="dynamicValidateForm" label-width="100px">
 
-      <el-form-item v-for="(domain, index) in dynamicValidateForm.domains" :label="'域名' + index" :key="domain.key" :prop="'domains.' + index + '.value'"
-                    :rules="[
-            { validator: checkAge, trigger: 'blur' }
-                     ]">
-        <el-input v-model.number="domain.value" style="width: 400px"></el-input>
+      <el-form-item v-for="(domain, index) in dynamicValidateForm.domains" :label="'域名' + index" :key="domain.key" :prop="'domains.' + index + '.valuess'"
+                    :rules="myValdataes.myValidator">
+        <el-input v-model="domain.valuess" style="width: 400px"></el-input>
         <el-button @click.prevent="removeDomain(domain)">删除</el-button>
       </el-form-item>
 
@@ -81,16 +79,19 @@
   import qyBtn from './qyBtn/qyBtn.vue'
   export default {
     created () {
-
+      console.log(this.ss)
+      console.log(typeof this.ss)
+      console.log(eval(this.stringss))
+      console.log(typeof eval(this.stringss))
+      console.log(new RegExp(this.stringss))
+      console.log(typeof new RegExp(this.stringss))
+      console.log(JSON.replace(new RegExp(this.stringss)))
     },
     components: {
       qyBtn
     },
     data () {
       var checkAge = (rule, value, callback) => {
-        if (!value) {
-          return callback(new Error('年龄不能为空'));
-        }
         setTimeout(() => {
           if ( parseInt(value) < 18) {
             callback(new Error('必须年满18岁'));
@@ -122,8 +123,20 @@
         dynamicValidateForm: {
           domains: [
             {
-              value: ''
+              valuess: ''
             }
+          ]
+        },
+        ss: /^[0-9]/,
+        stringss: '/^[0-9]/'
+      }
+    },
+    computed: {
+      myValdataes () {
+        return {
+          myValidator: [
+            { required: true, message: 'buweikong1', trigger: 'blur' },
+            { validator: this.checkAge, trigger: 'blur' }
           ]
         }
       }
@@ -185,7 +198,7 @@
       },
       addDomain () {
         this.dynamicValidateForm.domains.push({
-          value: '',
+          valuess: '',
           key: Date.now()
         })
       }
