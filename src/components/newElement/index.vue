@@ -83,6 +83,16 @@
   import qyBtn from './qyBtn/qyBtn.vue'
   export default {
     created () {
+//      var str = /^[a-z]/
+//      console.log(str)
+//      console.log(typeof str)
+      var newstr = "/^[a-z]/"
+      var expStr = newstr.slice(1,newstr.length-1)
+      var thisStr = new RegExp(expStr)
+//      console.log(expStr)
+//      console.log(new RegExp(expStr))
+//      console.log(typeof new RegExp(expStr))
+      console.log(thisStr.test('a'))
     },
     components: {
       qyBtn
@@ -138,7 +148,6 @@
         alert(12345)
       },
       formatter (row, column) {
-        console.log(1)
 //        return ((a,b) => {
 //          return a + '--->' + b
 //        })(row.address,row.date)
@@ -198,10 +207,10 @@
     computed: {
       bigCount: function () {
         if (this.showCao) {
-          console.log(1111111111111)
+//          console.log(1111111111111)
           return '你好世界'
         }else {
-          console.log(2222222222)
+//          console.log(2222222222)
           return 'hello world'
         }
       }
