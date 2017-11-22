@@ -1,86 +1,94 @@
 <template>
   <div>
-    <p>封装的element ui 的按钮</p>
-    <qy-btn @click="myFunc" type="orange">点击me</qy-btn>
-    <br />
+    <div v-show="whichShow=='no'">
+      <p>封装的element ui 的按钮</p>
+      <qy-btn @click="myFunc" type="orange">点击me</qy-btn>
+      <br />
 
-    <p>垂直居中的图片实现方式</p>
-    <div class="head-area">
-      <div class="img-warp">
-        <img class="myimg" src="../../../static/img/20-200.png" alt="">
+      <p>垂直居中的图片实现方式</p>
+      <div class="head-area">
+        <div class="img-warp">
+          <img class="myimg" src="../../../static/img/20-200.png" alt="">
+        </div>
       </div>
-    </div>
-    <br />
-    <div class="head-area">
-      <div class="img-warp">
-        <img class="myimg" src="../../../static/img/44-440.png" alt="">
+      <br />
+      <div class="head-area">
+        <div class="img-warp">
+          <img class="myimg" src="../../../static/img/44-440.png" alt="">
+        </div>
       </div>
-    </div>
-    <br />
-    <div class="head-area">
-      <div class="img-warp">
-        <img class="myimg" src="../../../static/img/404Girl.jpg" alt="">s
+      <br />
+      <div class="head-area">
+        <div class="img-warp">
+          <img class="myimg" src="../../../static/img/404Girl.jpg" alt="">s
+        </div>
       </div>
-    </div>
-    <br />
+      <br />
 
-    <p>使用高度100%让图片自适应</p>
-    <div class="new-head-area">
-      <div class="new-img-warp">
-        <img class="new-myimg" src="../../../static/img/22-100.png" alt="">
+      <p>使用高度100%让图片自适应</p>
+      <div class="new-head-area">
+        <div class="new-img-warp">
+          <img class="new-myimg" src="../../../static/img/22-100.png" alt="">
+        </div>
       </div>
-    </div>
-    <br />
-    <div class="new-head-area">
-      <div class="new-img-warp">
-        <img class="new-myimg" src="../../../static/img/44-440.png" alt="">
+      <br />
+      <div class="new-head-area">
+        <div class="new-img-warp">
+          <img class="new-myimg" src="../../../static/img/44-440.png" alt="">
+        </div>
       </div>
-    </div>
 
-    <br />
-    <p>formatter函数不仅可以用来过滤数据，也可用来添加DOM</p>
-    <el-table
-      :data="tableData"
-      border
-      style="width: 400px">
-      <el-table-column
-        prop="date"
-        label="日期"
-        width="180">
-      </el-table-column>
-      <el-table-column
-        prop="address"
-        label="地址"
-        :formatter="formatter">
-      </el-table-column>
-    </el-table>
-    <el-button type="primary" @click="changeTableData">改变表格数据</el-button>
+      <br />
+      <p>formatter函数不仅可以用来过滤数据，也可用来添加DOM</p>
+      <el-table
+        :data="tableData"
+        border
+        style="width: 400px">
+        <el-table-column
+          prop="date"
+          label="日期"
+          width="180">
+        </el-table-column>
+        <el-table-column
+          prop="address"
+          label="地址"
+          :formatter="formatter">
+        </el-table-column>
+      </el-table>
+      <el-button type="primary" @click="changeTableData">改变表格数据</el-button>
 
-    <br>
+      <br>
 
-    <el-form :model="dynamicValidateForm" ref="dynamicValidateForm" label-width="100px">
-      <el-form-item v-for="(domain, index) in dynamicValidateForm.domains" :label="'域名' + index" :key="domain.key" :prop="'domains.' + index + '.value'"
-                    :rules="[
+      <el-form :model="dynamicValidateForm" ref="dynamicValidateForm" label-width="100px">
+        <el-form-item v-for="(domain, index) in dynamicValidateForm.domains" :label="'域名' + index" :key="domain.key" :prop="'domains.' + index + '.value'"
+                      :rules="[
             { validator: checkAge, trigger: 'blur' }
                      ]">
-        <el-input v-model.number="domain.value" style="width: 400px"></el-input>
-        <el-button @click.prevent="removeDomain(domain)">删除</el-button>
-      </el-form-item>
+          <el-input v-model.number="domain.value" style="width: 400px"></el-input>
+          <el-button @click.prevent="removeDomain(domain)">删除</el-button>
+        </el-form-item>
 
-      <el-form-item>
-        <el-button type="primary" @click="submitForm('dynamicValidateForm')">提交</el-button>
-        <el-button @click="addDomain">新增域名</el-button>
-        <el-button @click="resetForm('dynamicValidateForm')">重置</el-button>
-      </el-form-item>
-    </el-form>
+        <el-form-item>
+          <el-button type="primary" @click="submitForm('dynamicValidateForm')">提交</el-button>
+          <el-button @click="addDomain">新增域名</el-button>
+          <el-button @click="resetForm('dynamicValidateForm')">重置</el-button>
+        </el-form-item>
+      </el-form>
+      <el-checkbox v-model="checked">备选项</el-checkbox>{{checked}} 字符串"0" 会先转false <br>
+      <button class="dj-btn dj-btn-success" @click="ssss">{{bigCount}}</button>
+      {{bigCount}}
 
-    <button class="dj-btn dj-btn-success" @click="ssss">{{bigCount}}</button>
-    {{bigCount}}
+      <p></p>
+    </div>
+    <button class="dj-btn dj-btn-info" @click="changeCom">改变加载的组件</button>
+    <component v-bind:is="whichShow"></component>
   </div>
 </template>
 
 <script type="text/ecmascript-6">
   import qyBtn from './qyBtn/qyBtn.vue'
+  import dongTaiCom1 from './qyBtn/testComp1.vue'
+  import dongTaiCom2 from './qyBtn/testComp2.vue'
   export default {
     created () {
 //      var str = /^[a-z]/
@@ -95,7 +103,9 @@
       console.log(thisStr.test('a'))
     },
     components: {
-      qyBtn
+      qyBtn,
+      dongTaiCom1,
+      dongTaiCom2
     },
     data () {
       var checkAge = (rule, value, callback) => {
@@ -111,6 +121,8 @@
         }, 500);
       };
       return {
+        whichShow: 'no',
+        checked: "0",
         showCao: true,
         checkAge: checkAge,
         tableData: [
@@ -141,6 +153,15 @@
       }
     },
     methods: {
+      changeCom () {
+        if(this.whichShow == 'no'){
+          this.whichShow = 'dongTaiCom1'
+        }else if(this.whichShow == 'dongTaiCom1'){
+          this.whichShow = 'dongTaiCom2'
+        }else if(this.whichShow == 'dongTaiCom2'){
+          this.whichShow = 'no'
+        }
+      },
       ssss () {
         this.showCao = !this.showCao
       },
@@ -207,10 +228,10 @@
     computed: {
       bigCount: function () {
         if (this.showCao) {
-//          console.log(1111111111111)
+          console.log(1111111111111)
           return '你好世界'
         }else {
-//          console.log(2222222222)
+          console.log(2222222222)
           return 'hello world'
         }
       }
