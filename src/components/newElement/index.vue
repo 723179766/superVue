@@ -64,7 +64,7 @@
                       :rules="[
             { validator: checkAge, trigger: 'blur' }
                      ]">
-          <el-input v-model.number="domain.value" style="width: 400px"></el-input>
+          <el-input v-model="domain.value" style="width: 400px"></el-input>
           <el-button @click.prevent="removeDomain(domain)">删除</el-button>
         </el-form-item>
 
@@ -144,12 +144,17 @@
 //      console.log(expStr)
 //      console.log(new RegExp(expStr))
 //      console.log(typeof new RegExp(expStr))
-      console.log(thisStr.test('a'))
-      var a = /^(?=.*?[a-zA-Z])(?=.*?[0-9])(?=.*?[\.\!\~\_@#$])[a-zA-Z0-9\.\!\~_@#$]{8,20}$/
-      console.log(a)
-      console.log('null')
-      console.log(Boolean(null))
-      console.log(Boolean(!null))
+//      console.log(thisStr.test('a'))
+//      var a = /^(?=.*?[a-zA-Z])(?=.*?[0-9])(?=.*?[\.\!\~\_@#$])[a-zA-Z0-9\.\!\~_@#$]{8,20}$/
+//      console.log(a)
+//      console.log('null')
+//      console.log(Boolean(null))
+//      console.log(Boolean(!null))
+      var osfipin= '    http://www.cnblogs.com/osfipin/     ';
+      console.log(osfipin.replace(/(^\s*)|(\s*$)/g, ""))
+
+      var str = '  hcy   '
+      console.log(str.replace(/^\s+|\s+$/g,''));
     },
     components: {
       qyBtn,
@@ -158,6 +163,10 @@
     },
     data () {
       var checkAge = (rule, value, callback) => {
+        var newvalue = value.toString().replace(/^\s+|\s+$/g,'')
+        console.log(newvalue)
+        console.log(newvalue.length)
+        return
         if (!value) {
           return callback(new Error('年龄不能为空'));
         }
