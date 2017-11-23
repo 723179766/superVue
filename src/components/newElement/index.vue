@@ -75,6 +75,7 @@
         </el-form-item>
       </el-form>
       <el-checkbox v-model="checked">备选项</el-checkbox>{{checked}} 字符串"0" 会先转false <br>
+      <el-checkbox v-model="checkedwei1">备选项</el-checkbox><br>
       <button class="dj-btn dj-btn-success" @click="ssss">{{bigCount}}</button>
       {{bigCount}}
 
@@ -137,13 +138,18 @@
 //      var str = /^[a-z]/
 //      console.log(str)
 //      console.log(typeof str)
-      var newstr = "/^[a-z]/"
-      var expStr = newstr.slice(1,newstr.length-1)
+      var newstr = '/^[a-z]/'
+      var expStr = newstr.slice(1, newstr.length - 1)
       var thisStr = new RegExp(expStr)
 //      console.log(expStr)
 //      console.log(new RegExp(expStr))
 //      console.log(typeof new RegExp(expStr))
       console.log(thisStr.test('a'))
+      var a = /^(?=.*?[a-zA-Z])(?=.*?[0-9])(?=.*?[\.\!\~\_@#$])[a-zA-Z0-9\.\!\~_@#$]{8,20}$/
+      console.log(a)
+      console.log('null')
+      console.log(Boolean(null))
+      console.log(Boolean(!null))
     },
     components: {
       qyBtn,
@@ -165,7 +171,8 @@
       };
       return {
         whichShow: 'no',
-        checked: "0",
+        checked: '0',
+        checkedwei1: 1,
         showCao: true,
         checkAge: checkAge,
         tableData: [
