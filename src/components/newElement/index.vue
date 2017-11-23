@@ -1,97 +1,160 @@
 <template>
   <div>
-    <p>封装的element ui 的按钮</p>
-    <qy-btn @click="myFunc" type="orange">点击me</qy-btn>
-    <br />
+    <div v-show="whichShow=='no'">
+      <p>封装的element ui 的按钮</p>
+      <qy-btn @click="myFunc" type="orange">点击me</qy-btn>
+      <br />
 
-    <p>垂直居中的图片实现方式</p>
-    <div class="head-area">
-      <div class="img-warp">
-        <img class="myimg" src="../../../static/img/20-200.png" alt="">
+      <p>垂直居中的图片实现方式</p>
+      <div class="head-area">
+        <div class="img-warp">
+          <img class="myimg" src="../../../static/img/20-200.png" alt="">
+        </div>
       </div>
-    </div>
-    <br />
-    <div class="head-area">
-      <div class="img-warp">
-        <img class="myimg" src="../../../static/img/44-440.png" alt="">
+      <br />
+      <div class="head-area">
+        <div class="img-warp">
+          <img class="myimg" src="../../../static/img/44-440.png" alt="">
+        </div>
       </div>
-    </div>
-    <br />
-    <div class="head-area">
-      <div class="img-warp">
-        <img class="myimg" src="../../../static/img/404Girl.jpg" alt="">s
+      <br />
+      <div class="head-area">
+        <div class="img-warp">
+          <img class="myimg" src="../../../static/img/404Girl.jpg" alt="">s
+        </div>
       </div>
-    </div>
-    <br />
+      <br />
 
-    <p>使用高度100%让图片自适应</p>
-    <div class="new-head-area">
-      <div class="new-img-warp">
-        <img class="new-myimg" src="../../../static/img/22-100.png" alt="">
+      <p>使用高度100%让图片自适应</p>
+      <div class="new-head-area">
+        <div class="new-img-warp">
+          <img class="new-myimg" src="../../../static/img/22-100.png" alt="">
+        </div>
       </div>
-    </div>
-    <br />
-    <div class="new-head-area">
-      <div class="new-img-warp">
-        <img class="new-myimg" src="../../../static/img/44-440.png" alt="">
+      <br />
+      <div class="new-head-area">
+        <div class="new-img-warp">
+          <img class="new-myimg" src="../../../static/img/44-440.png" alt="">
+        </div>
       </div>
+
+      <br />
+      <p>formatter函数不仅可以用来过滤数据，也可用来添加DOM</p>
+      <el-table
+        :data="tableData"
+        border
+        style="width: 400px">
+        <el-table-column
+          prop="date"
+          label="日期"
+          width="180">
+        </el-table-column>
+        <el-table-column
+          prop="address"
+          label="地址"
+          :formatter="formatter">
+        </el-table-column>
+      </el-table>
+      <el-button type="primary" @click="changeTableData">改变表格数据</el-button>
+
+      <br>
+
+      <el-form :model="dynamicValidateForm" ref="dynamicValidateForm" label-width="100px">
+        <el-form-item v-for="(domain, index) in dynamicValidateForm.domains" :label="'域名' + index" :key="domain.key" :prop="'domains.' + index + '.value'"
+                      :rules="[
+            { validator: checkAge, trigger: 'blur' }
+                     ]">
+          <el-input v-model.number="domain.value" style="width: 400px"></el-input>
+          <el-button @click.prevent="removeDomain(domain)">删除</el-button>
+        </el-form-item>
+
+        <el-form-item>
+          <el-button type="primary" @click="submitForm('dynamicValidateForm')">提交</el-button>
+          <el-button @click="addDomain">新增域名</el-button>
+          <el-button @click="resetForm('dynamicValidateForm')">重置</el-button>
+        </el-form-item>
+      </el-form>
+      <el-checkbox v-model="checked">备选项</el-checkbox>{{checked}} 字符串"0" 会先转false <br>
+      <button class="dj-btn dj-btn-success" @click="ssss">{{bigCount}}</button>
+      {{bigCount}}
+
+      <p></p>
+      <el-table
+        :data="tableData5"
+        style="width: 100%">
+        <el-table-column type="expand" v-if="!noTab">
+          <template scope="props">
+            <el-form label-position="left" inline class="demo-table-expand">
+              <el-form-item label="商品名称">
+                <span>{{ props.row.name }}</span>
+              </el-form-item>
+              <el-form-item label="所属店铺">
+                <span>{{ props.row.shop }}</span>
+              </el-form-item>
+              <el-form-item label="商品 ID">
+                <span>{{ props.row.id }}</span>
+              </el-form-item>
+              <el-form-item label="店铺 ID">
+                <span>{{ props.row.shopId }}</span>
+              </el-form-item>
+              <el-form-item label="商品分类">
+                <span>{{ props.row.category }}</span>
+              </el-form-item>
+              <el-form-item label="店铺地址">
+                <span>{{ props.row.address }}</span>
+              </el-form-item>
+              <el-form-item label="商品描述">
+                <span>{{ props.row.desc }}</span>
+              </el-form-item>
+            </el-form>
+          </template>
+        </el-table-column>
+        <el-table-column
+          label="商品 ID"
+          prop="id">
+        </el-table-column>
+        <el-table-column
+          label="商品名称"
+          prop="name">
+        </el-table-column>
+        <el-table-column
+          label="描述"
+          prop="desc">
+        </el-table-column>
+      </el-table>
     </div>
-
-    <br />
-    <p>formatter函数不仅可以用来过滤数据，也可用来添加DOM</p>
-    <el-table
-      :data="tableData"
-      border
-      style="width: 400px">
-      <el-table-column
-        prop="date"
-        label="日期"
-        width="180">
-      </el-table-column>
-      <el-table-column
-        prop="address"
-        label="地址"
-        :formatter="formatter">
-      </el-table-column>
-    </el-table>
-    <el-button type="primary" @click="changeTableData">改变表格数据</el-button>
-
-    <br>
-
-    <el-form :model="dynamicValidateForm" ref="dynamicValidateForm" label-width="100px">
-
-      <el-form-item v-for="(domain, index) in dynamicValidateForm.domains" :label="'域名' + index" :key="domain.key" :prop="'domains.' + index + '.valuess'"
-                    :rules="myValdataes.myValidator">
-        <el-input v-model="domain.valuess" style="width: 400px"></el-input>
-        <el-button @click.prevent="removeDomain(domain)">删除</el-button>
-      </el-form-item>
-
-      <el-form-item>
-        <el-button type="primary" @click="submitForm('dynamicValidateForm')">提交</el-button>
-        <el-button @click="addDomain">新增域名</el-button>
-        <el-button @click="resetForm('dynamicValidateForm')">重置</el-button>
-      </el-form-item>
-    </el-form>
+    <button class="dj-btn dj-btn-info" @click="changeCom">改变加载的组件</button>
+    <component v-bind:is="whichShow"></component>
   </div>
 </template>
 
 <script type="text/ecmascript-6">
   import qyBtn from './qyBtn/qyBtn.vue'
+  import dongTaiCom1 from './qyBtn/testComp1.vue'
+  import dongTaiCom2 from './qyBtn/testComp2.vue'
   export default {
     created () {
-      console.log(this.ss)
-      console.log(typeof this.ss)
-      console.log(eval(this.stringss))
-      console.log(typeof eval(this.stringss))
-      console.log(new RegExp(this.stringss))
-      console.log(typeof new RegExp(this.stringss))
-      console.log(JSON.replace(new RegExp(this.stringss)))
+//      var str = /^[a-z]/
+//      console.log(str)
+//      console.log(typeof str)
+      var newstr = "/^[a-z]/"
+      var expStr = newstr.slice(1,newstr.length-1)
+      var thisStr = new RegExp(expStr)
+//      console.log(expStr)
+//      console.log(new RegExp(expStr))
+//      console.log(typeof new RegExp(expStr))
+      console.log(thisStr.test('a'))
     },
     components: {
-      qyBtn
+      qyBtn,
+      dongTaiCom1,
+      dongTaiCom2
     },
     data () {
       var checkAge = (rule, value, callback) => {
+        if (!value) {
+          return callback(new Error('年龄不能为空'));
+        }
         setTimeout(() => {
           if ( parseInt(value) < 18) {
             callback(new Error('必须年满18岁'));
@@ -101,6 +164,9 @@
         }, 500);
       };
       return {
+        whichShow: 'no',
+        checked: "0",
+        showCao: true,
         checkAge: checkAge,
         tableData: [
           {
@@ -120,33 +186,66 @@
             address: '七七小鱼二号'
           }
         ],
+        noTab: false,
+        tableData5: [{
+          id: '12987122',
+          name: '好滋好味鸡蛋仔',
+          category: '江浙小吃、小吃零食',
+          desc: '荷兰优质淡奶，奶香浓而不腻',
+          address: '上海市普陀区真北路',
+          shop: '王小虎夫妻店',
+          shopId: '10333'
+        }, {
+          id: '12987123',
+          name: '好滋好味鸡蛋仔',
+          category: '江浙小吃、小吃零食',
+          desc: '荷兰优质淡奶，奶香浓而不腻',
+          address: '上海市普陀区真北路',
+          shop: '王小虎夫妻店',
+          shopId: '10333'
+        }, {
+          id: '12987125',
+          name: '好滋好味鸡蛋仔',
+          category: '江浙小吃、小吃零食',
+          desc: '荷兰优质淡奶，奶香浓而不腻',
+          address: '上海市普陀区真北路',
+          shop: '王小虎夫妻店',
+          shopId: '10333'
+        }, {
+          id: '12987126',
+          name: '好滋好味鸡蛋仔',
+          category: '江浙小吃、小吃零食',
+          desc: '荷兰优质淡奶，奶香浓而不腻',
+          address: '上海市普陀区真北路',
+          shop: '王小虎夫妻店',
+          shopId: '10333'
+        }],
         dynamicValidateForm: {
           domains: [
             {
-              valuess: ''
+              value: ''
             }
-          ]
-        },
-        ss: /^[0-9]/,
-        stringss: '/^[0-9]/'
-      }
-    },
-    computed: {
-      myValdataes () {
-        return {
-          myValidator: [
-            { required: true, message: 'buweikong1', trigger: 'blur' },
-            { validator: this.checkAge, trigger: 'blur' }
           ]
         }
       }
     },
     methods: {
+      changeCom () {
+        if(this.whichShow == 'no'){
+          this.whichShow = 'dongTaiCom1'
+        }else if(this.whichShow == 'dongTaiCom1'){
+          this.whichShow = 'dongTaiCom2'
+        }else if(this.whichShow == 'dongTaiCom2'){
+          this.whichShow = 'no'
+        }
+      },
+      ssss () {
+        this.showCao = !this.showCao
+      },
       myFunc () {
         alert(12345)
       },
       formatter (row, column) {
-        console.log(1)
 //        return ((a,b) => {
 //          return a + '--->' + b
 //        })(row.address,row.date)
@@ -198,9 +297,20 @@
       },
       addDomain () {
         this.dynamicValidateForm.domains.push({
-          valuess: '',
+          value: '',
           key: Date.now()
         })
+      }
+    },
+    computed: {
+      bigCount: function () {
+        if (this.showCao) {
+          console.log(1111111111111)
+          return '你好世界'
+        }else {
+          console.log(2222222222)
+          return 'hello world'
+        }
       }
     }
   }
