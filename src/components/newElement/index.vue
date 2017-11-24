@@ -83,8 +83,8 @@
       <el-table
         :data="tableData5"
         style="width: 100%">
-        <el-table-column type="expand" v-if="!noTab">
-          <template scope="props">
+        <el-table-column type="expand">
+          <template scope="props" v-if="props.row.id=='duohang'">
             <el-form label-position="left" inline class="demo-table-expand">
               <el-form-item label="商品名称">
                 <span>{{ props.row.name }}</span>
@@ -111,15 +111,15 @@
           </template>
         </el-table-column>
         <el-table-column
-          label="商品 ID"
+          label="第一列"
           prop="id">
         </el-table-column>
         <el-table-column
-          label="商品名称"
+          label="第二列"
           prop="name">
         </el-table-column>
         <el-table-column
-          label="描述"
+          label="第三列"
           prop="desc">
         </el-table-column>
       </el-table>
@@ -138,9 +138,9 @@
 //      var str = /^[a-z]/
 //      console.log(str)
 //      console.log(typeof str)
-      var newstr = '/^[a-z]/'
-      var expStr = newstr.slice(1, newstr.length - 1)
-      var thisStr = new RegExp(expStr)
+//      var newstr = '/^[a-z]/'
+//      var expStr = newstr.slice(1, newstr.length - 1)
+//      var thisStr = new RegExp(expStr)
 //      console.log(expStr)
 //      console.log(new RegExp(expStr))
 //      console.log(typeof new RegExp(expStr))
@@ -204,7 +204,7 @@
         ],
         noTab: false,
         tableData5: [{
-          id: '12987122',
+          id: 'duohang',
           name: '好滋好味鸡蛋仔',
           category: '江浙小吃、小吃零食',
           desc: '荷兰优质淡奶，奶香浓而不腻',
@@ -212,7 +212,7 @@
           shop: '王小虎夫妻店',
           shopId: '10333'
         }, {
-          id: '12987123',
+          id: 'danhang',
           name: '好滋好味鸡蛋仔',
           category: '江浙小吃、小吃零食',
           desc: '荷兰优质淡奶，奶香浓而不腻',
@@ -220,7 +220,7 @@
           shop: '王小虎夫妻店',
           shopId: '10333'
         }, {
-          id: '12987125',
+          id: 'duohang',
           name: '好滋好味鸡蛋仔',
           category: '江浙小吃、小吃零食',
           desc: '荷兰优质淡奶，奶香浓而不腻',
@@ -228,7 +228,7 @@
           shop: '王小虎夫妻店',
           shopId: '10333'
         }, {
-          id: '12987126',
+          id: 'danhang',
           name: '好滋好味鸡蛋仔',
           category: '江浙小吃、小吃零食',
           desc: '荷兰优质淡奶，奶香浓而不腻',
