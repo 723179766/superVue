@@ -35,6 +35,8 @@ import AppDetail from '@/components/appManage/AppDetail'
 
 // 封装element ui
 import index from '@/components/newElement/index'
+import demoStudy from '@/components/newElement/demoStudy'
+import table from '@/components/newElement/tableStudy/table'
 
 // 组件系统
 import LabelEdit from '@/components/comSystem/LabelEdit'
@@ -382,6 +384,22 @@ export default new Router({
           component:index,
           meta:{
             name:'封装element ui'
+          }
+        },
+        {
+          path:'/demoStudy',
+          name:'demoStudy',
+          component:demoStudy,
+          meta:{
+            name:'demoStudy'
+          }
+        },
+        {
+          path:'/table',
+          name:'table',
+          component:table,
+          meta:{
+            name:'table'
           }
         }
         //,

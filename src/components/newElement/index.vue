@@ -92,14 +92,8 @@
             </div>
           </template>
         </el-table-column>
-        <el-table-column
-          label="商品 ID"
-          prop="id">
-        </el-table-column>
-        <el-table-column
-          label="商品名称"
-          prop="name">
-        </el-table-column>
+        <el-table-column label="商品 ID" prop="id"></el-table-column>
+        <el-table-column label="商品名称" prop="name"></el-table-column>
       </el-table>
     </div>
     <button class="dj-btn dj-btn-info" @click="changeCom">改变加载的组件</button>

@@ -153,6 +153,9 @@
         <el-menu-item index="A1">
           <router-link to="/index" tag="span">index</router-link>
         </el-menu-item>
+        <el-menu-item index="A2">
+          <router-link to="/demoStudy" tag="span">学习使用</router-link>
+        </el-menu-item>
       </el-submenu>
     </el-menu>
 
