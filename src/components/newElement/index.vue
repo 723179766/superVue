@@ -120,11 +120,11 @@
                 <div class="cell">
                   <el-popover
                     placement="bottom"
-                    trigger="click">
+                    trigger="hover">
                     <div>123123</div>
                     <div>22222</div>
                     <div>33333</div>
-                    <el-button slot="reference">focus 激活</el-button>
+                    <el-button slot="reference">hover 激活</el-button>
                   </el-popover>
                 </div>
               </td>

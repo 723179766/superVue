@@ -1,5 +1,6 @@
 <template>
   <div>
+    <h2>表头可拉伸</h2>
     <button class="dj-btn dj-btn-success" @click="changeTabHei">改变表格高度</button>
     <el-table
               border
@@ -72,8 +73,7 @@
         console.log(222)
       },
       changeTabHei(){
-        alert(1)
-        this.tabHei = '100px'
+        this.tabHei = '200px'
       }
     }
   }

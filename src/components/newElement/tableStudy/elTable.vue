@@ -7,8 +7,9 @@
         </template>
       </el-table-column>
 
-      <el-table-column v-for="(item,index) in tableConfig" v-if="item.auth" :label="item.label" :prop="item.dataKey"></el-table-column>
-      <el-table-column label="自定义渲染列" :formatter="formatter"></el-table-column>
+      <el-table-column v-for="(item,index) in tableConfig" v-if="item.auth" :label="item.label" :prop="item.dataKey" :formatter="formatter">
+      </el-table-column>
+
       <el-table-column label="更多" v-if="tableType.more">
         <template scope="scope">
           <el-dropdown trigger="click" menu-align="start">

@@ -33,13 +33,14 @@
           {
             label: '地址',
             dataKey: 'address',
-            auth: 'address'
+            auth: 'address',
+            formatter: 'img'
           }
         ],
         tableData: [
           {
             date: '2016-05-02',
-            name: '王小虎',
+            name: 'img',
             address: '上海市普陀区金沙江路 1518 弄',
             brother: [
               {
@@ -65,13 +66,32 @@
           {
             date: '2016-05-01',
             name: '王小虎',
-            address: '上海市普陀区金沙江路 1519 弄',
+            address: '上海市普陀区金沙江路 1516 弄',
             brother: []
           },
           {
             date: '2016-05-03',
-            name: '王小虎',
-            address: '上海市普陀区金沙江路 1516 弄',
+            name: 'img',
+            address: '上海市普陀区金沙江路 1515 弄',
+            brother: [
+              {
+                id: '1',
+                name: '特辣黄焖鸡米饭'
+              },
+              {
+                id: '2',
+                name: '微辣黄焖鸡米饭'
+              },
+              {
+                id: '3',
+                name: '超级辣黄焖鸡米饭'
+              }
+            ]
+          },
+          {
+            date: '2016-05-03',
+            name: 'img',
+            address: '上海市普陀区金沙江路 1514 弄',
             brother: [
               {
                 id: '1',
@@ -90,26 +110,7 @@
           {
             date: '2016-05-03',
             name: '王小虎',
-            address: '上海市普陀区金沙江路 1516 弄',
-            brother: [
-              {
-                id: '1',
-                name: '特辣黄焖鸡米饭'
-              },
-              {
-                id: '2',
-                name: '微辣黄焖鸡米饭'
-              },
-              {
-                id: '3',
-                name: '超级辣黄焖鸡米饭'
-              }
-            ]
-          },
-          {
-            date: '2016-05-03',
-            name: '王小虎',
-            address: '上海市普陀区金沙江路 1516 弄',
+            address: '上海市普陀区金沙江路 1513 弄',
             brother: []
           }
         ],
@@ -237,7 +238,7 @@
           this.tableData = [
             {
               date: '2016-05-02',
-              name: '王小虎',
+              name: 'img',
               address: '上海市普陀区金沙江路 1518 弄',
               brother: [
                 {
@@ -263,13 +264,32 @@
             {
               date: '2016-05-01',
               name: '王小虎',
-              address: '上海市普陀区金沙江路 1519 弄',
+              address: '上海市普陀区金沙江路 1516 弄',
               brother: []
             },
             {
               date: '2016-05-03',
-              name: '王小虎',
-              address: '上海市普陀区金沙江路 1516 弄',
+              name: 'img',
+              address: '上海市普陀区金沙江路 1515 弄',
+              brother: [
+                {
+                  id: '1',
+                  name: '特辣黄焖鸡米饭'
+                },
+                {
+                  id: '2',
+                  name: '微辣黄焖鸡米饭'
+                },
+                {
+                  id: '3',
+                  name: '超级辣黄焖鸡米饭'
+                }
+              ]
+            },
+            {
+              date: '2016-05-03',
+              name: 'img',
+              address: '上海市普陀区金沙江路 1514 弄',
               brother: [
                 {
                   id: '1',
@@ -288,26 +308,7 @@
             {
               date: '2016-05-03',
               name: '王小虎',
-              address: '上海市普陀区金沙江路 1516 弄',
-              brother: [
-                {
-                  id: '1',
-                  name: '特辣黄焖鸡米饭'
-                },
-                {
-                  id: '2',
-                  name: '微辣黄焖鸡米饭'
-                },
-                {
-                  id: '3',
-                  name: '超级辣黄焖鸡米饭'
-                }
-              ]
-            },
-            {
-              date: '2016-05-03',
-              name: '王小虎',
-              address: '上海市普陀区金沙江路 1516 弄',
+              address: '上海市普陀区金沙江路 1513 弄',
               brother: []
             }
           ]
@@ -322,10 +323,14 @@
         }
       },
       myFormatter (row, column) {
-        return <div>
-        <div>12:24:22</div>
-        <div><img src="../../../static/img/404Girl.jpg" class="mypic" /></div>
-          </div>
+        if(row[column.property] == 'img'){
+          return <div>
+          <div>11111</div>
+          <div><img src="../../../static/img/404Girl.jpg" class="mypic" /></div>
+            </div>
+        }else{
+          return row[column.property]
+        }
       }
     }
   }
