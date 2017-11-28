@@ -8,46 +8,75 @@
       margin: 0;
       padding: 0;
     }
-    #app{
-      /*display: flex;*/
-      /*flex-direction: column;*/
-      background: red;
-      height: 100%;
+    .father{
+      display: flex;
+      height: 100px;
+      background: #87cefa;
+    }
+    .child1{
+      background:lawngreen;
+      width: 100%;
+    }
+    .child2{
+      background:rebeccapurple;
+      width: 100%;
+    }
+    .child3{
+      background:gold;
+      width: 100%;
     }
 
+    .left{
+      position: absolute;
+      width: 100px;
+      height: 50px;
+      background: pink;
+    }
+    .right{
+      display: flex;
+      display: -webkit-flex;
+      z-index: -2;
+      position: absolute;
+      width: 100%;
+      height: 50px;
+      padding-left: 100px;
+      background: lightgoldenrodyellow;
+    }
+    .right-child1{
+      width: 100%;
+      height: 50px;
+      background: #87cefa;
+    }
+    .right-child2{
+      width: 100%;
+      height: 50px;
+      background: lawngreen;
+    }
+    .right-child3{
+      width: 100%;
+      height: 50px;
+      background: rebeccapurple;
+    }
 
-    .myhtml{
-      height: 200px;
-    }
-    .mybody{
-    }
-    .child{
-      height: 100%;
-      background: red;
-    }
   </style>
 </head>
 <body>
-<div id="app">
-
-  <div id="A"></div>
-
-  <div id="content">
-    <div id="B"></div>
-    <div id="C"></div>
-  </div>
-
-  <div id="D"></div>
-
+<div class="father">
+  <div class="child1">1</div>
+  <div class="child2">2</div>
+  <div class="child3">3</div>
 </div>
 
-<div class="myhtml">
-  <div class="mybody">
-    <div class="child">
-      1
-    </div>
+<div style="position: relative">
+  <div class="left"></div>
+  <div class="right">
+    <div class="right-child1">1</div>
+    <div class="right-child2">2</div>
+    <div class="right-child3">3</div>
   </div>
 </div>
+
+
 
 </body>
 </html>

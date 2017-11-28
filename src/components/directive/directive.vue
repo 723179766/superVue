@@ -29,11 +29,20 @@
       let newObj = Object.assign({}, this.myObj)
       newObj.hcy = 'hahaha'
       this.myObj = {
-        name: 1,
+        name: 33,
         sex: 2
       }
       console.log(newObj)
       console.log(this.myObj)
+      var arr = []
+      for (let i = 0; i < 5; i++) {
+        let testData = {
+          name: 'hcy' + i.toString()
+        }
+        arr.push(testData)
+      }
+      console.log(arr)
+      console.log(2 % 2)
     },
     data () {
       const generateData = _ => {

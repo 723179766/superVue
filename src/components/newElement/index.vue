@@ -86,14 +86,56 @@
         style="width: 100%">
         <el-table-column type="expand">
           <template scope="props">
-            <div v-for="item in props.row.brother">
-              <span style="margin-left: 20px">{{item.id}}</span>
-              <span>{{item.name}}</span>
+            <div class="wode-tr" v-for="item in [1,2,3,4]">
+              <td>
+              </td>
+              <td>
+                <div class="cell">好滋好味鸡蛋仔</div>
+              </td>
+              <td>
+                <div class="cell">荷兰优质淡123123奶</div>
+              </td>
+              <td>
+                <div class="cell">荷兰优质淡123123奶</div>
+              </td>
+              <td>
+                <div class="cell">荷兰优质淡123123奶</div>
+              </td>
+              <td>
+                <div class="cell">荷兰优质淡123123奶</div>
+              </td>
+              <td>
+                <div class="cell">荷兰优质淡123123奶</div>
+              </td>
+              <td>
+                <div class="cell">荷兰优质淡123123奶</div>
+              </td>
+              <td>
+                <div class="cell">荷兰优质淡123123奶</div>
+              </td>
+              <td>
+                <div class="cell">荷兰优质淡123123奶</div>
+              </td>
+              <td>
+                <div class="cell">
+                  <el-popover
+                    placement="bottom"
+                    trigger="click">
+                    <div>123123</div>
+                    <div>22222</div>
+                    <div>33333</div>
+                    <el-button slot="reference">focus 激活</el-button>
+                  </el-popover>
+                </div>
+              </td>
             </div>
+            <!--<div v-for="item in props.row.brother">-->
+            <!--<span style="margin-left: 20px">{{item.id}}</span>-->
+            <!--<span>{{item.name}}</span>-->
+            <!--</div>-->
           </template>
         </el-table-column>
-        <el-table-column label="商品 ID" prop="id"></el-table-column>
-        <el-table-column label="商品名称" prop="name"></el-table-column>
+        <el-table-column label="商品 name" prop="name" v-for="item in [1,2,3,4,11,24,34,44,54,22]"></el-table-column>
       </el-table>
     </div>
     <button class="dj-btn dj-btn-info" @click="changeCom">改变加载的组件</button>
@@ -178,6 +220,7 @@
           {
             id: '1',
             name: '黄焖鸡米饭',
+            size: '很饿很大',
             brother: [
               {
                 id: '1',
@@ -196,16 +239,19 @@
           {
             id: '2',
             name: '百世可乐',
+            size: '很饿很大',
             brother: []
           },
           {
             id: '3',
             name: '油条蛋糕',
+            size: '很饿很大',
             brother: []
           },
           {
             id: '4',
             name: '荷兰优质淡奶',
+            size: '很饿很大',
             brother: []
           }
         ],
@@ -250,7 +296,7 @@
 //        return function (){
 //          return 1111111
 //        }()
-        return <h1 class="table-cell-hello" title={row.address}>{row.address}</h1>
+        return <h2 class="table-cell-hello" title={row.address}>{row.address}</h2>
       },
       changeTableData () {
         this.tableData = [
@@ -358,6 +404,31 @@
   .hide-expand{
     .el-table__expand-icon{
       display: none;
+    }
+  }
+  .el-table__expanded-cell{
+    padding: 0;
+  }
+  .wode-tr{
+    display: flex;
+    >td:first-child{
+      box-sizing: border-box;
+      width: 49px;
+      border-bottom: none;
+    }
+    >td:not(:first-child){
+      box-sizing: border-box;
+      flex: 1;
+      border-bottom: none;
+    }
+    >td{
+      >.cell{
+        height: 40px;
+        line-height: 40px;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+      }
     }
   }
 </style>
