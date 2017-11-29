@@ -80,15 +80,11 @@
       {{bigCount}}
 
       <p></p>
-      <el-table
-        :data="tableData5"
-        :row-class-name="getRowClass"
-        style="width: 100%">
+      <el-table :data="tableData5" :row-class-name="getRowClass" style="width: 100%">
         <el-table-column type="expand">
           <template scope="props">
             <div class="wode-tr" v-for="item in [1,2,3,4]">
-              <td>
-              </td>
+              <td></td>
               <td>
                 <div class="cell">好滋好味鸡蛋仔</div>
               </td>
@@ -118,9 +114,7 @@
               </td>
               <td>
                 <div class="cell">
-                  <el-popover
-                    placement="bottom"
-                    trigger="hover">
+                  <el-popover placement="bottom" trigger="hover">
                     <div>123123</div>
                     <div>22222</div>
                     <div>33333</div>
@@ -290,12 +284,6 @@
         alert(12345)
       },
       formatter (row, column) {
-//        return ((a,b) => {
-//          return a + '--->' + b
-//        })(row.address,row.date)
-//        return function (){
-//          return 1111111
-//        }()
         return <h2 class="table-cell-hello" title={row.address}>{row.address}</h2>
       },
       changeTableData () {

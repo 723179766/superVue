@@ -33,8 +33,7 @@
           {
             label: '地址',
             dataKey: 'address',
-            auth: 'address',
-            formatter: 'img'
+            auth: 'address'
           }
         ],
         tableData: [
@@ -122,7 +121,7 @@
     },
     methods: {
       changeTable1 () {
-        if (this.init == 4){
+        if (this.init === 4) {
           this.tableConfig = [
             {
               label: 'ID',
@@ -217,7 +216,7 @@
             }
           ]
           this.init = 6
-        }else{
+        } else {
           this.tableConfig = [
             {
               label: '日期',
@@ -318,17 +317,17 @@
       changeTable2 () {
         if (this.tableType.expand) {
           this.tableType.expand = false
-        }else{
+        } else {
           this.tableType.expand = true
         }
       },
       myFormatter (row, column) {
-        if(row[column.property] == 'img'){
+        if (row[column.property] === 'img') {
           return <div>
           <div>11111</div>
           <div><img src="../../../static/img/404Girl.jpg" class="mypic" /></div>
             </div>
-        }else{
+        } else {
           return row[column.property]
         }
       }

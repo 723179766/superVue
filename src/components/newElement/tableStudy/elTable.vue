@@ -38,11 +38,9 @@
     },
     methods: {
       getRowClass: function (row, index) {
-        if(row.brother.length>0){
-          console.log(row)
-          console.log(index)
+        if (row.brother.length > 0) {
           return ''
-        }else {
+        } else {
           return 'hide-expand'
         }
       }
@@ -66,13 +64,13 @@
 
 <style lang="scss">
   .fengzhuang-eltable{
-  .hide-expand{
-  .el-table__expand-icon{
-    display: none;
-  }
-  }
-  .el-table__expanded-cell{
-    padding: 0;
-  }
+    .hide-expand{
+      .el-table__expand-icon{
+        display: none;
+      }
+    }
+    .el-table__expanded-cell{
+      padding: 0;
+    }
   }
 </style>
