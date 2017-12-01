@@ -43,11 +43,17 @@
       <el-table
         :data="tableData"
         border
-        style="width: 400px">
+        style="width: 1000px">
         <el-table-column
           prop="date"
           label="日期"
           width="180">
+        </el-table-column>
+        <el-table-column
+          prop="arr"
+          label="字段数组"
+          width="380"
+          :formatter="formatter">
         </el-table-column>
         <el-table-column
           prop="address"
@@ -158,10 +164,10 @@
 //      console.log('null')
 //      console.log(Boolean(null))
 //      console.log(Boolean(!null))
-      var osfipin= '    http://www.cnblogs.com/osfipin/     ';
-      console.log(osfipin.replace(/(^\s*)|(\s*$)/g, ""))
+      var osfipin= '    http://www.cnblogs.com/osfipin/     '
+//      console.log(osfipin.replace(/(^\s*)|(\s*$)/g, ""))
       var str = '  hcy   '
-      console.log(str.replace(/^\s+|\s+$/g,''));
+//      console.log(str.replace(/^\s+|\s+$/g,''));
     },
     components: {
       qyBtn,
@@ -170,21 +176,21 @@
     },
     data () {
       var checkAge = (rule, value, callback) => {
-        var newvalue = value.toString().replace(/^\s+|\s+$/g,'')
+        var newvalue = value.toString().replace(/^\s+|\s+$/g, '')
         console.log(newvalue)
         console.log(newvalue.length)
         return
         if (!value) {
-          return callback(new Error('年龄不能为空'));
+          return callback(new Error('年龄不能为空'))
         }
         setTimeout(() => {
-          if ( parseInt(value) < 18) {
-            callback(new Error('必须年满18岁'));
+          if (parseInt(value) < 18) {
+            callback(new Error('必须年满18岁'))
           } else {
-            callback();
+            callback()
           }
-        }, 500);
-      };
+        }, 500)
+      }
       return {
         whichShow: 'no',
         checked: '0',
@@ -194,19 +200,23 @@
         tableData: [
           {
             date: '2016-05-02',
-            address: '七七小鱼1号'
+            address: '七七小鱼1号',
+            arr: ['name', 'data', 'hello']
           },
           {
             date: '2016-05-04',
-            address: '七七小鱼二号'
+            address: '七七小鱼二号',
+            arr: ['name', 'data', 'hello']
           },
           {
             date: '2016-05-01',
-            address: '七七小鱼1号'
+            address: '七七小鱼1号',
+            arr: ['name', 'data', 'hello']
           },
           {
             date: '2016-05-03',
-            address: '七七小鱼二号'
+            address: '七七小鱼二号',
+            arr: ['name', 'data', 'hello']
           }
         ],
         noTab: false,
@@ -260,20 +270,20 @@
     },
     methods: {
       getRowClass: function (row, index) {
-        if(row.brother.length>0){
-          console.log(row)
-          console.log(index)
+        if (row.brother.length > 0) {
+//          console.log(row)
+//          console.log(index)
           return ''
-        }else {
+        } else {
           return 'hide-expand'
         }
       },
       changeCom () {
-        if(this.whichShow == 'no'){
+        if (this.whichShow === 'no') {
           this.whichShow = 'dongTaiCom1'
-        }else if(this.whichShow == 'dongTaiCom1'){
+        } else if (this.whichShow === 'dongTaiCom1') {
           this.whichShow = 'dongTaiCom2'
-        }else if(this.whichShow == 'dongTaiCom2'){
+        } else if (this.whichShow === 'dongTaiCom2'){
           this.whichShow = 'no'
         }
       },
@@ -284,7 +294,23 @@
         alert(12345)
       },
       formatter (row, column) {
-        return <h2 class="table-cell-hello" title={row.address}>{row.address}</h2>
+        var vm = this
+        var h = vm.$createElement
+        if (Array.isArray(row[column.property])) {
+//          let children = []
+//          for (let i = 0; i < row[column.property].length; i++) {
+//            children.push(
+//              h('span', {
+//                class: ['span-margin-left-10']
+//              }, row[column.property][i])
+//            )
+//          }
+          return h('div', {}, row[column.property])
+        } else {
+          return h('h2', {
+            class: ['table-cell-hello']
+          }, row[column.property])
+        }
       },
       changeTableData () {
         this.tableData = [
@@ -337,10 +363,10 @@
     computed: {
       bigCount: function () {
         if (this.showCao) {
-          console.log(1111111111111)
+//          console.log(1111111111111)
           return '你好世界'
         }else {
-          console.log(2222222222)
+//          console.log(2222222222)
           return 'hello world'
         }
       }
@@ -349,6 +375,9 @@
 </script>
 
 <style lang="scss">
+  .span-margin-left-10:not(:first-child){
+    margin-left: 10px;
+  }
   .head-area{
     box-sizing: border-box;
     height: 80px;

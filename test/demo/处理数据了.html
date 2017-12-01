@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+
+<script>
+  var data = [
+    {
+      'resource_id': '873672',
+      'resource_opt': 'mod',
+      'resource_person': 'root',
+      'resource_type': 'systemSource',
+      'after': ['侯超瑜', '18', '男'],
+      'before': ['七七小鱼', '28', '女'],
+      'field': ['name', 'age', 'sex']
+    },
+    {
+      'resource_id': '1235554',
+      'resource_opt': 'add',
+      'resource_person': 'qiqixiaoyu',
+      'resource_type': 'systemSource',
+      'field': ['money', 'time'],
+      'after': ['100W', '2017-2-2'],
+      'before': ['5000W', '2017-12-2']
+    },
+    {
+      'resource_id': '6547892',
+      'resource_opt': 'del',
+      'resource_person': 'houchaoyu',
+      'resource_type': 'systemSource',
+      'field': ['yanzhi'],
+      'after': ['帅气'],
+      'before': ['逆天']
+    }
+  ]
+//  console.log(data)
+//  let newObj = Object.assign({}, data[0])
+//  console.log(newObj)
+
+  // 处理
+  for (let i = 0; i < data.length; i++) {
+    data[i].brother = []
+    if (data[i].field.length > 1) {
+      var allFieldArr = []
+      var allAfterArr = []
+      var allBeforeArr = []
+      data[i].field.forEach(function (val) {
+        allFieldArr.push(val)
+      })
+      data[i].after.forEach(function (val) {
+        allAfterArr.push(val)
+      })
+      data[i].before.forEach(function (val) {
+        allBeforeArr.push(val)
+      })
+      for (let j = 0; j < data[i].field.length - 1; j++) {
+        let newObj = Object.assign({}, data[i])
+        data[i].brother.push(newObj)
+      }
+      for (let q = 0; q < data[i].brother.length; q++) {
+        data[i].brother[q].brother = []
+        data[i].brother[q].field = []
+        data[i].brother[q].after = []
+        data[i].brother[q].before = []
+        data[i].brother[q].field.push(allFieldArr[q + 1])
+        data[i].brother[q].after.push(allAfterArr[q + 1])
+        data[i].brother[q].before.push(allBeforeArr[q + 1])
+      }
+      data[i].field = []
+      data[i].after = []
+      data[i].before = []
+      data[i].field.push(allFieldArr[0])
+      data[i].after.push(allAfterArr[0])
+      data[i].before.push(allBeforeArr[0])
+    }
+  }
+  console.log(data)
+
+</script>
+</body>
+</html>
