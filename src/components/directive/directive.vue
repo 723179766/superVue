@@ -11,6 +11,7 @@
 
     <div>
       <el-transfer v-model="value1" :data="data" :render-content="renderFunc"></el-transfer>
+      <div :title="arrTitle">数组title</div>
     </div>
 
   </div>
@@ -22,6 +23,10 @@
       elBtn
     },
     created () {
+      var strtestgArr = ['hcy']
+      console.log(strtestgArr.length)
+      var strtestg = 'hcy,'
+      console.log(strtestg.slice(0, strtestg.length - 1))
 //      console.log(this.tableData.length)
 //      console.log(this.tableData[this.tableData.length])
 //      console.log(this.tableData[this.tableData.length - 1])
@@ -57,6 +62,7 @@
         return data
       }
       return {
+        arrTitle: [['hcy', 'qiqixiaoyu', 'qiqixiaoyu', 'qiqixiaoyu', 'qiqixiaoyu', 'qiqixiaoyu', 'qiqixiaoyu']],
         data: generateData(),
         value1: [1, 4],
         comProp: 'color-success',

@@ -34,11 +34,38 @@
       'field': ['yanzhi'],
       'after': ['帅气'],
       'before': ['逆天']
+    },
+    {
+      'resource_id': '9875674',
+      'resource_opt': 'search',
+      'resource_person': '侯超瑜',
+      'resource_type': 'systemSource',
+      'field': ['imgFile', 'textfile'],
+      'after': [
+        {
+          'type': 'img',
+          'content': '../imgFileUrl'
+        },
+        {
+          'type': 'img',
+          'content': '../textfileUrl'
+        }
+      ],
+      'before': [
+        {
+          'type': 'img',
+          'content': '../imgFileUrl2222222222'
+        },
+        {
+          'type': 'font',
+          'content': '普通文字'
+        }
+      ]
     }
   ]
-//  console.log(data)
-//  let newObj = Object.assign({}, data[0])
-//  console.log(newObj)
+  //  console.log(data)
+  //  let newObj = Object.assign({}, data[0])
+  //  console.log(newObj)
 
   // 处理
   for (let i = 0; i < data.length; i++) {
