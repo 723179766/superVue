@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    span{
+      font-size: 28px;
+    }
+  </style>
+</head>
+<body>
+<script>
+  function colorChange (text) {
+    var length = text.length
+    if (length === 0) {
+      return
+    } else {
+      var str = ''
+      for (var i = 0; i < length; i++) {
+        var randomColor = 'rgb(' + Math.floor(Math.random() * 256) + ',' + Math.floor(Math.random() * 256) + ',' + Math.floor(Math.random() * 256) + ')'
+        var _s = '<span style=color:' + randomColor + ';>' + text[i] + '</span>'
+        str += _s
+      }
+    }
+    return str
+  }
+
+  console.log(colorChange('七七小鱼'))
+  document.write(colorChange('七七小鱼七七小鱼七七小鱼七七小鱼七七小鱼七七小鱼'))
+</script>
+</body>
+</html>

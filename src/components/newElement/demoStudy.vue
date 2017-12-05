@@ -1,6 +1,7 @@
 <template>
   <div class="demo-study">
     <button class="dj-btn dj-btn-primary" @click="goTable">EL表格封装</button>
+    <button class="dj-btn dj-btn-info" @click="goBackGroundImg">背景图</button>
   </div>
 </template>
 
@@ -17,7 +18,10 @@
     },
     methods: {
       goTable () {
-        this.$router.push({name:'table'})
+        this.$router.push({name: 'table'})
+      },
+      goBackGroundImg () {
+        this.$router.push({name: 'backGroundImg'})
       }
     }
   }
