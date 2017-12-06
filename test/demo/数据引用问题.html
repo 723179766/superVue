@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+  var testArr = [
+    {
+      name: 'hcy'
+    },
+    {
+      name: 'xixihaha'
+    },
+    {
+      name: 'heihei'
+    },
+    {
+      name: '123123'
+    }
+  ]
+
+  var obj1 = {
+    name: '123'
+  }
+  obj1.key = testArr[0].name
+
+  console.log(testArr)
+  console.log(obj1)
+
+  obj1.key = 12345
+  console.log(testArr)
+  console.log(obj1)
+</script>
+</body>
+</html>

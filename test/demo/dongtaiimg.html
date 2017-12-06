@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+    }
+  </style>
+</head>
+<body>
+<img src="./file/3.png" alt="">
+
+<script>
+  window.onload = function(){
+    function getViewSize() {//获取浏览器视口的宽高
+      return {
+        "w": window['innerWidth'] || document.documentElement.clientWidth || document.documentElement.clientHeight
+      }
+    }
+    function getFullSize() {//获取浏览器最大的宽度
+      var w = Math.max(document.documentElement.clientWidth, document.body.clientWidth) +
+        Math.max(document.documentElement.scrollLeft, document.body.scrollLeft);
+      var h = Math.max(document.documentElement.clientHeight, document.body.clientHeight) +
+        Math.max(document.documentElement.scrollTop, document.body.scrollTop);
+      w = Math.max(document.documentElement.scrollWidth, w);
+      h = Math.max(document.documentElement.scrollHeight, h);
+      return {
+        "w": w,
+        "h": h
+      };
+    }
+    var _sv_w = getViewSize()["w"];
+    var _sf_w = getFullSize()["w"];
+    var _w = _sv_w;//这里用视口的宽度，具体视情况
+    var Imgarray = document.getElementsByTagName("img");
+    var realWidth;//真实的宽度
+    var realHeight;//真实的高度
+    for(var i =0;i<Imgarray.length;i++){
+      var imgtemp = new Image();//创建一个image对象
+      imgtemp.src = Imgarray[i].src;
+      imgtemp.index = i;//指定一个检索值，用于确定是哪张图
+      imgtemp.onload = function(){//图片加载完成后执行
+        var _stemp = this;//将当前指针复制给新的变量，不然会导致变量共用
+        realWidth = this.width;
+        realHeight = this.height;
+        if(realWidth >=_w )
+        {
+          alert(2)
+          Imgarray[_stemp.index].style.width = _w+'px';
+          Imgarray[_stemp.index].style.height = 'auto';
+        }
+        else{
+          alert(3)
+          Imgarray[_stemp.index].style.width = realWidth+'px';
+          Imgarray[_stemp.index].style.height = realHeight+'px';
+        }
+      }
+    }
+  }
+</script>
+</body>
+</html>

@@ -1,5 +1,8 @@
 <template>
-  <div class="back-ground-test" id="ssssssssss" ref="ssssssssss" style="background-position: 176px 58px; background-size: 100%;">
+  <div class="back-ground-test" id="ssssssssss" ref="ssssssssss">
+    <div style="position: absolute;z-index: -100;width: 100px;height: 100px;overflow: hidden;">
+      <img src="./1.png" alt="" id="imgNew">
+    </div>
     <div style="height: 400px;color: yellow;" v-for="item in [1,2,3,4]">
       Hello World
       Hello World
@@ -18,23 +21,29 @@
     methods: {
     },
     mounted () {
-      window.onresize = function () {
-        let dom = document.getElementById('ssssssssss')
-        console.log(dom.offsetHeight)
-        console.log(dom.offsetWidth)
-        let countVal = dom.offsetWidth + 'px' + ' ' + dom.offsetHeight + 'px'
-        console.log(countVal)
-        dom.style.backgroundSize = countVal
-      }
-
-      var dom = document.getElementById('ssssssssss')
-      var countVal = dom.offsetWidth + 'px' + ' ' + dom.offsetHeight + 'px'
-      console.log(dom.offsetWidth)
-      console.log(dom.offsetHeight)
-      console.log(countVal)
-      dom.style.backgroundSize = countVal
-//      console.log(countVal)
-      console.log(dom.style.backgroundSize)
+//      window.onresize = function () {
+//        let dom = document.getElementById('ssssssssss')
+//        console.log(dom.offsetHeight)
+//        console.log(dom.offsetWidth)
+//        let countVal = dom.offsetWidth + 'px' + ' ' + dom.offsetHeight + 'px'
+//        console.log(countVal)
+//        dom.style.backgroundSize = countVal
+//
+//        let positionVal = ((dom.offsetWidth/8).toFixed(2) + 200) + 'px' + ' ' + ((dom.offsetHeight/8).toFixed(2) + 200) + 'px'
+//        dom.style.backgroundPosition = positionVal
+//        console.log('positionVal')
+//        console.log(positionVal)
+//      }
+//
+//      var dom = document.getElementById('ssssssssss')
+//      var countVal = dom.offsetWidth + 'px' + ' ' + dom.offsetHeight + 'px'
+//      dom.style.backgroundSize = countVal
+//      dom.style.backgroundPosition = '176px 58px'
+      setTimeout(function(){
+        var img = document.getElementById("imgNew");
+        console.log(img.offsetWidth);
+        console.log(img.offsetHeight);
+      },1000)
     }
   }
 </script>
@@ -46,8 +55,8 @@
     padding: 0 !important;
     overflow-y: auto;
 
-    background-image: url(1.png);
-    background-repeat: no-repeat;
-    background-attachment: fixed;
+    /*background-image: url(4.png);*/
+    /*background-repeat: no-repeat;*/
+    /*background-attachment: fixed;*/
   }
 </style>
