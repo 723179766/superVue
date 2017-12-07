@@ -58,5 +58,9 @@
     /*background-image: url(4.png);*/
     /*background-repeat: no-repeat;*/
     /*background-attachment: fixed;*/
+
+    position: absolute;
+    width: 10%;
+    background: red;
   }
 </style>
