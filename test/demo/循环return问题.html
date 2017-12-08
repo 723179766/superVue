@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+  //  function myReturn () {
+  //    for (let i = 0; i < 4; i++) {
+  //      console.log('i', i)
+  //      return 'hcy'
+  //    }
+  //    console.log(123456)
+  //  }
+  //  console.log(myReturn())
+
+  //  function myReturn2 () {
+  //    ['hcy', 'asd', 'ffff'].forEach(function (val, index, arr) {
+  //      console.log(val, index, arr)
+  //      return 'hcy'
+  //    })
+  //    console.log(123456)
+  //  }
+  //  console.log(myReturn2())
+
+  function consoleA (callback) {
+    console.log('A')
+    callback()
+    console.log('B')
+  }
+
+  function myReturn2 () {
+    ['1次', '2次', '3次'].forEach(function (val, index, arr) {
+      console.log(val)
+      consoleA(function () {
+        alert(index)
+        return false
+      })
+    })
+  }
+  myReturn2()
+</script>
+</body>
+</html>

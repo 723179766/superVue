@@ -33,6 +33,20 @@
   obj1.key = 12345
   console.log(testArr)
   console.log(obj1)
+
+  console.log('---------------------')
+  var a = b = [1, 2, 3, 4]
+  a = [2, 3, 4, 5, 1]
+  console.log(b)
+  console.log(a)
+
+  console.log('---------------------')
+  var c1 = [1, 2, 3, 4]
+  var c2 = c1
+  c1 = [1, 2, 3, 4, 5, 6]
+  c2.forEach(function (val, index, arr) {
+    console.log(val)
+  })
 </script>
 </body>
 </html>

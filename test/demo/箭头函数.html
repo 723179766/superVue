@@ -7,15 +7,17 @@
 <body>
 <a href="http://blog.csdn.net/itpinpai/article/details/52182093" target="_blank">附加参考链接</a>
 <script>
-    console.log( (a=>{return a})('hcy') )
-    var getFunction = (id => ({id: 1, anme: "Temp"}))();
+    var getFunction = (id => ({id: 1, anme: 'Temp'}))()
     console.log(getFunction)
 
-    var x = y => 555;
+    var x = y => 555
     console.log(x())
 
-    var x = y => y;
-    console.log(x(777))
+    var c = y => y
+    console.log(c(777))
+
+    console.log((a => { return a })('hcy'))
+
 </script>
 </body>
 </html>
