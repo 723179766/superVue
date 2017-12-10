@@ -25,7 +25,7 @@
     mounted () {
       var vm = this
       var dom = document.getElementById('img_area_warp')        //获取C区节点
-
+      dom.style.backgroundImage="url(./static/backgroundimg/2.png)"
 
       function imgChange(){
         let areaWidth = dom.offsetWidth                            //C区宽
@@ -158,7 +158,6 @@
     padding: 0 !important;
     overflow-y: auto;
 
-    background-image: url(./1.png);
     background-repeat: no-repeat;
   }
 </style>
