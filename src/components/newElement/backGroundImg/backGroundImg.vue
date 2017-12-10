@@ -30,8 +30,8 @@
       function imgChange(){
         let areaWidth = dom.offsetWidth                            //C区宽
         let areaHeight = dom.offsetHeight                         //C区高
-        console.log(areaWidth, areaHeight)
         if (areaHeight < 250 || areaWidth < 600) {
+          console.log(areaWidth, areaHeight, '比例合适')
           dom.style.backgroundSize = 'cover'
           dom.style.backgroundPosition = "50% 50%"
           return
