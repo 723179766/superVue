@@ -159,7 +159,8 @@
       </el-submenu>
     </el-menu>
 
-    <div v-bind:class="{'right-no-full':openFlag,'right-full':!openFlag}" class="right">
+    <!--<div v-bind:class="{'right-no-full':openFlag,'right-full':!openFlag}" class="right">-->
+    <div class="right">
       <!-- <div class="head">
             <span class="title"> {{$root.title}}</span>
             <el-button type="text" icon="upload2" @click="loginOut"> 退出</el-button>
@@ -296,7 +297,9 @@
 
   .right {
     position: absolute;
+    left: 176px;
     right: 0;
+    min-width: 1000px;
     height: calc(100% - 58px);
     background-color: #F5F5F5;
     overflow-y: auto;
