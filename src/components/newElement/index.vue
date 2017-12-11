@@ -138,6 +138,21 @@
         <el-table-column label="商品 name" prop="name" v-for="item in [1,2,3,4,11,24,34,44,54,22]"></el-table-column>
       </el-table>
     </div>
+
+    <div class="margin-top-20" style="width: 400px" v-for="item in inputArr">
+      <el-form :rules="rules" ref="ruleForm">
+        <el-form-item label="姓名" prop="name">
+          <el-input v-model="item.formData.name"></el-input>
+        </el-form-item>
+        <el-form-item label="性别" prop="sex">
+          <el-input v-model="item.formData.sex"></el-input>
+        </el-form-item>
+      </el-form>
+    </div>
+    <div class="margin-top-20" style="width: 400px">
+      <el-button @click="inputData">input数据</el-button>
+    </div>
+
     <button class="dj-btn dj-btn-info" @click="changeCom">改变加载的组件</button>
     <component v-bind:is="whichShow"></component>
   </div>
@@ -192,6 +207,30 @@
         }, 500)
       }
       return {
+        rules: {
+          name: [
+            { required: true, message: 'required', trigger: 'blur' }
+          ],
+          sex: [
+            { required: true, message: 'required', trigger: 'blur' }
+          ]
+        },
+        inputArr: [
+          {
+            title: 'mt4',
+            formData: {
+              name: 'hcy',
+              sex: '男'
+            }
+          },
+          {
+            title: 'mt5',
+            formData: {
+              name: 'qiqixiaoyu',
+              sex: '女'
+            }
+          }
+        ],
         whichShow: 'no',
         checked: '0',
         checkedwei1: 1,
@@ -269,6 +308,9 @@
       }
     },
     methods: {
+      inputData () {
+        console.log(this.inputArr)
+      },
       getRowClass: function (row, index) {
         if (row.brother.length > 0) {
 //          console.log(row)
