@@ -38,6 +38,7 @@ import index from '@/components/newElement/index'
 import demoStudy from '@/components/newElement/demoStudy'
 import table from '@/components/newElement/tableStudy/table'
 import backGroundImg from '@/components/newElement/backGroundImg/backGroundImg'
+import formFor from '@/components/newElement/formFor/formFor'
 
 // 组件系统
 import LabelEdit from '@/components/comSystem/LabelEdit'
@@ -409,6 +410,14 @@ export default new Router({
           component: backGroundImg,
           meta: {
             name: 'backGroundImg'
+          }
+        },
+        {
+          path: '/formFor',
+          name: 'formFor',
+          component: formFor,
+          meta: {
+            name: 'formFor'
           }
         }
         // ,

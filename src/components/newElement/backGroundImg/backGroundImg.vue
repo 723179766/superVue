@@ -24,10 +24,10 @@
     },
     mounted () {
       var vm = this
-      var dom = document.getElementById('img_area_warp')        //获取C区节点
+      var dom = document.getElementById('img_area_warp')        // 获取C区节点
       dom.style.backgroundImage="url(./static/backgroundimg/2.png)"
 
-      function imgChange(){
+      function imgChange () {
         let areaWidth = dom.offsetWidth                            //C区宽
         let areaHeight = dom.offsetHeight                         //C区高
         if (areaHeight < 250 || areaWidth < 600) {
