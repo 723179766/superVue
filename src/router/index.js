@@ -39,6 +39,7 @@ import demoStudy from '@/components/newElement/demoStudy'
 import table from '@/components/newElement/tableStudy/table'
 import backGroundImg from '@/components/newElement/backGroundImg/backGroundImg'
 import formFor from '@/components/newElement/formFor/formFor'
+import tableModel from '@/components/newElement/tableModel/tableModel'
 
 // 组件系统
 import LabelEdit from '@/components/comSystem/LabelEdit'
@@ -418,6 +419,14 @@ export default new Router({
           component: formFor,
           meta: {
             name: 'formFor'
+          }
+        },
+        {
+          path: '/tableModel',
+          name: 'tableModel',
+          component: tableModel,
+          meta: {
+            name: 'tableModel'
           }
         }
         // ,
