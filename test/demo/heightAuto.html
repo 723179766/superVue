@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>菜鸟教程(runoob.com)</title>
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    table{
+      width: 100%;
+    }
+    td{
+      box-sizing: border-box;
+      width: 48%;
+      border: 1px solid #ccc;
+    }
+    .flexDiv{
+      flex: 1;
+      min-width: 48%;
+      max-width: 48%;
+    }
+    .flexDiv:nth-child(odd) {
+      background: lightskyblue;
+    }
+    .flexDiv:nth-child(even) {
+      background: lawngreen;
+    }
+  </style>
+</head>
+<body>
+<button onclick="changeTd()">改变表格</button>
+<button onclick="changeDiv()">改变div</button>
+<h3 style="margin-top: 20px">table中td如何换行？</h3>
+<table>
+  <td>Peter</td>
+  <td>Peter</td>
+  <td>Peter</td>
+  <td id="ppp">$100</td>
+</table>
+<h3 style="margin-top: 20px">flex可实现高度自适应</h3>
+<div style="display: flex;">
+  <div class="flexDiv">
+    <p id="pp2">321</p>
+  </div>
+  <div class="flexDiv">
+    <p>123</p>
+  </div>
+  <div class="flexDiv">
+    <p>123</p>
+  </div>
+</div>
+
+<script>
+  function changeTd(){
+    document.getElementById('ppp').innerHTML = "<p>123123</p><p>123123</p><p>123123</p><p>123123</p>"
+  }
+  function changeDiv(){
+    document.getElementById('pp2').innerHTML = "<p>123123</p><p>123123</p><p>123123</p><p>123123</p>"
+  }
+</script>
+</body>
+</html>
