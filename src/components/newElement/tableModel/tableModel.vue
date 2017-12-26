@@ -243,6 +243,7 @@
     flex: 1;
     min-height: 44px;
     line-height: 44px;
+    min-width: 150px;
     padding: 0 15px;
   }
   .table-body-td .el-tag{
@@ -250,15 +251,13 @@
   }
 
   .mg-table2{
-    width: 800px;
+    min-width: 800px;
     border: 1px solid #dfe6ec;
     overflow-x: auto;
   }
   .mg-table2 .table-header{
-    width: 1200px;
   }
   .mg-table2 .table-body{
-    width: 1200px;
     height: 200px;
     overflow-y: auto;
   }
