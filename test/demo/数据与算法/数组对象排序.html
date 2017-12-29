@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+
+<script>
+  var arrAll = [
+    {
+      key: 'money',
+      name: '金币'
+    },
+    {
+      key: 'piple',
+      name: '纸张'
+    },
+    {
+      key: 'price',
+      name: '价格'
+    },
+    {
+      key: 'know',
+      name: '知识'
+    },
+    {
+      key: 'jiangpai',
+      name: '银牌'
+    }
+  ]
+
+  var arrUse = [
+    {
+      key: 'money',
+      name: '金币11111'
+    },
+    {
+      key: 'know',
+      name: '知识11111'
+    },
+    {
+      key: 'piple',
+      name: '纸张111111'
+    },
+    {
+      key: 'aid',
+      name: '777777777'
+    }
+  ]
+
+  var newArr = []
+  for (var i = 0; i < arrAll.length; i++) {
+    newArr.push({
+      key: arrAll[i].key,
+      name: ''
+    })
+  }
+  for (var j = 0; j < arrUse.length; j++) {
+    if (arrUse[j].key === 'aid') {
+      newArr.push({
+        key: arrUse[j].key,
+        name: arrUse[j].name
+      })
+    }
+    for (var q = 0; q < newArr.length; q++) {
+      if (arrUse[j].key === newArr[q].key) {
+        newArr[q].name = arrUse[j].name
+        break
+      }
+      console.log(1)
+    }
+  }
+  console.log(newArr)
+</script>
+</body>
+</html>

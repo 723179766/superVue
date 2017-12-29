@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+  var arrAll = [
+    {
+      key: 'money',
+      name: '金币'
+    },
+    {
+      key: 'piple',
+      name: '纸张'
+    },
+    {
+      key: 'price',
+      name: '价格'
+    },
+    {
+      key: 'konw',
+      name: '知识'
+    },
+    {
+      key: 'jiangpai',
+      name: '银牌'
+    }
+  ]
+
+  var arrUse = [
+    {
+      key: 'konw',
+      name: '知识'
+    },
+    {
+      key: 'jiangpai',
+      name: '银牌'
+    }
+  ]
+
+  var arrNotUse = JSON.parse(JSON.stringify(arrAll))
+
+  for (var i = 0; i < arrUse.length; i++) {
+    for (var j = 0; j < arrNotUse.length; j++) {
+      if (arrUse[i].key === arrNotUse[j].key) {
+        arrNotUse.splice(j, 1)
+        break
+      }
+      console.log(1)
+    }
+  }
+
+  console.log('arrAll', arrAll)
+  console.log('arrUse', arrUse)
+  console.log('arrNotUse', arrNotUse)
+
+</script>
+</body>
+</html>

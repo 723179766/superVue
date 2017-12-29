@@ -15,9 +15,11 @@
     }
   ]
 
-  var arrtoo = arr.concat()
+//  var arrtoo = arr   // 两个数组都同时改变
+//  var arrtoo = arr.concat()
+  var arrtoo = JSON.parse(JSON.stringify(arr))
 
-  arrtoo.push({
+  arr.push({
     name: 'houchaoyu'
   })
 
