@@ -51,7 +51,7 @@
 
     <div class="mg-table2">
       <div class="table-header">
-        <div class="table-header-tr">
+        <div class="table-header-tr" style="position: relative; right: 0;">
           <div class="table-header-th">
             <span>账号类型</span>
           </div>
@@ -70,14 +70,15 @@
           <div class="table-header-th">
             <span>佣金</span>
           </div>
-          <div class="table-header-th" style="min-width: 200px">
+          <div class="table-header-th" style="min-width: 200px;"></div>
+          <div class="table-header-th" style="min-width: 200px; position: absolute; right: 0;">
             <span>group</span>
             <i class="el-icon-information"></i>
           </div>
         </div>
       </div>
       <div class="table-body">
-        <div class="table-body-tr" v-for="item in [1,2,3,4,5]">
+        <div class="table-body-tr" v-for="item in [1,2,3,4,5]" style="position: relative">
           <div class="table-body-td">
             <el-select v-model="value" placeholder="请选择">
               <el-option label="黄金" value="good"></el-option>
@@ -104,7 +105,8 @@
           <div class="table-body-td">
             <el-input placeholder="请输入"></el-input>
           </div>
-          <div class="table-body-td last-td" style="min-width: 200px">
+          <div class="table-body-td" style="min-width: 200px;"></div>
+          <div class="table-body-td last-td" style="min-width: 200px; position: absolute; right: 0;">
               <el-input placeholder="请输入"></el-input>
               <i class="el-icon-delete"></i>
           </div>
@@ -228,6 +230,7 @@
     flex: 1;
     height: 44px;
     line-height: 44px;
+    min-width: 150px;
     padding: 0 15px;
   }
   .table-body{
@@ -235,6 +238,7 @@
   }
   .table-body-tr{
     display: flex;
+    width: 100%;
   }
   .table-body-tr:not(:last-child){
     border-bottom: 1px solid #dfe6ec
@@ -251,15 +255,14 @@
   }
 
   .mg-table2{
-    min-width: 800px;
     border: 1px solid #dfe6ec;
-    overflow-x: auto;
   }
   .mg-table2 .table-header{
   }
   .mg-table2 .table-body{
-    height: 200px;
-    overflow-y: auto;
+    width: 100%;
+    height: 210px;
+    overflow-x: auto;
   }
   .last-td .el-input{
     width: auto;
@@ -267,5 +270,8 @@
   .last-td .el-input__inner{
     display: inline-block;
     width: 142px;
+  }
+  .ss{
+    background: lightskyblue;
   }
 </style>
