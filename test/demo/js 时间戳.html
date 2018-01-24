@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+  var oldTime = new Date('2018-1-18 16:05:20').getTime()
+  console.log('oldTime', oldTime)
+  console.log('nowTime', new Date().getTime())
+  console.log('时间差毫秒')
+  var a = new Date().getTime() - oldTime
+  console.log(a)
+  console.log('时间差秒数')
+  console.log(Math.round(a / 1000) + 'S')
+</script>
+</body>
+</html>
