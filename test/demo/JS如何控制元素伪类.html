@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    .ssss:hover:before{
+      content: attr(data-errorInfo);
+    }
+  </style>
+</head>
+<body>
+<button onclick="createDom()">生成div</button>
+
+<script>
+  //  console.log(document.getElementById('ss'))
+  //    document.getElementById('ss').onmouseover = function () {
+  //      console.log(this.innerHTML)
+  //      this.style.color = 'red'
+  //    }
+
+  function createDom() {
+    var html = '<div class="ssss">123123</div>'
+    $('body').append(html)
+  }
+
+  $('ssss').on("mouseover", "#ele", function() {
+    this.setAttribute('data-errorInfo', this.innerHTML)
+  })
+
+  //  var style = window.getComputedStyle(dom, ':after').getPropertyValue('color')
+  //  console.log(style)
+  //
+  //  document.getOverrideStyle(dom, ':after').cssText = 'display: none !important'
+</script>
+</body>
+</html>
