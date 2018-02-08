@@ -4,6 +4,8 @@
     <button class="dj-btn dj-btn-info" @click="goBackGroundImg">背景图</button>
     <button class="dj-btn dj-btn-success" @click="goForm">表单循环</button>
     <button class="dj-btn dj-btn-warning" @click="goTableModel">伪Table</button>
+    <button class="dj-btn dj-btn-info" @click="vuex1">vuex状态共享1</button>
+    <button class="dj-btn dj-btn-info" @click="vuex2">vuex状态共享2</button>
   </div>
 </template>
 
@@ -30,6 +32,12 @@
       },
       goTableModel () {
         this.$router.push({name: 'tableModel'})
+      },
+      vuex1 () {
+        this.$router.push({name: 'vuex1'})
+      },
+      vuex2 () {
+        this.$router.push({name: 'vuex2'})
       }
     }
   }

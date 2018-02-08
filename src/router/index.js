@@ -40,6 +40,8 @@ import table from '@/components/newElement/tableStudy/table'
 import backGroundImg from '@/components/newElement/backGroundImg/backGroundImg'
 import formFor from '@/components/newElement/formFor/formFor'
 import tableModel from '@/components/newElement/tableModel/tableModel'
+import vuex1 from '@/components/newElement/vuex/vuex1'
+import vuex2 from '@/components/newElement/vuex/vuex2'
 
 // 组件系统
 import LabelEdit from '@/components/comSystem/LabelEdit'
@@ -427,6 +429,22 @@ export default new Router({
           component: tableModel,
           meta: {
             name: 'tableModel'
+          }
+        },
+        {
+          path: '/vuex1',
+          name: 'vuex1',
+          component: vuex1,
+          meta: {
+            name: 'vuex1'
+          }
+        },
+        {
+          path: '/vuex2',
+          name: 'vuex2',
+          component: vuex2,
+          meta: {
+            name: 'vuex2'
           }
         }
         // ,

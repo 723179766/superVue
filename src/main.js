@@ -10,7 +10,7 @@ import VueAxios from 'vue-axios'
 import filter from './filter/filter'
 import { Message } from 'element-ui';
 import '../static/sass/all.scss';
-
+import store from './store/store'
 
 Vue.use(ElementUI);
 Vue.config.productionTip = false;
@@ -88,6 +88,7 @@ window.app = new Vue({
     title: '工作台'
   },
   router,
+  store,
   template: '<App/>',
   components: {App}
 });
