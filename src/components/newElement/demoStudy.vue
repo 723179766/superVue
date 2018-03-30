@@ -6,6 +6,10 @@
     <button class="dj-btn dj-btn-warning" @click="goTableModel">伪Table</button>
     <button class="dj-btn dj-btn-info" @click="vuex1">vuex状态共享1</button>
     <button class="dj-btn dj-btn-info" @click="vuex2">vuex状态共享2</button>
+
+    <div v-once="true">{{count}}</div>
+    <div v-if="true">{{count}}</div>
+    <button class="dj-btn dj-btn-info" @click="count++">++++++++++</button>
   </div>
 </template>
 
@@ -14,7 +18,7 @@
     name: '',
     data () {
       return {
-
+        count: 1
       }
     },
     created () {

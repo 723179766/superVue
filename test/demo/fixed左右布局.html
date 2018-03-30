@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+    }
+    html,body{
+      height: 100%;
+      background: lightcyan;
+    }
+    .div1{
+      z-index: 1001;
+      position: fixed;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      width: 180px !important;
+      height: 100%;
+      background: yellow;
+    }
+    .div2{
+      height: 100%;
+      margin-left: 180px;
+      background: lawngreen;
+    }
+  </style>
+</head>
+<body>
+<div class="div1">hello world, hello world, hello world</div>
+<div class="div2">
+  <p>123123123</p>
+  <p>123123123</p>
+  <p>123123123</p>
+</div>
+<script>
+  var a = {name: 1};
+  var b = a;
+
+  console.log(a);
+  console.log(b);
+
+  b.name = 2;
+  console.log(a);
+  console.log(b);
+
+  var b = {name: 3};
+  console.log(a);
+  console.log(b);
+</script>
+</body>
+</html>

@@ -51,6 +51,7 @@ import ShanGe from '@/components/comSystem/ShanGe'
 import ShuttleBox from '@/components/comSystem/ShuttleBox'
 import Rate from '@/components/comSystem/Rate'
 import Tab from '@/components/comSystem/Tab'
+import Solt from '@/components/comSystem/Solt'
 
 import NewTree from '@/components/gongSiDemo/NewTree'
 import es6KuoZan from '@/components/gongSiDemo/es6KuoZan'
@@ -58,6 +59,8 @@ import es6KuoZan from '@/components/gongSiDemo/es6KuoZan'
 import computed from '@/components/vue/computed'
 import renderFunc from '@/components/vue/renderFunc'
 import directive from '@/components/directive/directive'
+
+import richEditor from '@/components/richEditor/index'
 
 Vue.use(Router)
 
@@ -320,6 +323,14 @@ export default new Router({
           }
         },
         {
+          path: '/Solt',
+          name: 'Solt',
+          component: Solt,
+          meta: {
+            name: '选项卡'
+          }
+        },
+        {
           path: '/CssModel',
           name: 'CssModel',
           component: CssModel,
@@ -445,6 +456,14 @@ export default new Router({
           component: vuex2,
           meta: {
             name: 'vuex2'
+          }
+        },
+        {
+          path: '/richEditor',
+          name: 'richEditor',
+          component: richEditor,
+          meta: {
+            name: 'richEditor'
           }
         }
         // ,

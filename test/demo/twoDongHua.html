@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    .span1{
+      position: relative;
+      color: lightgreen;
+      top: 40px;
+      animation: myfirst ease-in 1s;
+      animation-fill-mode: forwards
+    }
+    .span1:hover{
+    }
+    .span2{
+      color: lightskyblue;
+      position: relative;
+      top: 40px;
+    }
+    @keyframes myfirst
+    {
+      0%  {top: 40px;}
+      100% {top: 0; display: none}
+    }
+  </style>
+</head>
+<body>
+<span class="span1">我是要往上移动的</span>
+<span class="span2">它上去我左边移动</span>
+</body>
+</html>

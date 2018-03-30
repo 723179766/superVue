@@ -92,6 +92,9 @@
         <el-menu-item index="86">
           <router-link to="/Tab" tag="span">选项卡</router-link>
         </el-menu-item>
+        <el-menu-item index="87">
+          <router-link to="/Solt" tag="span">插槽学习</router-link>
+        </el-menu-item>
       </el-submenu>
       <el-submenu index="9">
         <template slot="title">
@@ -155,6 +158,16 @@
         </el-menu-item>
         <el-menu-item index="A2">
           <router-link to="/demoStudy" tag="span">学习使用</router-link>
+        </el-menu-item>
+      </el-submenu>
+
+      <el-submenu index="B">
+        <template slot="title">
+          <img class="sys-icon" src="../assets/nav_icon_appstore.png" alt="">
+          插件使用
+        </template>
+        <el-menu-item index="B1">
+          <router-link to="/richEditor" tag="span">富文本编辑器</router-link>
         </el-menu-item>
       </el-submenu>
     </el-menu>
