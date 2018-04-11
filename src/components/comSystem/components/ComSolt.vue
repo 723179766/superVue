@@ -10,9 +10,9 @@
     <footer>
       <slot name="footer"></slot>
     </footer>
-    <template style="height: 100px;width: 100px">
+    <div style="height: 100px;width: 100px; color: red">
       <slot name="newName"></slot>
-    </template>
+    </div>
   </div>
 </template>
 

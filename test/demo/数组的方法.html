@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+  var a = [1, 4, -5, 10].find((n) => n < 0)
+  console.log(a)
+
+  var obj = [
+    {
+      key: 'hcy',
+      num: 10
+    },
+    {
+      key: 'hhh',
+      num: 111
+    }
+  ]
+  var c = obj.filter(function (value, index, arr) {
+    if (value.num === 111) {
+      return value.key
+    }
+  })
+  console.log(c)
+</script>
+</body>
+</html>

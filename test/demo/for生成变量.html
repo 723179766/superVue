@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+
+<script>
+  var editorList = {}
+  var num = [1, 2, 3]
+  num.forEach(function (val, index, arr) {
+    alert(index)
+    editorList['editor' + val] = val + 'D'
+  })
+  console.log(editorList)
+</script>
+</body>
+</html>
