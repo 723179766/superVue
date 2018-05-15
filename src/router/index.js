@@ -61,6 +61,7 @@ import renderFunc from '@/components/vue/renderFunc'
 import directive from '@/components/directive/directive'
 
 import richEditor from '@/components/richEditor/index'
+import echarts from '@/components/echarts/index'
 
 Vue.use(Router)
 
@@ -464,6 +465,14 @@ export default new Router({
           component: richEditor,
           meta: {
             name: 'richEditor'
+          }
+        },
+        {
+          path: '/echarts',
+          name: 'echarts',
+          component: echarts,
+          meta: {
+            name: 'echarts'
           }
         }
         // ,

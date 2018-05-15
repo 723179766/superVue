@@ -169,6 +169,9 @@
         <el-menu-item index="B1">
           <router-link to="/richEditor" tag="span">富文本编辑器</router-link>
         </el-menu-item>
+        <el-menu-item index="B2">
+          <router-link to="/echarts" tag="span">echarts使用</router-link>
+        </el-menu-item>
       </el-submenu>
     </el-menu>
 
