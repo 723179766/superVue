@@ -36,6 +36,7 @@ import AppDetail from '@/components/appManage/AppDetail'
 // 封装element ui
 import index from '@/components/newElement/index'
 import demoStudy from '@/components/newElement/demoStudy'
+import comDemoStudy from '@/components/newElement/comDemoStudy'
 import table from '@/components/newElement/tableStudy/table'
 import backGroundImg from '@/components/newElement/backGroundImg/backGroundImg'
 import formFor from '@/components/newElement/formFor/formFor'
@@ -409,6 +410,14 @@ export default new Router({
           component: demoStudy,
           meta: {
             name: 'demoStudy'
+          }
+        },
+        {
+          path: '/comDemoStudy',
+          name: 'comDemoStudy',
+          component: comDemoStudy,
+          meta: {
+            name: 'comDemoStudy'
           }
         },
         {

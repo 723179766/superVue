@@ -159,6 +159,9 @@
         <el-menu-item index="A2">
           <router-link to="/demoStudy" tag="span">学习使用</router-link>
         </el-menu-item>
+        <el-menu-item index="A3">
+          <router-link to="/comDemoStudy" tag="span">动态组件学习</router-link>
+        </el-menu-item>
       </el-submenu>
 
       <el-submenu index="B">
