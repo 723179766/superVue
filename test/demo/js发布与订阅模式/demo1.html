@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<h2>Javascript中理解发布--订阅模式</h2>
+<script>
+  var shoeObj = {} // 定义发布者
+  shoeObj.list = [] // 缓存列表 存放订阅者回调函数
+
+  // 增加订阅者
+  shoeObj.listen = function (fn) {
+    shoeObj.list.push(fn)  // 订阅消息添加到缓存列表
+  }
+
+  // 小红订阅如下消息
+  shoeObj.listen(function (color, size) {   // 放了一个函数到List里面去
+    console.log('小红订阅颜色是：' + color)
+    console.log('小红订阅尺码是：' + size)
+  })
+
+  // 小花订阅如下消息
+  shoeObj.listen(function (color, size) {   // 放了一个函数到List里面去
+    console.log('小花订阅颜色是：' + color)
+    console.log('小花订阅尺码是：' + size)
+  })
+
+  // 发布消息
+  shoeObj.trigger = function () {
+    for (var i = 0, fn; fn = this.list[i++];) {
+      fn.apply(this, arguments)
+    }
+  }
+
+  shoeObj.trigger('红色', 40)
+  shoeObj.trigger('黑色', 42)
+
+//  console.log(shoeObj)
+  // console.log(shoeObj.list[0]())
+  // console.log(shoeObj.list[1]())
+
+  var hcyObj = {
+    name1: '123',
+    name2: this.name1
+  }
+  console.log(hcyObj)
+</script>
+</body>
+</html>

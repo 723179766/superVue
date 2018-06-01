@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+  function a () {
+    var user = '追梦子'
+    console.log(this.user) // undefined
+    console.log(this) // Window
+  }
+  a()
+  // 按照我们上面说的this最终指向的是调用它的对象，这里的函数a实际是被Window对象所点出来的，下面的代码就可以证明。
+  function a () {
+    var user = '追梦子'
+    console.log(this.user) // undefined
+    console.log(this) // Window
+  }
+  window.a()
+  // alert其实是Window调用出来的 alert(1) window.alert(1)
+
+  var o = {
+    user: '追梦子',
+    fn: function () {
+      console.log(this.user) // 追梦子
+    }
+  }
+  o.fn()
+  // 这里的this指向的是对象o，因为你调用这个fn是通过o.fn()执行的，那自然指向就是对象o，这里再次强调一点，this的指向在函数创建的时候是决定不了的，在调用的时候才能决定，谁调用的就指向谁，一定要搞清楚这个。
+
+  // 其实例子1和例子2说的并不够准确，下面这个例子就可以推翻上面的理论。如果要彻底的搞懂this必须看接下来的几个例子
+  var c = {
+    user: '追梦子222',
+    fn: function () {
+      console.log(this.user) // 追梦子222
+    }
+  }
+  window.c.fn()
+  // 这段代码和上面的那段代码几乎是一样的，但是这里的this为什么不是指向window，如果按照上面的理论，最终this指向的是调用它的对象，这里先说个而外话，window是js中的全局对象，我们创建的变量实际上是给window添加属性，所以这里可以用window点o对象。
+  // 这里先不解释为什么上面的那段代码this为什么没有指向window，我们再来demo2代码。
+</script>
+</body>
+</html>

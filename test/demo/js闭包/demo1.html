@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+  // 闭包return方法
+  function fn () {
+    // 定义了一个变量name
+    var name = '追梦子'
+    // 我现在想在外部访问这个变量name怎么办呢？哈：不是有return，我把它返回出去，我再用个变量接收一下不就可以了，哈哈哈哈~~~~~
+    return name
+  }
+  // var name = fn()// 接收fn返回的name值。
+  // alert(name)// 追梦子
+
+  // 这里的闭包就是利用函数的return。除了通过return还可以通过其他的几种方法如下：
+  function fn () {   // 方法1
+    var a = 0
+    b = a
+  }
+  //  fn()
+  //  alert(b)
+  // 上面利用了js的一个特性，如果在函数中没有用var定义变量，那么这个变量属于全局的，但这种方法多少有些不好。
+
+  var f = null  // 方法2
+  function fn () {
+    var a = 0
+    f = function () {
+      a++
+      f.a = a
+    }
+    console.log(f)
+  }
+  fn()
+  f()
+  alert(f.a)// 1
+  f()
+  alert(f.a)// 2
+</script>
+</body>
+</html>

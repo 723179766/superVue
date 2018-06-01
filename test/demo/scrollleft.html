@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+  <meta charset='UTF-8'>
+  <title>Title</title>
+  <style type='text/css'>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    p {
+      white-space: nowrap;
+      overflow: scroll;
+    }
+  </style>
+</head>
+<body>
+<p id='pp'>
+  这是一些文本。
+  这是一些文本。
+  这是一些文本。
+  这是一些文本。
+  这是一些文本。
+  这是一些文本。
+  这是一些文本。
+  这是一些文本。
+  这是一些文本。
+  这是一些文本。
+  这是一些文本。
+  这是一些文本。
+</p>
+<script>
+  //  function getScrollLeft () {
+  //    setTimeout(function () {
+  //      var dom = document.getElementById('pp')
+  //      console.log(dom.scrollLeft)
+  //      dom.scrollLeft += dom.scrollLeft + 10
+  //      getScrollLeft()
+  //    }, 1000)
+  //  }
+  //  getScrollLeft()
+
+  function IsPC () {
+    let userAgentInfo = navigator.userAgent
+    let Agents = ['Android', 'iPhone',
+      'SymbianOS', 'Windows Phone',
+      'iPad', 'iPod'
+    ]
+    let flag = true
+    for (let v = 0; v < Agents.length; v++) {
+      if (userAgentInfo.indexOf(Agents[v]) > 0) {
+        flag = false
+        break
+      }
+    }
+    return flag
+  }
+
+  console.log(IsPC())
+  console.log(navigator.appName)
+  console.log(navigator.platform)
+  console.log(navigator.userAgent)
+</script>
+</body>
+</html>

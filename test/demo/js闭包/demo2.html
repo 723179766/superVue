@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    li{
+    }
+  </style>
+</head>
+<body>
+<ul>
+  <li>1</li>
+  <li>2</li>
+  <li>3</li>
+  <li>4</li>
+  <li>5</li>
+</ul>
+<script>
+  //  var lis = document.getElementsByTagName('li')
+  //  console.log(lis)
+  //  for (var i = 0; i < lis.length; i++) {
+  //    lis[i].onclick = function () {
+  //      console.log(i)
+  //      console.log(this)
+  //      this.style.border = '1px solid #ccc'
+  //    }
+  //    lis[i].onclick()
+  //  }
+
+  //  function fn () {
+  //    var num = 0
+  //    return function () {
+  //      num += 1
+  //      alert(num)
+  //    }
+  //  }
+  //  var f = fn()
+  //  f() // 1
+  //  f() // 2
+  window.onload = function(){
+    var div = document.getElementsByTagName("li");
+    for(var i=0;i<div.length;i++){
+      (function(i){
+        div[i].onclick = function(){
+          console.log(i);
+        }
+      })(i)
+    }
+  }
+
+  var arr = [];
+  for(var i=0;i<2;i++){
+    arr[i] = a(i);
+  }
+
+  function a(i){
+    return function(){
+      console.log(i);
+    }
+  }
+
+  arr[0](); //0
+  arr[1](); //1
+</script>
+</body>
+</html>

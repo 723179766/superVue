@@ -1,23 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+  <meta charset="UTF-8">
+  <title>Title</title>
 </head>
 <body>
 <a href="http://blog.csdn.net/itpinpai/article/details/52182093" target="_blank">附加参考链接</a>
 <script>
-    var getFunction = (id => ({id: 1, anme: 'Temp'}))()
-    console.log(getFunction)
+  var getFunction = (id =>
+      ({id: 1, name: 'Temp'})
+  )()
+  console.log(getFunction)
+  //
+  //  var x = y => 555
+  //  console.log(x())
+  //
+  //  var c = y => y
+  //  console.log(c(777))
+  //
+  //  console.log((a => { return a })('hcy'))
 
-    var x = y => 555
-    console.log(x())
-
-    var c = y => y
-    console.log(c(777))
-
-    console.log((a => { return a })('hcy'))
-
+  //  var personal = (resp, data1, data2) => {
+  //    let a = 'aaaaa'
+  //    let b = 'bbbbb'
+  //    console.log(a)
+  //    console.log(b)
+  //    console.log(resp, data1, data2)
+  //  }
+  //  personal(1, 2, 3)
 </script>
 </body>
 </html>
