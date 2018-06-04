@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<h2>深入理解javascript原型和闭包（1）——一切都是对象</h2>
+<script>
+  function show (x) {
+    console.log(typeof x)    // undefined
+    console.log(typeof 10)   // number
+    console.log(typeof 'abc') // string
+    console.log(typeof true)  // boolean
+    console.log(typeof function () {})  // function
+    console.log(typeof [1, 'a', true])  // object
+    console.log(typeof { a: 10, b: 20 })  // object
+    console.log(typeof null)  // object
+    console.log(typeof new Number(10))  // object
+  }
+//  show()
+
+//  var fn = function () {}
+//  console.log(fn instanceof Object)  // true
+
+  function fn () {
+    alert(100)
+  }
+  fn.a = 101
+  fn.b = function () {
+    alert(123)
+  }
+  fn.prototype.sex = '女1'
+  fn.c = {
+    name: '王福朋',
+    year: 1988
+  }
+  console.log(fn.a)
+  console.log(fn.sex)
+  console.log(fn)
+
+//  var dd = ['hcy']
+//  dd.hcy = 1234
+//  console.log(dd)
+//  console.log(dd.length)
+//  console.log(dd[0])
+//  console.log(dd[1])
+//  console.log(dd.hcy)
+</script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<h2>深入理解javascript原型和闭包（2）——函数和对象的关系</h2>
+<script>
+  function Fn () {
+    this.name = '王福朋'
+    this.year = 1988
+  }
+  var fn1 = new Fn()
+
+  var obj = new Object();
+  obj.a = 10;
+  obj.b = 20;
+  var arr = new Array();
+  arr[0] = 5;
+  arr[1] = true;
+  console.log(typeof (Object));  // function
+  console.log(typeof (Array));  // function
+  console.log(typeof (arr));  // function
+</script>
+</body>
+</html>

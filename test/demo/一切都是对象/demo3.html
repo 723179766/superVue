@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<h2>深入理解javascript原型和闭包（3）——prototype原型</h2>
+<script>
+  function Fn() { }
+  Fn.prototype.name = '王福朋';
+  Fn.prototype.getYear = function () {
+    return 1988;
+  };
+
+  var fn = new Fn();
+  console.log(fn.name);
+  console.log(fn.getYear());
+  console.log(fn);
+</script>
+</body>
+</html>
