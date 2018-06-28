@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<h2>深入理解javascript原型和闭包（4）——隐式原型</h2>
+<script>
+  var obj = {}
+  console.log(obj)
+
+  console.log(Object.prototype)
+
+  function Fn () { }
+  console.log(Fn.prototype)
+
+  var a = {
+    'hcy': {
+      name: '七七小雨'
+    }
+  }
+  var b = {
+    'houchaoyu': {
+      name: '火车与'
+    }
+  }
+  var c = {
+    'QQQ': {
+      name: 'QQQQ'
+    }
+  }
+
+  var d = Object.assign(a, b, c)
+  console.log(d)
+
+</script>
+</body>
+</html>

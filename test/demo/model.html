@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+    }
+    .model{
+      position: fixed;
+      background-color: rgba(0, 0, 0, 0.65);
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 9000;
+    }
+    .showCode{
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 30%;
+      height: 30%;
+      transform: translate(-50%, -50%);
+      -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+      background: #87cefa;
+      font-size: 8px;
+      overflow: hidden;
+    }
+    /*.showCode *{*/
+      /*font-size:1rem !important*/
+    /*}*/
+  </style>
+</head>
+<body>
+12312312312
+<!--<div class="model"></div>-->
+<div class="showCode" id="showCode">
+  <h1 id="h1" style="font-size: 24px">我是字体文字</h1>
+  <h2>我是字体文字</h2>
+  <h3>我是字体文字</h3>
+  <div>我是字体
+    <span>文字</span>
+  </div>
+  <h4>我是字体文字</h4>
+</div>
+<button onclick="ss()">11</button>
+<script>
+  function ss () {
+    document.getElementById('showCode').style.width = '50%'
+    document.getElementById('showCode').style.height = '50%'
+    document.getElementById('showCode').style.fontSize = '40px'
+    var a = document.getElementById('h1').style.fontSize
+    console.log(a)
+  }
+//  var allDom = document.getElementsByTagName('*')
+//  console.log('allDom', allDom)
+//  var b = document.getElementById('showCode').childNodes
+//  console.log('b', b)
+
+  var a = document.getElementById('showCode').getElementsByTagName('*')
+  console.log('a', a)
+  console.log('a.length', a.length)
+  for (let i = 0; i < a.length; i++) {
+    console.log(a[i])
+    console.log(a[i].style.fontSize)
+  }
+</script>
+</body>
+</html>

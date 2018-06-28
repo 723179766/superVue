@@ -8,6 +8,7 @@
     </div>
     <div>
       <button class="dj-btn dj-btn-info" @click="write">输出值</button>
+      <el-button type="primary" @click="openLpoa">点击打开 Dialog</el-button>
     </div>
   </div>
 </template>
@@ -27,6 +28,10 @@
     methods: {
       write () {
         alert(this.searchText)
+      },
+      openLpoa () {
+        console.log(document.body)
+        var dialogHtml = 'div'
       }
     }
   }
