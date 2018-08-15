@@ -95,6 +95,9 @@
         <el-menu-item index="87">
           <router-link to="/Solt" tag="span">插槽学习</router-link>
         </el-menu-item>
+        <el-menu-item index="88">
+          <router-link to="/Tree" tag="span">Tree</router-link>
+        </el-menu-item>
       </el-submenu>
       <el-submenu index="9">
         <template slot="title">

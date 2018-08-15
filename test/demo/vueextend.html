@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+</head>
+<body>
+<div id="mount-point">
+  <p>woshidiv</p>
+</div>
+<script>
+  // 创建一个 Profile 构造函数
+  var Profile = Vue.extend({
+    template: '<p>{{firstName}}</p>',
+    data: function () {
+      return {
+        firstName: 'Walter'
+      }
+    }
+  })
+  // 创建一个 Profile 实例，并将其挂载到一个元素上。
+
+  var component = new Profile().$mount()
+  document.getElementById('mount-point').appendChild(component.$el)
+</script>
+</body>
+</html>

@@ -53,6 +53,7 @@ import ShuttleBox from '@/components/comSystem/ShuttleBox'
 import Rate from '@/components/comSystem/Rate'
 import Tab from '@/components/comSystem/Tab'
 import Solt from '@/components/comSystem/Solt'
+import Tree from '@/components/comSystem/Tree'
 
 import NewTree from '@/components/gongSiDemo/NewTree'
 import es6KuoZan from '@/components/gongSiDemo/es6KuoZan'
@@ -329,7 +330,15 @@ export default new Router({
           name: 'Solt',
           component: Solt,
           meta: {
-            name: '选项卡'
+            name: '插槽'
+          }
+        },
+        {
+          path: '/Tree',
+          name: 'Tree',
+          component: Tree,
+          meta: {
+            name: 'Tree'
           }
         },
         {
