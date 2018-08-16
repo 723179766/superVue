@@ -13,7 +13,8 @@
         </el-dropdown-menu>
       </el-dropdown>
     </div>
-    <el-menu unique-opened default-active="1" v-bind:class="{'menu-width-open':openFlag,'menu-width-close':!openFlag}" class="el-menu-vertical-demo" @open="handleOpen" @close="handleClose" theme="dark">
+    <el-menu unique-opened default-active="1" v-bind:class="{'menu-width-open':openFlag,'menu-width-close':!openFlag}"
+             @open="handleOpen" @close="handleClose" background-color="#545c64" text-color="#fff" active-text-color="#ffd04b">
       <el-menu-item index="0">
         <img class="sys-icon" src="../assets/nav_icon_home.png" alt="">
         <router-link to="/Gzt" tag="span">首页</router-link>
@@ -33,7 +34,7 @@
           <router-link to="/Role" tag="span">角色管理</router-link>
         </el-menu-item>
         <!--<el-menu-item index="54">-->
-          <!--<router-link to="/Staff" tag="span">人员管理</router-link>-->
+        <!--<router-link to="/Staff" tag="span">人员管理</router-link>-->
         <!--</el-menu-item>-->
       </el-submenu>
       <el-submenu index="6">
@@ -244,7 +245,12 @@
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
+<style scoped lang="scss">
+  .hello {
+    .el-submenu__title img {
+      vertical-align: baseline;
+    }
+  }
   .hello .fade-enter-active{
     transition: opacity .7s
   }

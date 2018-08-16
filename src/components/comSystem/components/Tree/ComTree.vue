@@ -2,7 +2,7 @@
   <div class="tree-item">
     <div :class="{'tree-item-bold': isFolder}" class="tree-item-row">
       <i :class="{'el-icon-caret-right': !open, 'el-icon-caret-bottom': open}" v-if="isFolder" class="tree-icon" @click="toggle(model)"></i>
-      <input type="checkbox" class="tree-checkbox" v-model="model.state">
+      <el-checkbox v-model="model.state" class="tree-checkbox"></el-checkbox>
       <span class="tree-label" @click="toggle(model)">{{ model.name }}</span>
     </div>
     <transition name="el-fade-in-linear">
@@ -49,19 +49,19 @@
       toggle (model) {
         if (model.hasLoad === false) {
           model.hasLoad = true
-          Bus.$emit('loadChild', model) // 只会加载一次
+          Bus.$emit('childEvent', model) // 只会加载一次
         }
         if (this.isFolder) {
           this.open = !this.open
         }
       },
+      loadMoreEvent (model) {
+        Bus.$emit('moreEvent', model) // 加载更多当前层级
+      },
       loadChild (content, data) {
         content.children = content.children.concat(data)
       },
-      loadMoreEvent (model) {
-        Bus.$emit('loadMoreEvent', model) // 加载更多当前层级
-      },
-      loadMoreData (content, data) {
+      loadMore (content, data) {
         if (data.length) {
           content.children = content.children.concat(data)
         } else {
