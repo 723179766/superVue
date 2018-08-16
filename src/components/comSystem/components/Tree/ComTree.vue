@@ -2,6 +2,9 @@
   <div class="tree-item">
     <div :class="{'tree-item-bold': isFolder}" class="tree-item-row">
       <i :class="{'el-icon-caret-right': !open, 'el-icon-caret-bottom': open}" v-if="isFolder" class="tree-icon" @click="toggle(model)"></i>
+      <div class="no-child-box" v-if="!isFolder">
+        <i class="no-child-sign"></i>
+      </div>
       <el-checkbox v-model="model.state" class="tree-checkbox"></el-checkbox>
       <span class="tree-label" @click="toggle(model)">{{ model.name }}</span>
     </div>
@@ -87,6 +90,21 @@
       }
       .tree-checkbox,.tree-label{
         margin-left: 5px;
+      }
+      .no-child-box{
+        display: inline-block;
+        width: 14px;
+        height: 14px;
+        line-height: 14px;
+        text-align: center;
+        vertical-align: middle;
+        .no-child-sign{
+          display: inline-block;
+          width: 5px;
+          height: 5px;
+          border-radius: 50% !important;
+          background: #000;
+        }
       }
     }
     ul {

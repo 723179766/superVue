@@ -29,7 +29,7 @@
     methods: {
       loadChild (content) {
         let data = []
-        if (Math.floor(Math.random() * 10 + 1) > 0) {
+        if (Math.floor(Math.random() * 10 + 1) > 4) {
           data = [
             {
               uid: content.uid + 1,
