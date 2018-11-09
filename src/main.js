@@ -11,6 +11,9 @@ import 'element-ui/lib/theme-chalk/index.css';
 import { Message } from 'element-ui';
 import '../static/sass/all.scss';
 import store from './store/store'
+import preview from 'vue-photo-preview'
+import 'vue-photo-preview/dist/skin.css'
+Vue.use(preview)
 
 Vue.use(ElementUI);
 Vue.config.productionTip = false;

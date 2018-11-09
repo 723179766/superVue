@@ -2,7 +2,9 @@
   <div class="app-container">
     <div id="editorElem" style="text-align:left"></div>
     <button v-on:click="getContent">查看内容</button>
-    <div></div>
+    <div>
+      <img src="/static/img/404Girl.jpg" large="/static/img/44-440.png" preview="0" preview-text="preview-chajian11">
+    </div>
     <!--<tabel-change></tabel-change>-->
   </div>
 </template>
